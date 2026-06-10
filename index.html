@@ -109,7 +109,7 @@
             border-bottom: 2px solid var(--primary-color);
             position: fixed;
             width: 100%;
-            tحop: 0;
+            top: 0;
             z-index: 1000;
             box-shadow: 0 4px 25px rgba(0,0,0,0.8);
             backdrop-filter: blur(8px);
@@ -166,46 +166,88 @@
             width: 100%;
         }
 
-        /* قسم المقدمة الغامض (Hero Section) */
-        .hero {
-            margin-top: 80px;
-            padding: 130px 20px;
+        /* قسم الإمبراطور والواجهة العلوية الفخمة بالكامل */
+        .emperor-section {
+            position: relative;
+            margin-top: 74px; /* مسافة أمان لكي لا يختفي القسم تحت الهيدر الثابت */
             text-align: center;
-            background: radial-gradient(circle, rgba(22, 12, 43, 0.4) 0%, rgba(5, 5, 8, 0.85) 100%), 
-                        url('https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1200') no-repeat center center/cover;
+            background-color: rgba(15, 18, 26, 0.2);
             border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            padding-bottom: 60px;
+        }
+
+        /* صورة غلاف المملكة العلوية والمطفية */
+        .emperor-cover {
+            height: 380px;
+            /* يمكنك استبدال الرابط أدناه بمسار صورتك المحلية الفعلي بمجلد assets عند رفعه */
+            background: linear-gradient(rgba(5, 5, 8, 0.65), rgba(5, 5, 8, 0.75)), 
+                        url('https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1200') no-repeat center center/cover;
+            filter: grayscale(25%) brightness(45%); /* تأثير المظهر المطفي والمظلم لإبراز العناصر البصرية الأمامية */
+            box-shadow: inset 0 -50px 50px rgba(5, 5, 8, 0.9);
+        }
+
+        /* حاوية الملف الشخصي المحاذية للأعلى والداخلة في الغلاف */
+        .emperor-profile-container {
+            max-width: 800px;
+            margin: -110px auto 0 auto; /* رفع الحاوية للأعلى ليتداخل الأفاتار الدائري مع الغلاف المطفأ */
+            padding: 0 20px;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* الصورة الدائرية للإمبراطور */
+        .emperor-avatar {
+            width: 170px;
+            height: 170px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+            overflow: hidden;
+            background-color: #0d0e12;
+            transition: transform 0.5s ease;
+        }
+
+        .emperor-avatar:hover {
+            transform: scale(1.05) rotate(3deg);
+        }
+
+        .emperor-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .badge-elite {
             background-color: rgba(212, 175, 55, 0.1);
             border: 1px solid var(--primary-color);
             color: var(--primary-color);
-            padding: 5px 15px;
+            padding: 5px 18px;
             border-radius: 50px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
         }
 
-        .hero h1 {
-            font-size: 48px;
+        .emperor-name {
+            font-size: 36px;
             font-weight: 900;
-            margin-bottom: 15px;
             color: #fff;
+            margin-bottom: 10px;
         }
 
-        .hero h1 span {
+        .emperor-name span {
             color: var(--primary-color);
             text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
         }
 
-        .hero p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
+        .emperor-bio {
+            font-size: 17px;
             color: #e0e0e0;
+            max-width: 650px;
+            margin: 0 auto 25px auto;
             text-shadow: 0 2px 5px rgba(0,0,0,0.6);
         }
 
@@ -215,6 +257,7 @@
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
+            margin-bottom: 25px;
         }
 
         .btn {
@@ -250,6 +293,65 @@
             background-color: var(--primary-color);
             color: #000;
             transform: translateY(-3px);
+        }
+
+        /* زر الكشف التفاعلي عن السجل الملكي */
+        .btn-reveal {
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 10px 26px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+        }
+
+        .btn-reveal:hover {
+            background: var(--primary-color);
+            color: #000;
+            box-shadow: 0 0 20px var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* صندوق التفاصيل المخفي الافتراضي */
+        .emperor-details-box {
+            display: none; /* مخفي بشكل افتراضي ويظهر بالجافا سكريبت */
+            margin-top: 30px;
+            background: rgba(25, 30, 41, 0.85);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: right;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .emperor-details-box h3 {
+            color: var(--primary-color);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .emperor-details-box p {
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: #e0e0e0;
+        }
+
+        .emperor-details-box p strong {
+            color: var(--primary-color);
         }
 
         /* الأقسام العامة للبطاقات والشبكات */
@@ -424,110 +526,16 @@
             .nav-menu {
                 display: none;
             }
-            .hero h1 {
-                font-size: 32px;
+            .emperor-name {
+                font-size: 28px;
             }
-            .hero p {
+            .emperor-bio {
                 font-size: 15px;
             }
+            .emperor-cover {
+                height: 300px;
+            }
         }
-        /* قسم الإمبراطور بالكامل */
-.emperor-section {
-    position: relative;
-    margin-top: 75px; /* لمنع الاختفاء تحت الهيدر الثابت */
-    text-align: center;
-    background-color: rgba(15, 18, 26, 0.4);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-    padding-bottom: 40px;
-}
-
-/* صورة الغلاف العريضة والمطفية */
-.emperor-cover {
-    height: 250px;
-    background: linear-gradient(rgba(5, 5, 8, 0.65), rgba(5, 5, 8, 0.65)), 
-                url('assets/images/elite-kingdom-cover.jpg') no-repeat center center/cover;
-    filter: grayscale(40%) brightness(50%); /* جعل الألوان مطفية وغامضة لتبرز الصورة الدائرية */
-}
-
-/* حاوية الملف الشخصي المحاذية للأعلى */
-.emperor-profile-container {
-    max-width: 800px;
-    margin: -80px auto 0 auto; /* لرفع الصورة الدائرية بحيث تتداخل مع الغلاف */
-    padding: 0 20px;
-    position: relative;
-    z-index: 5;
-}
-
-/* الصورة الدائرية للإمبراطور */
-.emperor-avatar {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 15px auto;
-    border-radius: 50%;
-    border: 3px solid var(--primary-color);
-    box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
-    overflow: hidden;
-    background-color: #111;
-}
-
-.emperor-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.emperor-name {
-    font-size: 28px;
-    font-weight: 900;
-    color: var(--primary-color);
-    text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-    margin-bottom: 10px;
-}
-
-.emperor-bio {
-    font-size: 16px;
-    color: #e0e0e0;
-    max-width: 600px;
-    margin: 0 auto 20px auto;
-}
-
-/* زر الكشف التفاعلي */
-.btn-reveal {
-    background: rgba(212, 175, 55, 0.1);
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
-    padding: 8px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-family: var(--font-family);
-    font-weight: 700;
-    transition: all 0.3s ease;
-}
-
-.btn-reveal:hover {
-    background: var(--primary-color);
-    color: #000;
-    box-shadow: 0 0 15px var(--primary-color);
-}
-
-/* صندوق التفاصيل المخفي الافتراضي */
-.emperor-details-box {
-    display: none; /* مخفي بشكل افتراضي ويظهر بالجافا سكريبت */
-    margin-top: 25px;
-    background: rgba(25, 30, 41, 0.85);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: right;
-    backdrop-filter: blur(10px);
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-٨
     </style>
 </head>
 <body>
@@ -540,56 +548,51 @@
         <div class="nav-container">
             <div class="logo">
                 <i class="fa-solid fa-crown"></i>
-                <span> مملكة إيليت كورااا العمة</span>
+                <span>مملكة إيليت</span>
             </div>
             <nav class="nav-menu">
                 <a href="index.html" class="active">الرئيسية</a>
-                <a href="administration.html"> الإدارة واللوردات و كورا عمة اللوردات </a>
-                <a href="guilds.html">النقابات وعمة الادميرالات كورا </a>
+                <a href="administration.html">الإدارة واللوردات</a>
+                <a href="guilds.html">النقابات والأدميرالات</a>
                 <a href="legends.html">المعتزلين والتكريم</a>
             </nav>
         </div>
     </header>
 
-    <!-- المقدمة (Hero Section) -->
-    <section class="hero">
-        <div class="badge-elite">تأسست لتسود والجمال شعارها</div>
-        <h1>مرحباً بكم في <span>مملكة إيليت</span></h1>
-        <p>تحت قيادة الإمبراطور العظيم <strong>إينوماكي</strong>، هنا يجتمع الصفوة والنخبة لصناعة التاريخ والمجد. قوة، نظام، وولاء لا يتزعزع.</p>
-        <div class="btn-container">
-            <a href="guilds.html" class="btn btn-primary"><i class="fa-solid fa-shield-halved"></i> استكشف النقابات</a>
-            <a href="#" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> انضم إلينا عبر الواتساب</a>
+    <!-- 👑 واجهة المملكة المطورة: صورة الغلاف العريضة المطفية مع ملف الإمبراطور الشخصي 👑 -->
+    <section class="emperor-section">
+        <!-- صورة الغلاف العريضة المطفية الفخمة للمملكة -->
+        <div class="emperor-cover"></div>
+        
+        <div class="emperor-profile-container">
+            <!-- الصورة الدائرية للإمبراطور إينوماكي من مجلد الأصول التابع لكِ -->
+            <div class="emperor-avatar">
+                <img src="assets/images/1a408bf70e41420bb28d704018b7349f (1).jpg" alt="الإمبراطور إينوماكي">
+            </div>
+            
+            <div class="badge-elite">تأسست لتسود والجمال شعارها</div>
+            <h1 class="emperor-name">مرحباً بكم في <span>مملكة إيليت</span></h1>
+            <p class="emperor-bio">تحت قيادة الإمبراطور العظيم <strong>إينوماكي</strong>، هنا يجتمع الصفوة والنخبة لصناعة التاريخ والمجد. قوة، نظام، وولاء لا يتزعزع.</p>
+            
+            <div class="btn-container">
+                <a href="guilds.html" class="btn btn-primary"><i class="fa-solid fa-shield-halved"></i> استكشف النقابات</a>
+                <a href="#" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> انضم إلينا عبر الواتساب</a>
+            </div>
+
+            <!-- زر الكشف التفاعلي عن السجل -->
+            <button class="btn-reveal" onclick="toggleEmperorDetails()">
+                <i class="fa-solid fa-scroll"></i> كشف السجل الإمبراطوري
+            </button>
+            
+            <!-- اللوحة المخفية التي تظهر عند الضغط على الزر بسلاسة -->
+            <div id="emperor-details" class="emperor-details-box">
+                <h3>📜 السجل الملكي والقدرات</h3>
+                <p><strong>اللقب:</strong> ظل الإمبراطورية العظيم</p>
+                <p><strong>القدرة السحرية:</strong> التوجيه المطلق والسيطرة على الكلمات السحرية.</p>
+                <p><strong>الرؤية:</strong> قيادة النخبة نحو السيادة الكاملة وبناء نظام قتالي إستراتيجي لا يُقهر.</p>
+            </div>
         </div>
     </section>
-    <section class="emperor-section">
-    <!-- صورة الغلاف العريضة المطفية -->
-    <div class="emperor-cover"></div>
-    
-    <div class="emperor-profile-container">
-        <!-- الصورة الدائرية للإمبراطور إينوماكي -->
-        <div class="emperor-avatar">
-            <img src="assets/images/inumaki-avatar.gif" alt="الإمبراطور إينوماكي">
-        </div>
-        
-        <!-- اسم الإمبراطور والوصف -->
-        <h2 class="emperor-name">الإمبراطور إينوماكي</h2>
-        <p class="emperor-bio">مؤسس وقائد مملكة إيليت. هنا حيث تُصنع القوانين، ويُحفر المجد بمداد من هيبة وولاء لا يتزعزع.</p>
-        
-        <!-- زر الكشف التفاعلي عن التفاصيل -->
-        <button class="btn-reveal" onclick="toggleEmperorDetails()">
-            <i class="fa-solid fa-scroll"></i> كشف السجل الإمبراطوري
-        </button>
-        
-        <!-- اللوحة المخفية التي تظهر عند الضغط على الزر -->
-        <div id="emperor-details" class="emperor-details-box">
-            <h3>📜 السجل الملكي والقدرات</h3>
-            <p><strong>اللقب:</strong> ظل الإمبراطورية العظيم</p>
-            <p><strong>القدرة السحرية:</strong> التوجيه المطلق والسيطرة على الكلمات السحرية.</p>
-            <p><strong>الرؤية:</strong> قيادة النخبة نحو السيادة الكاملة وبناء نظام قتالي إستراتيجي لا يُقهر.</p>
-        </div>
-    </div>
-</section>
-
 
     <!-- أقسام المملكة السريعة (الروابط الداخلية) -->
     <section class="section-container">
@@ -666,8 +669,8 @@
             const particle = document.createElement('div');
             particle.classList.add('snowflake');
             
-            // نجوم متلألئة وبلورات سحرية وناعمة بدلاً من الزهور
-            const icons = ['✦', '✨', '✧', '•'];
+            // نجوم متلألئة وبلورات سحرية وناعمة
+            const icons = ['✦', '✨', '✧', '•','⚜️'];
             particle.innerText = icons[Math.floor(Math.random() * icons.length)];
             
             particle.style.left = Math.random() * 100 + 'vw';
@@ -688,17 +691,18 @@
             }, 11000);
         }
 
-        // تم رفع المدة إلى 250 ميللي ثانية لتقليل الكثافة بشكل ملحوظ وجعل التساقط خفيفاً وراقياً
+        // إطلاق تساقط الجزيئات السحرية بانتظام
         setInterval(createParticle, 250);
-        function toggleEmperorDetails() {
-    const detailsBox = document.getElementById('emperor-details');
-    if (detailsBox.style.display === 'block') {
-        detailsBox.style.display = 'none';
-    } else {
-        detailsBox.style.display = 'block';
-    }
-}
 
+        // دالة التحكم بإظهار وإخفاء السجل الملكي للإمبراطور بسلاسة
+        function toggleEmperorDetails() {
+            const detailsBox = document.getElementById('emperor-details');
+            if (detailsBox.style.display === 'block') {
+                detailsBox.style.display = 'none';
+            } else {
+                detailsBox.style.display = 'block';
+            }
+        }
     </script>
 </body>
 </html>

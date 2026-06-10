@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مملكة إيليت كورااااااااا العمه 💫 | الصفحة الرئيسية</title>
+    <title>مملكة إيليت⚜️| الصفحة الرئيسية</title>
     <!-- استدعاء خط Cairo الفخم من جوجل -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -109,7 +109,7 @@
             border-bottom: 2px solid var(--primary-color);
             position: fixed;
             width: 100%;
-            top: 0;
+            tحop: 0;
             z-index: 1000;
             box-shadow: 0 4px 25px rgba(0,0,0,0.8);
             backdrop-filter: blur(8px);
@@ -431,6 +431,103 @@
                 font-size: 15px;
             }
         }
+        /* قسم الإمبراطور بالكامل */
+.emperor-section {
+    position: relative;
+    margin-top: 75px; /* لمنع الاختفاء تحت الهيدر الثابت */
+    text-align: center;
+    background-color: rgba(15, 18, 26, 0.4);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    padding-bottom: 40px;
+}
+
+/* صورة الغلاف العريضة والمطفية */
+.emperor-cover {
+    height: 250px;
+    background: linear-gradient(rgba(5, 5, 8, 0.65), rgba(5, 5, 8, 0.65)), 
+                url('assets/images/elite-kingdom-cover.jpg') no-repeat center center/cover;
+    filter: grayscale(40%) brightness(50%); /* جعل الألوان مطفية وغامضة لتبرز الصورة الدائرية */
+}
+
+/* حاوية الملف الشخصي المحاذية للأعلى */
+.emperor-profile-container {
+    max-width: 800px;
+    margin: -80px auto 0 auto; /* لرفع الصورة الدائرية بحيث تتداخل مع الغلاف */
+    padding: 0 20px;
+    position: relative;
+    z-index: 5;
+}
+
+/* الصورة الدائرية للإمبراطور */
+.emperor-avatar {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+    overflow: hidden;
+    background-color: #111;
+}
+
+.emperor-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.emperor-name {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--primary-color);
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    margin-bottom: 10px;
+}
+
+.emperor-bio {
+    font-size: 16px;
+    color: #e0e0e0;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+}
+
+/* زر الكشف التفاعلي */
+.btn-reveal {
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-reveal:hover {
+    background: var(--primary-color);
+    color: #000;
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+/* صندوق التفاصيل المخفي الافتراضي */
+.emperor-details-box {
+    display: none; /* مخفي بشكل افتراضي ويظهر بالجافا سكريبت */
+    margin-top: 25px;
+    background: rgba(25, 30, 41, 0.85);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: right;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+٨
     </style>
 </head>
 <body>
@@ -464,6 +561,35 @@
             <a href="#" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> انضم إلينا عبر الواتساب</a>
         </div>
     </section>
+    <section class="emperor-section">
+    <!-- صورة الغلاف العريضة المطفية -->
+    <div class="emperor-cover"></div>
+    
+    <div class="emperor-profile-container">
+        <!-- الصورة الدائرية للإمبراطور إينوماكي -->
+        <div class="emperor-avatar">
+            <img src="assets/images/inumaki-avatar.gif" alt="الإمبراطور إينوماكي">
+        </div>
+        
+        <!-- اسم الإمبراطور والوصف -->
+        <h2 class="emperor-name">الإمبراطور إينوماكي</h2>
+        <p class="emperor-bio">مؤسس وقائد مملكة إيليت. هنا حيث تُصنع القوانين، ويُحفر المجد بمداد من هيبة وولاء لا يتزعزع.</p>
+        
+        <!-- زر الكشف التفاعلي عن التفاصيل -->
+        <button class="btn-reveal" onclick="toggleEmperorDetails()">
+            <i class="fa-solid fa-scroll"></i> كشف السجل الإمبراطوري
+        </button>
+        
+        <!-- اللوحة المخفية التي تظهر عند الضغط على الزر -->
+        <div id="emperor-details" class="emperor-details-box">
+            <h3>📜 السجل الملكي والقدرات</h3>
+            <p><strong>اللقب:</strong> ظل الإمبراطورية العظيم</p>
+            <p><strong>القدرة السحرية:</strong> التوجيه المطلق والسيطرة على الكلمات السحرية.</p>
+            <p><strong>الرؤية:</strong> قيادة النخبة نحو السيادة الكاملة وبناء نظام قتالي إستراتيجي لا يُقهر.</p>
+        </div>
+    </div>
+</section>
+
 
     <!-- أقسام المملكة السريعة (الروابط الداخلية) -->
     <section class="section-container">
@@ -564,6 +690,15 @@
 
         // تم رفع المدة إلى 250 ميللي ثانية لتقليل الكثافة بشكل ملحوظ وجعل التساقط خفيفاً وراقياً
         setInterval(createParticle, 250);
+        function toggleEmperorDetails() {
+    const detailsBox = document.getElementById('emperor-details');
+    if (detailsBox.style.display === 'block') {
+        detailsBox.style.display = 'none';
+    } else {
+        detailsBox.style.display = 'block';
+    }
+}
+
     </script>
 </body>
 </html>

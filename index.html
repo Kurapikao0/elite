@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مملكة إيليت⚜️| الإصدار الملكي الاحترافي</title>
+    <title>مملكة إيليت⚜️| الإصدار الملكي المطور</title>
     <!-- استدعاء خط Cairo الفخم من جوجل -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,19 +18,20 @@
             --bg-card: rgba(25, 30, 41, 0.6);
             --text-main: #ffffff;
             --primary-color: #d4af37; /* ذهبي إمبراطوري */
-            --secondary-glow: #ff4500; /* توهج ناري */
-            --third-glow: #00ffff; /* توهج كريستالي */
+            --secondary-glow: #ff4500; /* توهج ناري متموج */
+            --third-glow: #00ffff; /* توهج كريستالي متموج */
             --font-family: 'Cairo', sans-serif;
-            --particle-color: rgba(214, 175, 55, 0.5);
+            --particle-color: rgba(214, 175, 55, 0.4);
         }
 
-        /* المتغيرات عند التحويل للمظهر البنفسجي الأسطوري */
+        /* 💜 تعديل: الوضع البنفسجي الأسطوري المحدث ليصبح أغمق وأفخم بكثير 💜 */
         [data-theme="mythic-purple"] {
-            --primary-color: #a020f0; /* بنفسجي نيون */
-            --secondary-glow: #00f5ff; /* فيروزي */
-            --third-glow: #ff007f; /* وردي نيون */
-            --particle-color: rgba(160, 32, 240, 0.6);
-            --bg-card: rgba(30, 15, 45, 0.65);
+            --bg-dark: #020105; /* خلفية داكنة جداً */
+            --primary-color: #7b1fa2; /* بنفسجي ملكي غامق */
+            --secondary-glow: #4a148c; /* بنفسجي عميق */
+            --third-glow: #ff007f; /* نيون وردي لكسر العتمة بنعومة */
+            --particle-color: rgba(123, 31, 162, 0.5);
+            --bg-card: rgba(18, 10, 28, 0.65);
         }
 
         /* إعادة تعيين الخصائص الافتراضية */
@@ -42,7 +43,7 @@
 
         body {
             background-color: var(--bg-dark);
-            background: linear-gradient(45deg, #050508, #110724, #080f21, #17041a, #050508);
+            background: linear-gradient(45deg, var(--bg-dark), #090414, #040914, #0d0212, var(--bg-dark));
             background-size: 400% 400%;
             animation: mysteriousWave 15s ease infinite;
             color: var(--text-main);
@@ -90,6 +91,36 @@
         header, section, footer {
             position: relative;
             z-index: 2;
+        }
+
+        /* ⚡ تعديل: زر تبديل المظهر مثبت أعلى الصفحة في الجانب وبكلمة واحدة ⚡ */
+        .theme-switcher-corner {
+            position: fixed;
+            top: 15px;
+            left: 20px;
+            z-index: 2000;
+            background: rgba(5, 5, 8, 0.8);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5), 0 0 10px var(--primary-color);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(5px);
+        }
+
+        .theme-switcher-corner:hover {
+            transform: scale(1.05);
+            background: var(--primary-color);
+            color: #000;
+            box-shadow: 0 0 20px var(--primary-color);
         }
 
         /* الهيدر وقائمة التنقل */
@@ -154,7 +185,7 @@
             padding-bottom: 60px;
         }
 
-        /* 📱 غلاف فتاة أنمي المحسن والمثالي للهواتف والكمبيوتر 📱 */
+        /* غلاف فتاة أنمي المتجاوب الفخم */
         .emperor-cover {
             height: 380px;
             background: linear-gradient(rgba(5, 5, 8, 0.4), rgba(5, 5, 8, 0.85)), 
@@ -172,42 +203,66 @@
             z-index: 5;
         }
 
-        /* أفاتار إينوماكي الرئيسي */
-        .emperor-avatar {
+        /* 🔥 هندسة الأنيميشن المتطور للشعاع الأكثر تموجاً وحركة حول حدود الصور الحقيقية مباشرة 🔥 */
+        .wave-glow-avatar {
             width: 170px;
             height: 170px;
             margin: 0 auto 20px auto;
             border-radius: 50%;
-            border: 3px solid var(--primary-color);
-            overflow: hidden;
-            box-shadow: 0 0 25px var(--primary-color);
-            background-color: #0d0e12;
-            transition: transform 0.4s ease;
+            padding: 5px; /* الإطار الحركي المتوج */
+            background: linear-gradient(30vh, var(--primary-color), var(--secondary-glow), var(--third-glow), var(--primary-color));
+            background-size: 400% 400%;
+            animation: extremeWaveGlow 3s linear infinite, continuousPulse 2s ease-in-out infinite alternate;
         }
 
-        .emperor-avatar img {
+        /* أنيميشن التموج اللوني فائق الحركة */
+        @keyframes extremeWaveGlow {
+            0% { background-position: 0% 50%; transform: rotate(0deg); }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; transform: rotate(360deg); }
+        }
+
+        /* أنيميشن النبض المتوهج حول الحدود */
+        @keyframes continuousPulse {
+            0% { box-shadow: 0 0 15px var(--primary-color), inset 0 0 10px var(--secondary-glow); }
+            100% { box-shadow: 0 0 35px var(--third-glow), inset 0 0 20px var(--primary-color); }
+        }
+
+        .wave-glow-avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #050508; /* عزل نظيف لإبراز حركة التموج الخارجي */
+            transform: rotate(-0deg); /* لمنع دوران الصورة الداخلية مع الإطار */
+            animation: cancelRotation 3s linear infinite;
         }
 
-        .badge-elite {
-            background-color: rgba(212, 175, 55, 0.1);
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 5px 18px;
-            border-radius: 50px;
-            font-size: 13px;
+        @keyframes cancelRotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+        }
+
+        /* ✨ تعديل: تحويل شارة النخبة إلى نص انسيابي عادي وأنيق غير شبيه بالزر ✨ */
+        .text-elite-normal {
+            color: #e2e8f0;
+            font-size: 15px;
             font-weight: 600;
-            display: inline-block;
-            margin-bottom: 15px;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            display: block;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        .text-elite-normal i {
+            color: var(--primary-color);
+            margin: 0 6px;
         }
 
         .emperor-name {
             font-size: 36px;
             font-weight: 900;
             color: #fff;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .emperor-name span {
@@ -215,34 +270,7 @@
             text-shadow: 0 0 20px var(--primary-color);
         }
 
-        /* ⚡ زر تبديل الألوان الاستراتيجي الجديد فوق النصوص وتحت الغلاف ⚡ */
-        .theme-switcher-center {
-            background: rgba(5, 5, 8, 0.7);
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 10px 24px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-family: var(--font-family);
-            font-weight: 700;
-            font-size: 14px;
-            margin: 10px auto 25px auto;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.5), 0 0 10px var(--primary-color);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
-
-        .theme-switcher-center:hover {
-            background: var(--primary-color);
-            color: #000;
-            box-shadow: 0 0 25px var(--primary-color);
-            transform: scale(1.03);
-        }
-
-        /* أزرار التفعيل والتحكم التفاعلي */
+        /* أزرار التحكم التفاعلي */
         .interactive-btn-group {
             display: flex;
             justify-content: center;
@@ -302,99 +330,96 @@
             font-size: 20px;
         }
 
-        /* ⚔️ الحاوية التفاعلية المخفية لقادة إيليت العليا ⚔️ */
+        /* ⚔️ حاوية قادة إيليت العليا التفاعلية المحدثة ⚔️ */
         .leaders-disclosure-container {
-            display: none; /* مخفية افتراضياً وتظهر عند النقر */
-            margin-top: 25px;
+            display: none;
+            margin-top: 30px;
             animation: slideDownFade 0.5s ease forwards;
             width: 100%;
         }
 
-        .deputies-vertical-stack {
+        /* 👑 تعديل: عرض النواب بشكل عادي وطبيعي ممتد بدون حاويات أو ديفات مغلقة ومقيدة 👑 */
+        .deputies-free-flow-stack {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 25px;
-            margin: 0 auto;
-            max-width: 500px;
+            gap: 45px; /* مسافة مريحة بين القادة للتنسيق العادي */
+            margin: 20px auto 0 auto;
+            max-width: 600px;
             width: 100%;
         }
 
-        /* بطاقة القائد العريضة الفخمة نظيفة وبدون حدود مشعة عشوائية */
-        .premium-deputy-card {
-            background: rgba(15, 19, 28, 0.85);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 16px;
-            width: 100%;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .premium-deputy-card:hover {
-            transform: translateX(-5px);
-            border-color: var(--primary-color);
-        }
-
-        .premium-deputy-inner {
-            padding: 20px 25px;
+        .single-leader-row {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 30px;
             width: 100%;
+            text-align: right;
+            padding: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .single-leader-row:hover {
+            transform: translateX(-5px);
         }
 
-        /* 🔴 تفاصيل تكبير الصورة ونقل الشعاع الإبداعي المتدرج لحدود الأفاتار مباشرة 🔴 */
-        .deputy-avatar-lux {
-            width: 110px;  /* تكبير حجم الصورة الحقيقي ليصبح جميلاً جداً وواضحاً */
-            height: 110px;
+        /* 🔴 تكبير إضافي لصورة القادة وتطبيق التموج الحركي الأقصى والدوران حول حدود الصورة مباشرة 🔴 */
+        .deputy-avatar-wave-wrapper {
+            width: 120px; /* تكبير حجم الصورة ليصبح بارزاً جداً ومبهراً */
+            height: 120px;
             border-radius: 50%;
-            padding: 4px;  /* مسافة داخلية لعمل الإطار اللوني المتدرج */
+            padding: 5px;
             flex-shrink: 0;
-            /* الشعاع الإبداعي الجديد الملتف بالكامل حول الصورة وبألوان متدرجة نابضة */
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-glow), var(--third-glow));
-            background-size: 200% 200%;
-            animation: creativeChromaGlow 4s linear infinite, avatarPulse 2s ease-in-out infinite alternate;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-glow), var(--third-glow), var(--primary-color));
+            background-size: 300% 300%;
+            animation: extremeWaveGlow 3.5s linear infinite, continuousPulse 2.2s ease-in-out infinite alternate;
         }
 
-        @keyframes creativeChromaGlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes avatarPulse {
-            0% { box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--secondary-glow); }
-            100% { box-shadow: 0 0 25px var(--third-glow), 0 0 35px var(--primary-color); }
-        }
-
-        .deputy-avatar-lux img {
+        .deputy-avatar-wave-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
-            border: 2px solid #0f131c; /* لفصل الصورة عن الشعاع الخارجي بنقاء */
+            border: 3px solid #050508;
+            animation: cancelRotation 3.5s linear infinite;
         }
 
-        .deputy-details-lux {
+        .deputy-text-block {
             display: flex;
             flex-direction: column;
-            gap: 6px;
-            text-align: right;
+            gap: 8px;
         }
 
-        .deputy-tag-lux {
+        /* 🌀 تعديل: تطبيق حدود متموجة ونابضة بالألوان حول صلاحيات وألقاب النواب تماماً كالصورة 🌀 */
+        .deputy-tag-wave-border {
             font-size: 13px;
-            color: var(--primary-color);
+            color: #ffffff;
             font-weight: 700;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 6px;
+            padding: 4px 14px;
+            border-radius: 50px;
+            width: fit-content;
+            position: relative;
+            background: #050508;
+            border: 2px solid transparent;
+            /* خدعة التموج الحركي حول حدود نص الصلاحية */
+            box-shadow: 0 0 12px rgba(214, 175, 55, 0.1);
+            background-clip: padding-box;
+            border: 2px solid var(--primary-color);
+            animation: continuousPulse 2s ease-in-out infinite alternate;
         }
 
-        .deputy-name-lux {
-            font-size: 24px;
+        .deputy-tag-wave-border i {
+            color: var(--primary-color);
+        }
+
+        .deputy-name-plain {
+            font-size: 26px;
             font-weight: 900;
             color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
         /* الأقسام العامة */
@@ -425,19 +450,24 @@
 
         footer { background-color: #030305; padding: 40px 20px; text-align: center; border-top: 2px solid var(--primary-color); margin-top: 40px; }
 
-        /* 📱 تحسينات الشاشات الصغيرة للهواتف بدقة 📱 */
+        /* 📱 تحسينات الهواتف ذكية الاستجابة 📱 */
         @media (max-width: 768px) {
             .nav-menu { display: none; }
-            .emperor-cover { height: 230px; } /* تصغير مثالي وجميل جداً للغلاف على الهاتف لعدم حجب الواجهة */
+            .emperor-cover { height: 230px; } 
             .emperor-profile-container { margin: -80px auto 0 auto; }
-            .emperor-avatar { width: 130px; height: 130px; }
+            .wave-glow-avatar { width: 130px; height: 130px; }
             .emperor-name { font-size: 26px; }
-            .premium-deputy-inner { flex-direction: column; text-align: center; padding: 20px; }
-            .deputy-details-lux { text-align: center; align-items: center; }
+            .single-leader-row { flex-direction: column; text-align: center; gap: 15px; }
+            .deputy-text-block { align-items: center; }
         }
     </style>
 </head>
 <body>
+
+    <!-- زر التبديل اللوني المثبت في الجانب بكلمة واحدة وتصميم انسيابي -->
+    <button class="theme-switcher-corner" onclick="toggleCustomTheme()">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> <span id="theme-btn-text">المظهر</span>
+    </button>
 
     <!-- حاوية تساقط الجزيئات الأسطورية -->
     <div id="snow-container"></div>
@@ -460,25 +490,18 @@
 
     <!-- واجهة المملكة الاحترافية والمعاد هيكلتها بالكامل -->
     <section class="emperor-section">
-        <!-- صورة الغلاف الحالية المتجاوبة (فتاة أنمي فخمة ومطسية ومناسبة جداً للهاتف) -->
         <div class="emperor-cover"></div>
         
         <div class="emperor-profile-container">
-            <!-- الصورة الدائرية للإمبراطور إينوماكي -->
-            <div class="emperor-avatar">
+            <!-- أفاتار إينوماكي المحاط بالإطار الأكثر حيوية وتموجاً لونياً ودورانياً -->
+            <div class="wave-glow-avatar">
                 <img src="assets/images/1a408bf70e41420bb28d704018b7349f (1).jpg" alt="الإمبراطور إينوماكي">
             </div>
             
-            <div class="badge-elite">النخبة تصنع المجد دائماً</div>
+            <!-- عبارة النخبة تظهر بنص انسيابي عادي وأنيق وبدون شكل زر -->
+            <span class="text-elite-normal"><i class="fa-solid fa-bolt"></i> النخبة تصنع المجد دائماً <i class="fa-solid fa-bolt"></i></span>
             <h1 class="emperor-name"><span>⚜️مملكة إيليت</span></h1>
             
-            <!-- ⚡ الزر السحري لتغيير قيم الألوان تم وضعه هنا (فوق الأزرار والنصوص وبشكل مركزي فخم) ⚡ -->
-            <div>
-                <button class="theme-switcher-center" onclick="toggleCustomTheme()">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i> <span id="theme-btn-text">تحويل للمظهر البنفسجي</span>
-                </button>
-            </div>
-
             <!-- أزرار التحكم التفاعلي المتناسقة للكشف عن المحتوى بالتناوب -->
             <div class="interactive-btn-group">
                 <button id="btn-royal-scroll" class="btn-interactive" onclick="toggleDisclosure('royal-scroll')">
@@ -501,41 +524,39 @@
                 <p><strong>الرؤية والقدرة:</strong> توجيه الكلمات السحرية وقيادة المجالس الإدارية والسيادية العليا لضمان بقاء المملكة في الصدارة المطلقة دائماً.</p>
             </div>
 
-            <!-- صندوق نبذة عن إيليت التفاعلي الجديد -->
+            <!-- صندوق نبذة عن إيليت التفاعلي -->
             <div id="box-elite-bio" class="info-disclosure-box">
                 <h3>⚜️ عن إمبراطورية إيليت</h3>
                 <p>إمبراطورية النخبة والصفوة، تأسست لتجمع أقوى الأعضاء تحت قيادة منظمة وقوانين صارمة تحافظ على العدالة والتفاعل الدائم وبناء أمجاد لا تنتهي.</p>
             </div>
 
-            <!-- ⚔️ قسم قادة إيليت العليا (يظهر ويختفي بالكامل عند الضغط على الزر الخاص به) ⚔️ -->
+            <!-- ⚔️ قسم قادة إيليت العليا (تم فكه ليظهر بشكل عادي وطبيعي بدون ديفات مغلقة وبتموج مذهل) ⚔️ -->
             <div id="box-leaders-list" class="leaders-disclosure-container">
-                <div class="deputies-vertical-stack">
+                <div class="deputies-free-flow-stack">
                     
-                    <!-- بطاقة النائب الملكي الأول: كرولو -->
-                    <div class="premium-deputy-card">
-                        <div class="premium-deputy-inner">
-                            <!-- الأفاتار المكبر والشعاع الإبداعي متدرج الألوان حول حدود الصورة مباشرة -->
-                            <div class="deputy-avatar-lux">
-                                <img src="assets/images/chrollo.jpg" alt="النائب الملكي كرولو" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150'">
-                            </div>
-                            <div class="deputy-details-lux">
-                                <div class="deputy-tag-lux"><i class="fa-solid fa-crown"></i> النائب الملكي للإمبراطور</div>
-                                <div class="deputy-name-lux">كرولو</div>
-                            </div>
+                    <!-- صف النائب الملكي الأول: كرولو -->
+                    <div class="single-leader-row">
+                        <!-- الأفاتار المكبر المحاط بالإطار شديد التموج والحركة دوراناً ونبضاً -->
+                        <div class="deputy-avatar-wave-wrapper">
+                            <img src="assets/images/chrollo.jpg" alt="النائب الملكي كرولو" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150'">
+                        </div>
+                        <div class="deputy-text-block">
+                            <!-- لقب وصلاحية محاطة بتموج لوني نابض متمم ومثالي -->
+                            <div class="deputy-tag-wave-border"><i class="fa-solid fa-crown"></i> النائب الملكي للإمبراطور</div>
+                            <div class="deputy-name-plain">كرولو</div>
                         </div>
                     </div>
 
-                    <!-- بطاقة النائب الثاني: باين (تحته مباشرة وبنفس العرض الفخم) -->
-                    <div class="premium-deputy-card">
-                        <div class="premium-deputy-inner">
-                            <!-- الأفاتار المكبر والشعاع الإبداعي متدرج الألوان حول حدود الصورة مباشرة -->
-                            <div class="deputy-avatar-lux">
-                                <img src="assets/images/pain.jpg" alt="النائب باين" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150'">
-                            </div>
-                            <div class="deputy-details-lux">
-                                <div class="deputy-tag-lux"><i class="fa-solid fa-star"></i> نائب الإمبراطور</div>
-                                <div class="deputy-name-lux">باين</div>
-                            </div>
+                    <!-- صف النائب الثاني: باين -->
+                    <div class="single-leader-row">
+                        <!-- الأفاتار المكبر المحاط بالإطار شديد التموج والحركة دوراناً ونبضاً -->
+                        <div class="deputy-avatar-wave-wrapper">
+                            <img src="assets/images/pain.jpg" alt="النائب باين" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150'">
+                        </div>
+                        <div class="deputy-text-block">
+                            <!-- لقب وصلاحية محاطة بتموج لوني نابض متمم ومثالي -->
+                            <div class="deputy-tag-wave-border"><i class="fa-solid fa-star"></i> نائب الإمبراطور</div>
+                            <div class="deputy-name-plain">باين</div>
                         </div>
                     </div>
 
@@ -545,7 +566,7 @@
         </div>
     </section>
 
-    <!-- باقي الأقسام التكميلية -->
+    <!-- الأقسام العامة التكميلية -->
     <section class="section-container">
         <h2 class="section-title">إدارات وأقسام النخبة</h2>
         <div class="grid-layout">
@@ -573,11 +594,9 @@
         </div>
     </footer>
 
-    <!-- السكربت التفاعلي الاحترافي المطور والمصلح بالكامل -->
+    <!-- السكربت التفاعلي للتحكم بالتناوب والمظهر وجزيئات الخلفية -->
     <script>
-        // 1. نظام فتح اللوحات النصية بالتناوب الذكي
         function toggleDisclosure(targetId) {
-            // إغلاق لوحة القادة أولاً لمنع التداخل البصري
             document.getElementById('box-leaders-list').style.display = 'none';
             document.getElementById('btn-leaders-list').classList.remove('active-box');
 
@@ -599,9 +618,7 @@
             }
         }
 
-        // 2. نظام فتح وإغلاق قائمة قادة إيليت العليا بشكل منفصل ومريح
         function toggleLeadersDisclosure() {
-            // إغلاق اللوحات النصية الأخرى أولاً لمنع التزاحم
             const allBoxes = document.querySelectorAll('.info-disclosure-box');
             const allBtns = document.querySelectorAll('.btn-interactive');
             allBoxes.forEach(box => box.style.display = 'none');
@@ -620,21 +637,15 @@
             }
         }
 
-        // 3. نظام تبديل الألوان الكلي (الذهبي <-> البنفسجي الأسطوري)
         function toggleCustomTheme() {
             const bodyEl = document.body;
-            const btnText = document.getElementById('theme-btn-text');
-            
             if (bodyEl.hasAttribute('data-theme')) {
                 bodyEl.removeAttribute('data-theme');
-                btnText.innerText = "تحويل للمظهر البنفسجي";
             } else {
                 bodyEl.setAttribute('data-theme', 'mythic-purple');
-                btnText.innerText = "العودة للمظهر الذهبي";
             }
         }
 
-        // 4. محرك الجزيئات المتساقطة الخفيف والذكي
         function createParticle() {
             const snowContainer = document.getElementById('snow-container');
             if (!snowContainer) return;

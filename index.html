@@ -166,6 +166,8 @@
             transition: all 0.3s ease;
             position: relative;
             padding: 5px 0;
+            text-decoration: none;
+            color: #fff;
         }
 
         .nav-menu a:hover, .nav-menu a.active { color: var(--primary-color); }
@@ -185,9 +187,9 @@
             padding-bottom: 60px;
         }
 
-        /* 🎬 تعديل: تحويل الغلاف إلى شريط سينمائي ناعم ورفيع جداً ومدمج بالفخامة 🎬 */
+        /* الغلاف الشريطي السينمائي الناعم والرفيع المدمج بالفخومة */
         .emperor-cover {
-            height: 160px; /* ارتفاع رفيع وأنيق جداً يمنع حجب الرؤية */
+            height: 160px; 
             background: linear-gradient(rgba(5, 5, 8, 0.2), rgba(5, 5, 8, 0.95)), 
                         url('https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1200') no-repeat center 20%/cover;
             filter: brightness(45%) contrast(110%);
@@ -195,8 +197,8 @@
         }
 
         .emperor-profile-container {
-            max-width: 800px;
-            margin: -70px auto 0 auto; /* موازنة مثالية لارتفاع الأفاتار الجديد */
+            max-width: 900px;
+            margin: -70px auto 0 auto; 
             padding: 0 20px;
             position: relative;
             z-index: 5;
@@ -290,6 +292,7 @@
             align-items: center;
             gap: 8px;
             backdrop-filter: blur(5px);
+            text-decoration: none;
         }
 
         .btn-interactive:hover, .btn-interactive.active-box {
@@ -444,7 +447,7 @@
         /* تكييف شاشات الهواتف */
         @media (max-width: 768px) {
             .nav-menu { display: none; }
-            .emperor-cover { height: 110px; } /* شريط رفيع جداً ومتناسق للغاية على الهاتف */
+            .emperor-cover { height: 110px; } 
             .emperor-profile-container { margin: -55px auto 0 auto; }
             .wave-glow-avatar { width: 120px; height: 120px; }
             .emperor-name { font-size: 26px; }
@@ -471,8 +474,8 @@
                 <span>مملكة إيليت</span>
             </div>
             <nav class="nav-menu">
-                <a href="index.html" class="active">الرئيسية</a>
-                <a href="administration.html">الإدارة واللوردات</a>
+                <a href="#" class="active">الرئيسية</a>
+                <a href="dukes.html">دوقات المملكة</a>
                 <a href="guilds.html">النقابات والأدميرالات</a>
                 <a href="legends.html">المعتزلين والتكريم</a>
             </nav>
@@ -481,20 +484,19 @@
 
     <!-- واجهة المملكة السينمائية المحدثة -->
     <section class="emperor-section">
-        <!-- غطاء شريطي علوي سينمائي أنيق ومدمج بنعومة بدلاً من الغلاف الضخم -->
         <div class="emperor-cover"></div>
         
         <div class="emperor-profile-container">
             <!-- أفاتار إينوماكي المحاط بالإطار فائق التموج والحركة -->
             <div class="wave-glow-avatar">
-                <img src="assets/images/1a408bf70e41420bb28d704018b7349f (1).jpg" alt="الإمبراطور إينوماكي">
+                <img src="assets/images/1a408bf70e41420bb28d704018b7349f (1).jpg" alt="العاهل">
             </div>
             
             <!-- عبارة الترحيب النصية الانسيابية -->
             <span class="text-elite-normal"><i class="fa-solid fa-bolt"></i> النخبة تصنع المجد دائماً <i class="fa-solid fa-bolt"></i></span>
-            <h1 class="emperor-name"><span>مملكة إيليت⚜️</span></h1>
+            <h1 class="emperor-name"><span>⚜️مملكة إيليت</span></h1>
             
-            <!-- أزرار التحكم التفاعلي للكشف عن المحتوى بالتناوب -->
+            <!-- أزرار التحكم التفاعلي للتحكم بالمحتوى والروابط -->
             <div class="interactive-btn-group">
                 <button id="btn-royal-scroll" class="btn-interactive" onclick="toggleDisclosure('royal-scroll')">
                     <i class="fa-solid fa-scroll"></i> كشف السجل الإمبراطوري
@@ -507,6 +509,11 @@
                 <button id="btn-leaders-list" class="btn-interactive" onclick="toggleLeadersDisclosure()">
                     <i class="fa-solid fa-users-gear"></i> قادة إيليت العليا
                 </button>
+
+                <!-- 🔗 الزر الجديد المضاف للانتقال لصفحة الدوقات 🔗 -->
+                <a href="dukes.html" class="btn-interactive">
+                    <i class="fa-solid fa-chess-knight"></i> مجلس دوقات المملكة
+                </a>
             </div>
             
             <!-- صندوق السجل الملكي التفاعلي -->
@@ -543,7 +550,7 @@
                             <img src="assets/images/pain.jpg" alt="النائب باين" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150'">
                         </div>
                         <div class="deputy-text-block">
-                            <div class="deputy-tag-wave-border"><i class="fa-solid fa-star"></i> نائب الملكي الإمبراطور</div>
+                            <div class="deputy-tag-wave-border"><i class="fa-solid fa-star"></i> نائب الإمبراطور</div>
                             <div class="deputy-name-plain">باين</div>
                         </div>
                     </div>
@@ -641,7 +648,7 @@
             const particle = document.createElement('div');
             particle.classList.add('snowflake');
             
-            const shapes = ['⚜️', '✨', '⚜️', '•'];
+            const shapes = ['⚜️', '✨', '✧', '•'];
             particle.innerText = shapes[Math.floor(Math.random() * shapes.length)];
             
             particle.style.left = Math.random() * 100 + 'vw';

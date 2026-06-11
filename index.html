@@ -471,4 +471,170 @@
         <div class="emperor-cover"></div>
         
         <div class="emperor-profile-container">
+            <div class="wave-glow-avatar">
+                <img src="assets/images/1a408bf70e41420bb28d704018b7349f (1).jpg" alt="العاهل">
+            </div>
             
+            <span class="text-elite-normal"><i class="fa-solid fa-bolt"></i> النخبة تصنع المجد دائماً <i class="fa-solid fa-bolt"></i></span>
+            <h1 class="emperor-name"><span>⚜️مملكة إيليت</span></h1>
+            
+            <div class="interactive-btn-group">
+                <button id="btn-royal-scroll" class="btn-interactive" onclick="toggleDisclosure('royal-scroll')">
+                    <i class="fa-solid fa-scroll"></i> كشف السجل الإمبراطوري
+                </button>
+                
+                <button id="btn-elite-bio" class="btn-interactive" onclick="toggleDisclosure('elite-bio')">
+                    <i class="fa-solid fa-shield-halved"></i> كشف نبذة عن إيليت
+                </button>
+                
+                <button id="btn-leaders-list" class="btn-interactive" onclick="toggleLeadersDisclosure()">
+                    <i class="fa-solid fa-users-gear"></i> قادة إيليت العليا
+                </button>
+
+                <a href="dukes.html" class="btn-interactive">
+                    <i class="fa-solid fa-chess-knight"></i> مجلس دوقات المملكة
+                </a>
+            </div>
+            
+            <div id="box-royal-scroll" class="info-disclosure-box">
+                <h3>📜 السجل الملكي وقدرات التاج</h3>
+                <p><strong>الاسم الحركي:</strong> الإمبراطور العظيم إينوماكي.</p>
+                <p><strong>الرؤية والقدرة:</strong> توجيه الكلمات السحرية وقيادة المجالس الإدارية والسيادية العليا لضمان بقاء المملكة في الصدارة المطلقة دائماً.</p>
+            </div>
+
+            <div id="box-elite-bio" class="info-disclosure-box">
+                <h3>⚜️ عن إمبراطورية إيليت</h3>
+                <p>إمبراطورية النخبة والصفوة، تأسست لتجمع أقوى الأعضاء تحت قيادة منظمة وقوانين صارمة تحافظ على العدالة والتفاعل الدائم وبناء أمجاد لا تنتهي.</p>
+            </div>
+
+            <div id="box-leaders-list" class="leaders-disclosure-container">
+                <div class="deputies-free-flow-stack">
+                    
+                    <div class="single-leader-row">
+                        <div class="deputy-avatar-wave-wrapper">
+                            <img src="assets/images/chrollo.jpg" alt="النائب الملكي كرولو" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150'">
+                        </div>
+                        <div class="deputy-text-block">
+                            <div class="deputy-tag-wave-border"><i class="fa-solid fa-crown"></i> النائب الملكي للإمبراطور</div>
+                            <div class="deputy-name-plain">كرولو</div>
+                        </div>
+                    </div>
+
+                    <div class="single-leader-row">
+                        <div class="deputy-avatar-wave-wrapper">
+                            <img src="assets/images/pain.jpg" alt="النائب باين" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150'">
+                        </div>
+                        <div class="deputy-text-block">
+                            <div class="deputy-tag-wave-border"><i class="fa-solid fa-star"></i> نائب الإمبراطور</div>
+                            <div class="deputy-name-plain">باين</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section-container">
+        <h2 class="section-title">إدارات وأقسام النخبة</h2>
+        <div class="grid-layout">
+            <div class="card">
+                <i class="fa-solid fa-user-shield"></i>
+                <h3>باقي أعضاء الإدارة</h3>
+                <p>تعرف على المشرفين واللوردات المسؤولين عن حماية استقرار النظام العام في المملكة.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>الأدميرالات والنقابات</h3>
+                <p>تصفح الفصائل العسكرية التابعة للتاج وتعرف على شروط وقادة الكتائب القتالية.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-medal"></i>
+                <h3>لوحة الشرف</h3>
+                <p>سجل الشرف المخصص لتكريم القادة المعتزلين الذين أسهموا في تخليد اسم إيليت.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="copyright">
+            &copy; 2026 مملكة إيليت. جميع الحقوق محفوظة | صُنع بامتياز بواسطة قادة النخبة.
+        </div>
+    </footer>
+
+    <script>
+        function toggleDisclosure(targetId) {
+            document.getElementById('box-leaders-list').style.display = 'none';
+            document.getElementById('btn-leaders-list').classList.remove('active-box');
+
+            const currentBox = document.getElementById('box-' + targetId);
+            const currentBtn = document.getElementById('btn-' + targetId);
+            
+            const allBoxes = document.querySelectorAll('.info-disclosure-box');
+            const allBtns = document.querySelectorAll('.btn-interactive');
+            
+            const isOpen = currentBox.style.display === 'block';
+            
+            allBoxes.forEach(box => box.style.display = 'none');
+            allBtns.forEach(btn => btn.classList.remove('active-box'));
+            
+            if (!isOpen) {
+                currentBox.style.display = 'block';
+                currentBtn.classList.add('active-box');
+                currentBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        function toggleLeadersDisclosure() {
+            const allBoxes = document.querySelectorAll('.info-disclosure-box');
+            const allBtns = document.querySelectorAll('.btn-interactive');
+            allBoxes.forEach(box => box.style.display = 'none');
+            allBtns.forEach(btn => btn.classList.remove('active-box'));
+
+            const leadersBox = document.getElementById('box-leaders-list');
+            const leadersBtn = document.getElementById('btn-leaders-list');
+            
+            if (leadersBox.style.display === 'block') {
+                leadersBox.style.display = 'none';
+                leadersBtn.classList.remove('active-box');
+            } else {
+                leadersBox.style.display = 'block';
+                leadersBtn.classList.add('active-box');
+                leadersBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        function toggleCustomTheme() {
+            const bodyEl = document.body;
+            if (bodyEl.hasAttribute('data-theme')) {
+                bodyEl.removeAttribute('data-theme');
+            } else {
+                bodyEl.setAttribute('data-theme', 'mythic-purple');
+            }
+        }
+
+        // تحسين أداء توليد الجزيئات وحفظ موارد المعالج
+        function createParticle() {
+            const snowContainer = document.getElementById('snow-container');
+            if (!snowContainer || document.hidden) return; // إيقاف التوليد في حال كانت الصفحة خلفية لتوفير الأداء
+
+            const particle = document.createElement('div');
+            particle.classList.add('snowflake');
+            
+            const shapes = ['⚜️', '✨', '✧', '•'];
+            particle.innerText = shapes[Math.floor(Math.random() * shapes.length)];
+            
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.animationDuration = (Math.random() * 3 + 5) + 's'; // تسريع الهبوط قليلاً لتقليل عدد العناصر المتزامنة
+            particle.style.fontSize = (Math.random() * 8 + 8) + 'px';
+            particle.style.opacity = Math.random() * 0.4 + 0.3;
+
+            snowContainer.appendChild(particle);
+            
+            setTimeout(() => { particle.remove(); }, 7000);
+        }
+        setInterval(createParticle, 350); // زيادة المهلة الزمنية للتخفيف من الحمل الإجمالي
+    </script>
+</body>
+</html>

@@ -4,32 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مملكة إيليت⚜️| الواجهة السينمائية الحديثة</title>
+    <!-- استدعاء خط Cairo الفخم من جوجل -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- استدعاء مكتبة الأيقونات FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         /* المتغيرات العامة للألوان والتصميم - الوضع الافتراضي (الذهبي الملكي) */
         :root {
             --bg-dark: #050508;
-            --bg-card: rgba(12, 17, 27, 0.75); /* تعميق الخلفية لبروز الأصفر */
+            --bg-gradient: linear-gradient(45deg, #050508, #090414, #040914, #0d0212, #050508);
+            --bg-card: rgba(12, 17, 27, 0.75); 
             --text-main: #ffffff;
-            --primary-color: #ffcc00; /* ذهبي ملكي نقي وعالي التباين والوضوح */
-            --secondary-glow: #ff5500; /* توهج ناري */
-            --third-glow: #00ffff; /* توهج كريستالي */
+            --primary-color: #ffcc00; /* ذهبي ملكي نقي */
+            --secondary-glow: #ff5500; 
+            --third-glow: #00ffff; 
             --font-family: 'Cairo', sans-serif;
             --particle-color: rgba(255, 204, 0, 0.5);
+            --btn-bg: rgba(15, 22, 36, 0.7);
         }
 
-        /* الوضع البنفسجي الأسطوري الغامق والفخم */
+        /* تحول المظهر الكامل - الوضع البنفسجي الأسطوري الغامق والفخم */
         [data-theme="mythic-purple"] {
-            --bg-dark: #020105; 
-            --primary-color: #bd1ffff; 
-            --secondary-glow: #4a148c; 
-            --third-glow: #ff007f; 
-            --particle-color: rgba(189, 31, 255, 0.5);
-            --bg-card: rgba(18, 10, 28, 0.75);
+            --bg-dark: #030107; 
+            --bg-gradient: linear-gradient(45deg, #030107, #120224, #09011a, #1a0230, #030107);
+            --bg-card: rgba(22, 11, 36, 0.8);
+            --primary-color: #bd1fff; /* بنفسجي نيون أسطوري */
+            --secondary-glow: #ff007f; /* وردي ناري */
+            --third-glow: #00e5ff; /* فيروزي مضيء */
+            --particle-color: rgba(189, 31, 255, 0.6);
+            --btn-bg: rgba(33, 13, 54, 0.7);
         }
 
         /* إعادة تعيين الخصائص الافتراضية */
@@ -41,7 +47,7 @@
 
         body {
             background-color: var(--bg-dark);
-            background: linear-gradient(45deg, var(--bg-dark), #090414, #040914, #0d0212, var(--bg-dark));
+            background: var(--bg-gradient);
             background-size: 400% 400%;
             animation: mysteriousWave 15s ease infinite;
             color: var(--text-main);
@@ -49,6 +55,7 @@
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
+            transition: background 0.5s ease, color 0.3s ease;
         }
 
         @keyframes mysteriousWave {
@@ -57,7 +64,7 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* حاوية تأثير تساقط الجزيئات الأسطورية المحدثة للأداء */
+        /* حاوية تأثير تساقط الجزيئات الأسطورية */
         #snow-container {
             position: fixed;
             top: 0;
@@ -77,6 +84,7 @@
             pointer-events: none;
             animation: fall linear infinite;
             will-change: transform, opacity;
+            transition: color 0.5s ease;
         }
 
         @keyframes fall {
@@ -110,7 +118,7 @@
             align-items: center;
             gap: 6px;
             box-shadow: 0 0 15px rgba(0,0,0,0.6), 0 0 10px var(--primary-color);
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
 
         .theme-switcher-corner:hover {
@@ -129,6 +137,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 25px rgba(0,0,0,0.9);
+            transition: border-color 0.5s ease;
         }
 
         .nav-container {
@@ -148,6 +157,7 @@
             align-items: center;
             gap: 10px;
             text-shadow: 0 0 12px var(--primary-color);
+            transition: color 0.5s ease;
         }
 
         .nav-menu {
@@ -168,7 +178,7 @@
         .nav-menu a:hover, .nav-menu a.active { color: var(--primary-color); }
         .nav-menu a::after {
             content: ''; position: absolute; width: 0; height: 2px; bottom: 0; right: 0;
-            background-color: var(--primary-color); transition: width 0.3s ease;
+            background-color: var(--primary-color); transition: width 0.3s ease, background-color 0.5s ease;
         }
         .nav-menu a:hover::after { width: 100%; }
 
@@ -179,10 +189,11 @@
             text-align: center;
             background-color: rgba(15, 18, 26, 0.2);
             border-bottom: 1px solid rgba(255, 204, 0, 0.15);
-            padding-bottom: 60px;
+            padding-bottom: 40px;
+            transition: border-color 0.5s ease;
         }
 
-        /* الغلاف الشريطي السينمائي الناعم والرفيع المدمج بالفخومة */
+        /* الغلاف الشريطي السينمائي */
         .emperor-cover {
             height: 180px; 
             background: linear-gradient(rgba(5, 5, 8, 0.3), rgba(5, 5, 8, 0.98)), 
@@ -199,9 +210,9 @@
             z-index: 5;
         }
 
-        /* إطار التوهج المحدث والآمن للأداء عالي التباين */
+        /* إطار التوهج المحسن */
         .wave-glow-avatar {
-            width: 190px; /* تم تكبير حجم الصورة الرئيسية هنا */
+            width: 190px; 
             height: 190px;
             margin: 0 auto 20px auto;
             border-radius: 50%;
@@ -210,6 +221,7 @@
             background-size: 200% 200%;
             animation: lightPulseGlow 3s ease-in-out infinite alternate;
             will-change: box-shadow;
+            transition: background 0.5s ease;
         }
 
         @keyframes lightPulseGlow {
@@ -217,18 +229,17 @@
             100% { box-shadow: 0 0 30px var(--primary-color), inset 0 0 15px var(--third-glow); background-position: 100% 50%; }
         }
 
-        /* توحيد الفلاتر والإضاءة للصور لمنع اللاق وحفظ الهوية الفنية */
         .wave-glow-avatar img, .deputy-avatar-wave-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
             border: 4px solid #050508; 
-            filter: brightness(95%) contrast(105%); /* إضاءة متزنة وموحدة وسينمائية */
+            filter: brightness(95%) contrast(105%); 
             box-shadow: inset 0 0 20px rgba(0,0,0,0.6);
         }
 
-        /* نص الترحيب الانسيابي العادي */
+        /* نص الترحيب النصي */
         .text-elite-normal {
             color: #ffffff;
             font-size: 15px;
@@ -244,6 +255,7 @@
         .text-elite-normal i {
             color: var(--primary-color);
             margin: 0 6px;
+            transition: color 0.5s ease;
         }
 
         .emperor-name {
@@ -256,6 +268,7 @@
         .emperor-name span {
             color: var(--primary-color);
             text-shadow: 0 0 25px var(--primary-color), 0 2px 5px rgba(0,0,0,0.9);
+            transition: color 0.5s ease;
         }
 
         /* أزرار التحكم التفاعلي */
@@ -268,7 +281,7 @@
         }
 
         .btn-interactive {
-            background: rgba(15, 22, 36, 0.7);
+            background: var(--btn-bg);
             border: 2px solid var(--primary-color);
             color: var(--text-main);
             padding: 12px 26px;
@@ -277,7 +290,7 @@
             font-family: var(--font-family);
             font-weight: 700;
             font-size: 15px;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease, border-color 0.5s ease, background-color 0.5s ease;
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -290,7 +303,7 @@
             box-shadow: 0 0 20px var(--primary-color);
         }
 
-        /* اللوحات المنبثقة التفاعلية */
+        /* اللوحات المنبثقة التفاعلية للنبذة والسجل */
         .info-disclosure-box {
             display: none;
             margin: 15px auto;
@@ -302,6 +315,7 @@
             box-shadow: 0 12px 35px rgba(0,0,0,0.7);
             animation: slideDownFade 0.3s ease forwards;
             max-width: 650px;
+            transition: border-color 0.5s ease, background-color 0.5s ease;
         }
 
         @keyframes slideDownFade {
@@ -316,6 +330,7 @@
             margin-bottom: 12px;
             font-size: 20px;
             text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+            transition: color 0.5s ease;
         }
 
         /* حاوية قادة إيليت العليا التفاعلية الممتدة */
@@ -330,7 +345,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 35px; 
+            gap: 25px; 
             margin: 20px auto 0 auto;
             max-width: 650px;
             width: 100%;
@@ -346,18 +361,20 @@
             background: rgba(10, 15, 26, 0.4);
             border-radius: 14px;
             border: 1px solid rgba(255, 204, 0, 0.05);
+            cursor: pointer; /* جعل الصف قابلاً للضغط كزر تفاعلي */
             transition: all 0.3s ease;
         }
         
         .single-leader-row:hover {
-            transform: translateX(-5px);
-            border-color: rgba(255, 204, 0, 0.3);
-            background: rgba(10, 15, 26, 0.6);
+            transform: scale(1.02);
+            border-color: var(--primary-color);
+            background: var(--bg-card);
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.1);
         }
 
-        /* إطار صور القادة المكبر والخفيف للأداء المستقر */
+        /* إطار صور القادة المكبر */
         .deputy-avatar-wave-wrapper {
-            width: 140px; /* تم تكبير حجم صور النواب هنا لبروز فخم */
+            width: 140px; 
             height: 140px;
             border-radius: 50%;
             padding: 5px;
@@ -365,6 +382,7 @@
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-glow), var(--primary-color));
             background-size: 200% 200%;
             animation: lightPulseGlow 3.5s ease-in-out infinite alternate;
+            transition: background 0.5s ease;
         }
 
         .deputy-text-block {
@@ -373,7 +391,7 @@
             gap: 8px;
         }
 
-        /* حدود متموجة ونابضة حول شارات ألقاب وصلاحيات النواب */
+        /* شارات ألقاب وصلاحيات النواب */
         .deputy-tag-wave-border {
             font-size: 13px;
             color: #ffffff;
@@ -387,10 +405,12 @@
             background: #050508;
             border: 2px solid var(--primary-color);
             box-shadow: 0 0 10px rgba(255, 204, 0, 0.2);
+            transition: border-color 0.5s ease;
         }
 
         .deputy-tag-wave-border i {
             color: var(--primary-color);
+            transition: color 0.5s ease;
         }
 
         .deputy-name-plain {
@@ -400,16 +420,54 @@
             text-shadow: 0 2px 12px rgba(0,0,0,0.7);
         }
 
+        /* حاوية زر الدوقات الأوسط الجديد المستقل فوق الأقسام */
+        .central-action-area {
+            text-align: center;
+            padding: 40px 20px 10px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .btn-dukes-mega {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--bg-card);
+            border: 2px solid var(--primary-color);
+            color: #ffffff;
+            padding: 18px 45px;
+            font-size: 20px;
+            font-weight: 800;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 15px rgba(255, 204, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn-dukes-mega:hover {
+            transform: translateY(-5px) scale(1.03);
+            background: var(--primary-color);
+            color: #000000;
+            box-shadow: 0 15px 40px var(--primary-color);
+        }
+
+        .btn-dukes-mega i {
+            font-size: 24px;
+        }
+
         /* الأقسام العامة */
-        .section-container { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
+        .section-container { max-width: 1200px; margin: 0 auto; padding: 30px 20px 60px 20px; }
         .section-title {
             text-align: center; font-size: 32px; font-weight: 800; margin-bottom: 40px;
             position: relative; color: var(--primary-color);
             text-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
+            transition: color 0.5s ease;
         }
         .section-title::after {
             content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
             width: 60px; height: 3px; background-color: var(--primary-color);
+            transition: background-color 0.5s ease;
         }
 
         .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
@@ -420,16 +478,87 @@
             border-radius: 12px;
             padding: 30px 20px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease, border-color 0.5s ease, background-color 0.5s ease;
             box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
         }
         .card:hover { border-color: var(--primary-color); transform: translateY(-5px); box-shadow: 0 12px 40px rgba(255, 204, 0, 0.15); }
-        .card i { font-size: 40px; color: var(--primary-color); margin-bottom: 20px; text-shadow: 0 0 10px rgba(255, 204, 0, 0.4); }
+        .card i { font-size: 40px; color: var(--primary-color); margin-bottom: 20px; text-shadow: 0 0 10px rgba(255, 204, 0, 0.4); transition: color 0.5s ease; }
         .card h3 { color: #ffffff; margin-bottom: 10px; }
         .card p { color: #cbd5e1; }
 
-        footer { background-color: #030305; padding: 40px 20px; text-align: center; border-top: 2px solid var(--primary-color); margin-top: 40px; }
+        footer { background-color: #030305; padding: 40px 20px; text-align: center; border-top: 2px solid var(--primary-color); margin-top: 40px; transition: border-color 0.5s ease;}
         footer .copyright { color: #94a3b8; font-weight: 600; }
+
+        /* ==================== نظام النوافذ المنبثقة السينمائية المضافة (Modals) ==================== */
+        .leader-modal {
+            display: none; 
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(3, 3, 5, 0.9);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            backdrop-filter: blur(8px);
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .modal-content {
+            background: var(--bg-card);
+            border: 2px solid var(--primary-color);
+            max-width: 600px;
+            width: 100%;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(255, 204, 0, 0.15);
+            animation: scaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.2) forwards;
+            transition: border-color 0.5s ease, background-color 0.5s ease;
+        }
+
+        @keyframes scaleUp { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+        .close-modal-btn {
+            position: absolute;
+            top: 15px; left: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none; color: #fff;
+            width: 35px; height: 35px; border-radius: 50%;
+            cursor: pointer; font-size: 16px;
+            display: flex; justify-content: center; align-items: center;
+            transition: background 0.2s;
+        }
+        .close-modal-btn:hover { background: #ef4444; }
+
+        .modal-avatar-wrapper {
+            width: 160px; height: 160px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            padding: 6px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-glow));
+            box-shadow: 0 0 25px var(--primary-color);
+        }
+        .modal-avatar-wrapper img {
+            width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid #050508;
+        }
+
+        .modal-title-tag {
+            background: #050508;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            display: inline-block;
+            padding: 4px 18px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .modal-name { font-size: 32px; font-weight: 900; color: #fff; margin-bottom: 15px; }
+        .modal-bio-text { color: #e2e8f0; font-size: 16px; line-height: 1.8; text-align: justify; text-align-last: center; }
 
         /* تكييف شاشات الهواتف */
         @media (max-width: 768px) {
@@ -441,17 +570,21 @@
             .emperor-name { font-size: 28px; }
             .single-leader-row { flex-direction: column; text-align: center; gap: 12px; padding: 20px 10px; }
             .deputy-text-block { align-items: center; }
+            .btn-dukes-mega { width: 100%; font-size: 18px; padding: 14px 20px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- زر التبديل اللوني الفاخر المثبت في الزاوية العلوية -->
     <button class="theme-switcher-corner" onclick="toggleCustomTheme()">
         <i class="fa-solid fa-wand-magic-sparkles"></i> <span id="theme-btn-text">المظهر</span>
     </button>
 
+    <!-- حاوية تساقط الجزيئات الأسطورية -->
     <div id="snow-container"></div>
 
+    <!-- الهيدر وقائمة التنقل -->
     <header>
         <div class="nav-container">
             <div class="logo">
@@ -467,17 +600,21 @@
         </div>
     </header>
 
+    <!-- واجهة المملكة السينمائية المحدثة -->
     <section class="emperor-section">
         <div class="emperor-cover"></div>
         
         <div class="emperor-profile-container">
+            <!-- أفاتار إينوماكي المحاط بالإطار المحسن -->
             <div class="wave-glow-avatar">
                 <img src="assets/images/1a408bf70e41420bb28d704018b7349f (1).jpg" alt="العاهل">
             </div>
             
+            <!-- عبارة الترحيب النصية الانسيابية -->
             <span class="text-elite-normal"><i class="fa-solid fa-bolt"></i> النخبة تصنع المجد دائماً <i class="fa-solid fa-bolt"></i></span>
             <h1 class="emperor-name"><span>⚜️مملكة إيليت</span></h1>
             
+            <!-- أزرار التحكم التفاعلي للتحكم بالمحتوى والروابط -->
             <div class="interactive-btn-group">
                 <button id="btn-royal-scroll" class="btn-interactive" onclick="toggleDisclosure('royal-scroll')">
                     <i class="fa-solid fa-scroll"></i> كشف السجل الإمبراطوري
@@ -490,27 +627,27 @@
                 <button id="btn-leaders-list" class="btn-interactive" onclick="toggleLeadersDisclosure()">
                     <i class="fa-solid fa-users-gear"></i> قادة إيليت العليا
                 </button>
-
-                <a href="dukes.html" class="btn-interactive">
-                    <i class="fa-solid fa-chess-knight"></i> مجلس دوقات المملكة
-                </a>
             </div>
             
+            <!-- صندوق السجل الملكي التفاعلي -->
             <div id="box-royal-scroll" class="info-disclosure-box">
                 <h3>📜 السجل الملكي وقدرات التاج</h3>
                 <p><strong>الاسم الحركي:</strong> الإمبراطور العظيم إينوماكي.</p>
                 <p><strong>الرؤية والقدرة:</strong> توجيه الكلمات السحرية وقيادة المجالس الإدارية والسيادية العليا لضمان بقاء المملكة في الصدارة المطلقة دائماً.</p>
             </div>
 
+            <!-- صندوق نبذة عن إيليت التفاعلي -->
             <div id="box-elite-bio" class="info-disclosure-box">
                 <h3>⚜️ عن إمبراطورية إيليت</h3>
                 <p>إمبراطورية النخبة والصفوة، تأسست لتجمع أقوى الأعضاء تحت قيادة منظمة وقوانين صارمة تحافظ على العدالة والتفاعل الدائم وبناء أمجاد لا تنتهي.</p>
             </div>
 
+            <!-- قسم قادة إيليت العليا المنسق انسيابياً وبأداء فائق السرعة -->
             <div id="box-leaders-list" class="leaders-disclosure-container">
                 <div class="deputies-free-flow-stack">
                     
-                    <div class="single-leader-row">
+                    <!-- صف النائب الأول: كرولو (عند الضغط يفتح الفتحة السينمائية) -->
+                    <div class="single-leader-row" onclick="openLeaderModal('chrollo')">
                         <div class="deputy-avatar-wave-wrapper">
                             <img src="assets/images/chrollo.jpg" alt="النائب الملكي كرولو" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150'">
                         </div>
@@ -520,7 +657,8 @@
                         </div>
                     </div>
 
-                    <div class="single-leader-row">
+                    <!-- صف النائب الثاني: باين (عند الضغط يفتح الفتحة السينمائية) -->
+                    <div class="single-leader-row" onclick="openLeaderModal('pain')">
                         <div class="deputy-avatar-wave-wrapper">
                             <img src="assets/images/pain.jpg" alt="النائب باين" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150'">
                         </div>
@@ -536,6 +674,14 @@
         </div>
     </section>
 
+    <!-- 📍 المنطقة المركزية الجديدة: زر مجلس دوقات المملكة فوق الأقسام والإدارات مباشرة 📍 -->
+    <div class="central-action-area">
+        <a href="dukes.html" class="btn-dukes-mega">
+            <i class="fa-solid fa-chess-knight"></i> مجلس دوقات المملكة الإستراتيجي
+        </a>
+    </div>
+
+    <!-- الأقسام العامة التكميلية -->
     <section class="section-container">
         <h2 class="section-title">إدارات وأقسام النخبة</h2>
         <div class="grid-layout">
@@ -557,12 +703,45 @@
         </div>
     </section>
 
+    <!-- ==================== هياكل النوافذ المنبثقة التفاعلية الفخمة (Modals) ==================== -->
+    
+    <!-- نافذة كرولو المكبرة -->
+    <div id="modal-chrollo" class="leader-modal" onclick="closeLeaderModal('chrollo')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeLeaderModal('chrollo')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/chrollo.jpg" alt="كرولو" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">👑 القائد والمخطط الأول للعرش</span>
+            <h2 class="modal-name">النائب الملكي كرولو</h2>
+            <p class="modal-bio-text">
+                هو العقل المدبر واليد اليمنى للإمبراطور في إدارة شؤون مملكة إيليت العليا. يتميز كرولو بذكاء إستراتيجي فذ، وقدرة استثنائية على تنظيم الصفوف وإدارة الأزمات الصعبة. يمتلك كاريزما القيادة المطلقة، ويقود المجالس السيادية بحكمة تجعل النخبة دائماً في طليعة القوى، ومسؤول عن وضع الخطط والأنظمة الإدارية التي تحافظ على هيبة واستقرار المملكة.
+            </p>
+        </div>
+    </div>
+
+    <!-- نافذة باين المكبرة -->
+    <div id="modal-pain" class="leader-modal" onclick="closeLeaderModal('pain')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeLeaderModal('pain')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/pain.jpg" alt="باين" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">⭐ درع العرش والقبضة الصارمة</span>
+            <h2 class="modal-name">نائب الإمبراطور باين</h2>
+            <p class="modal-bio-text">
+                هو رمز العدالة المطلقة والقوة الحازمة في المملكة. يشرف باين مباشرة على تطبيق القوانين وحماية الأمن الداخلي للنظام العام وتوجيه الفصائل والكتائب القتالية. يشتهر بقراراته الحاسمة والصارمة التي لا تعرف التهاون عندما يتعلق الأمر بسلامة وهيبة العرش، مما يجعله السد المنيع والدرع الإمبراطوري الأول الذي يحفظ التوازن والعدالة بين جميع أعضاء إيليت.
+            </p>
+        </div>
+    </div>
+
     <footer>
         <div class="copyright">
             &copy; 2026 مملكة إيليت. جميع الحقوق محفوظة | صُنع بامتياز بواسطة قادة النخبة.
         </div>
     </footer>
 
+    <!-- السكربت التفاعلي المحسن -->
     <script>
         function toggleDisclosure(targetId) {
             document.getElementById('box-leaders-list').style.display = 'none';
@@ -605,6 +784,7 @@
             }
         }
 
+        // دالة تبديل المظهر الكامل المحدثة
         function toggleCustomTheme() {
             const bodyEl = document.body;
             if (bodyEl.hasAttribute('data-theme')) {
@@ -614,19 +794,33 @@
             }
         }
 
-        // تحسين أداء توليد الجزيئات وحفظ موارد المعالج
+        // فتح وإغلاق النوافذ المنبثقة التفاعلية للقادة
+        function openLeaderModal(leaderId) {
+            document.getElementById('modal-' + leaderId).style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // منع تحريك الصفحة خلف النافذة
+        }
+
+        function closeLeaderModal(leaderId) {
+            document.getElementById('modal-' + leaderId).style.display = 'none';
+            document.body.style.overflow = 'auto'; // إعادة تمكين التحريك
+        }
+
+        // تحسين توليد الجزيئات لتناسب الثيم الحالي تلقائياً
         function createParticle() {
             const snowContainer = document.getElementById('snow-container');
-            if (!snowContainer || document.hidden) return; // إيقاف التوليد في حال كانت الصفحة خلفية لتوفير الأداء
+            if (!snowContainer || document.hidden) return;
 
             const particle = document.createElement('div');
             particle.classList.add('snowflake');
             
-            const shapes = ['⚜️', '✨', '✧', '•'];
+            // اختيار الرموز بناءً على المظهر الحالي
+            const isPurple = document.body.hasAttribute('data-theme');
+            const shapes = isPurple ? ['🔮', '✨', '✧', '☪️'] : ['⚜️', '✨', '✧', '•'];
+            
             particle.innerText = shapes[Math.floor(Math.random() * shapes.length)];
             
             particle.style.left = Math.random() * 100 + 'vw';
-            particle.style.animationDuration = (Math.random() * 3 + 5) + 's'; // تسريع الهبوط قليلاً لتقليل عدد العناصر المتزامنة
+            particle.style.animationDuration = (Math.random() * 3 + 5) + 's'; 
             particle.style.fontSize = (Math.random() * 8 + 8) + 'px';
             particle.style.opacity = Math.random() * 0.4 + 0.3;
 
@@ -634,7 +828,7 @@
             
             setTimeout(() => { particle.remove(); }, 7000);
         }
-        setInterval(createParticle, 350); // زيادة المهلة الزمنية للتخفيف من الحمل الإجمالي
+        setInterval(createParticle, 350); 
     </script>
 </body>
 </html>

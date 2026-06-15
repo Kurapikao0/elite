@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مملكة إيليت⚜️</title>
+    <title>⎔⋅• ━ ━╃⎔╷⚜️╵⎔╄━ ━ •⋅⎔  مملكة إيليـــــت|   </title>
+    <!-- استدعاء خط Cairo الفخم من جوجل -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- استدعاء مكتبة الأيقونات FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        /* المتغيرات العامة للألوان والتصميم */
         :root {
             --bg-dark: #050508;
             --bg-gradient: linear-gradient(45deg, #050508, #090414, #040914, #0d0212, #050508);
             --bg-card: rgba(12, 17, 27, 0.75); 
             --text-main: #ffffff;
-            --primary-color: #ffcc00; 
+            --primary-color: #ffcc00; /* ذهبي ملكي نقية */
             --secondary-glow: #ff5500; 
             --third-glow: #00ffff; 
             --font-family: 'Cairo', sans-serif;
             --particle-color: rgba(255, 204, 0, 0.5);
             --btn-bg: rgba(15, 22, 36, 0.7);
-            --court-color: #00e5ff; 
+            --court-color: #00e5ff; /* توهج سماوي خاص بالمحكمة والمستشارين */
             --court-gold: #ffaa00;
         }
 
@@ -53,23 +56,6 @@
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
-        }
-
-        /* 🎬 تأثير حركة الدخول الصاعدة والفخمة للموقع بالكامل */
-        .fade-in-up-effect {
-            animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-            opacity: 0;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         @keyframes mysteriousWave {
@@ -142,7 +128,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.9);
+            box-shadow: 0 4px 25px rgba(20, 20, 20, 0.9);
         }
 
         .nav-container {
@@ -179,227 +165,216 @@
             padding-bottom: 40px;
         }
 
+        /* صورة خلفية إينو (جبل جليدي وضباب رمادي باهت) */
         .emperor-cover {
-            height: 280px; 
-            background: linear-gradient(rgba(5, 5, 8, 0.1), rgba(5, 5, 8, 0.99)), 
+            height: 200px; 
+            background: linear-gradient(rgba(95, 95, 110, 0.1), rgba(30, 30, 48, 0.99)), 
                         url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200') no-repeat center center/cover;
             filter: grayscale(75%) contrast(115%) brightness(40%);
             box-shadow: inset 0 -30px 40px rgba(5, 5, 8, 1);
         }
 
-        .emperor-profile-container { max-width: 900px; margin: -140px auto 0 auto; padding: 0 20px; position: relative; z-index: 5; }
+        .emperor-profile-container { max-width: 900px; margin: -100px auto 0 auto; padding: 0 20px; position: relative; z-index: 5; }
 
         .wave-glow-avatar {
-            width: 220px; height: 220px; margin: 0 auto 25px auto; border-radius: 50%; padding: 6px; 
+            width: 190px; height: 190px; margin: 0 auto 20px auto; border-radius: 50%; padding: 5px; 
             background: linear-gradient(45deg, var(--primary-color), var(--secondary-glow), var(--third-glow), var(--primary-color));
             background-size: 200% 200%;
             animation: lightPulseGlow 3s ease-in-out infinite alternate;
         }
 
         @keyframes lightPulseGlow {
-            0% { box-shadow: 0 0 20px var(--primary-color); background-position: 0% 50%; }
-            100% { box-shadow: 0 0 40px var(--primary-color); background-position: 100% 50%; }
+            0% { box-shadow: 0 0 15px var(--primary-color); background-position: 0% 50%; }
+            100% { box-shadow: 0 0 30px var(--primary-color); background-position: 100% 50%; }
         }
 
         .wave-glow-avatar img, .deputy-avatar-wave-wrapper img {
-            width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 5px solid #050508;
+            width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid #050508;
         }
 
         .text-elite-normal {
-            color: #ffffff; font-size: 16px; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 15px;
-            display: inline-block; background: rgba(0, 0, 0, 0.5); padding: 5px 20px; border-radius: 50px;
+            color: #ffffff; font-size: 15px; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 12px;
+            display: inline-block; background: rgba(0, 0, 0, 0.5); padding: 4px 16px; border-radius: 20px;
         }
-        .text-elite-normal i { color: var(--primary-color); margin: 0 8px; }
-        .emperor-name { font-size: 42px; font-weight: 900; color: #fff; margin-bottom: 25px; }
-        .emperor-name span { color: var(--primary-color); text-shadow: 0 0 30px var(--primary-color); }
+        .text-elite-normal i { color: var(--primary-color); margin: 0 6px; }
+        .emperor-name { font-size: 36px; font-weight: 900; color: #fff; margin-bottom: 20px; }
+        .emperor-name span { color: var(--primary-color); text-shadow: 0 0 25px var(--primary-color); }
 
-        .interactive-btn-group { display: flex; justify-content: center; gap: 20px; margin: 25px auto; }
+        .interactive-btn-group { display: flex; justify-content: center; gap: 15px; margin: 20px auto; flex-wrap: wrap; }
 
         .btn-interactive {
             background: var(--btn-bg); border: 2px solid var(--primary-color); color: var(--text-main);
-            padding: 14px 32px; border-radius: 10px; cursor: pointer; font-family: var(--font-family);
-            font-weight: 700; font-size: 16px; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            padding: 12px 26px; border-radius: 8px; cursor: pointer; font-family: var(--font-family);
+            font-weight: 700; font-size: 15px; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px;
         }
 
-        .btn-interactive:hover, .btn-interactive.active-box { background: var(--primary-color); color: #000; box-shadow: 0 0 25px var(--primary-color); transform: translateY(-2px); }
+        .btn-interactive:hover, .btn-interactive.active-box { background: var(--primary-color); color: #000; box-shadow: 0 0 20px var(--primary-color); }
 
         .info-disclosure-box {
-            display: none; margin: 20px auto; background: var(--bg-card); border: 1px solid var(--primary-color);
-            padding: 30px; border-radius: 16px; text-align: right; box-shadow: 0 15px 45px rgba(0,0,0,0.8);
-            animation: slideDownFade 0.3s ease forwards; max-width: 700px;
+            display: none; margin: 15px auto; background: var(--bg-card); border: 1px solid var(--primary-color);
+            padding: 25px; border-radius: 12px; text-align: right; box-shadow: 0 12px 35px rgba(0,0,0,0.7);
+            animation: slideDownFade 0.3s ease forwards; max-width: 650px;
         }
 
-        @keyframes slideDownFade { from { opacity: 0; transform: translateY(-15px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideDownFade { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
-        .info-disclosure-box h3 { color: var(--primary-color); border-bottom: 1px solid rgba(255, 204, 0, 0.2); padding-bottom: 10px; margin-bottom: 15px; font-size: 22px; }
+        .info-disclosure-box h3 { color: var(--primary-color); border-bottom: 1px solid rgba(255, 204, 0, 0.2); padding-bottom: 8px; margin-bottom: 12px; font-size: 20px; }
 
-        .leaders-disclosure-container { display: none; margin-top: 40px; animation: slideDownFade 0.4s ease forwards; width: 100%; }
+        .leaders-disclosure-container { display: none; margin-top: 30px; animation: slideDownFade 0.4s ease forwards; width: 100%; }
 
-        .deputies-free-flow-stack { display: flex; flex-direction: column; align-items: center; gap: 35px; margin: 30px auto 0 auto; max-width: 750px; width: 100%; }
+        .deputies-free-flow-stack { display: flex; flex-direction: column; align-items: center; gap: 25px; margin: 20px auto 0 auto; max-width: 650px; width: 100%; }
 
         .single-leader-row {
-            display: flex; align-items: center; gap: 40px; width: 100%; text-align: right; padding: 20px 25px;
-            background: rgba(10, 15, 26, 0.4); border-radius: 18px; border: 1px solid rgba(255, 204, 0, 0.05);
+            display: flex; align-items: center; gap: 30px; width: 100%; text-align: right; padding: 15px;
+            background: rgba(10, 15, 26, 0.4); border-radius: 14px; border: 1px solid rgba(255, 204, 0, 0.05);
             cursor: pointer; transition: all 0.3s ease;
         }
         
-        .single-leader-row:hover { transform: scale(1.03) translateY(-3px); border-color: var(--primary-color); background: var(--bg-card); box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
+        .single-leader-row:hover { transform: scale(1.02); border-color: var(--primary-color); background: var(--bg-card); }
 
         .deputy-avatar-wave-wrapper {
-            width: 150px; height: 150px; border-radius: 50%; padding: 5px; flex-shrink: 0;
+            width: 140px; height: 140px; border-radius: 50%; padding: 5px; flex-shrink: 0;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-glow), var(--primary-color));
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
 
-        .deputy-text-block { display: flex; flex-direction: column; gap: 8px; font-family: var(--font-family); }
+        .deputy-text-block { display: flex; flex-direction: column; gap: 6px; }
 
         .deputy-tag-wave-border {
-            font-size: 13px; color: #ffffff; font-weight: 700; display: inline-flex; align-items: center; gap: 8px;
-            padding: 5px 16px; border-radius: 50px; width: fit-content; background: #050508; border: 2px solid var(--primary-color);
-            font-family: var(--font-family);
+            font-size: 12px; color: #ffffff; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;
+            padding: 4px 14px; border-radius: 50px; width: fit-content; background: #050508; border: 2px solid var(--primary-color);
         }
         .deputy-tag-wave-border i { color: var(--primary-color); }
-        .deputy-name-plain { font-size: 30px; font-weight: 900; color: #ffffff; letter-spacing: 0.5px; font-family: var(--font-family); }
+        .deputy-name-plain { font-size: 26px; font-weight: 900; color: #ffffff; }
 
+        /* ==================== تحديث واجهة القاضي الأعلى ريمورو ومجلس القضاء ==================== */
         .court-disclosure-box {
             width: 100%;
             background: linear-gradient(135deg, rgba(5, 12, 22, 0.95), rgba(3, 5, 10, 0.98));
-            border: 2px solid var(--primary-color);
-            box-shadow: 0 0 35px rgba(255, 204, 0, 0.3), inset 0 0 30px rgba(0, 0, 0, 0.9);
-            border-radius: 24px;
-            padding: 40px 30px;
-            margin-top: 35px;
+            border: 2px solid #ffcc00;
+            box-shadow: 0 0 25px rgba(255, 204, 0, 0.25), inset 0 0 20px rgba(0, 0, 0, 0.9);
+            border-radius: 16px;
+            padding: 30px 20px;
+            margin-top: 25px;
             text-align: center;
             position: relative;
         }
 
+        /* علامات الميزان التي تحف جانبي عنوان المحكمة وعنصرها */
         .court-header {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
-            margin-bottom: 35px;
+            gap: 15px;
+            margin-bottom: 25px;
             color: #fff;
-            font-size: 26px;
+            font-size: 22px;
             font-weight: 900;
-            text-shadow: 0 0 15px var(--primary-color);
-            border-bottom: 1px dashed rgba(255, 204, 0, 0.2);
-            padding-bottom: 15px;
-            font-family: var(--font-family);
+            text-shadow: 0 0 10px var(--primary-color);
         }
         
         .court-header .scale-icon {
             color: var(--primary-color);
-            font-size: 32px;
+            font-size: 26px;
             animation: balanceSway 3s ease-in-out infinite alternate;
         }
 
         @keyframes balanceSway {
-            0% { transform: rotate(-8deg); }
-            100% { transform: rotate(8deg); }
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
         }
 
         .court-leader-card {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            gap: 35px;
+            justify-content: center;
+            gap: 25px;
             background: rgba(5, 5, 8, 0.8);
-            padding: 25px 35px;
-            border-radius: 20px;
-            max-width: 580px;
+            padding: 20px 30px;
+            border-radius: 12px;
+            max-width: 520px;
             margin: 0 auto;
             border: 2px solid var(--primary-color);
-            box-shadow: 0 0 25px rgba(255, 204, 0, 0.15);
-            transition: all 0.3s ease;
-        }
-
-        .court-leader-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 35px rgba(255, 204, 0, 0.3);
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.1);
         }
 
         .court-avatar-glow {
-            width: 120px; height: 120px;
+            width: 105px; height: 105px;
             border-radius: 50%;
-            padding: 5px;
+            padding: 4px;
             background: linear-gradient(45deg, var(--primary-color), var(--secondary-glow));
-            box-shadow: 0 0 20px var(--primary-color);
-            flex-shrink: 0;
+            box-shadow: 0 0 15px var(--primary-color);
         }
-        .court-avatar-glow img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid #050508; }
+        .court-avatar-glow img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 2px solid #050508; }
 
-        /* ✨ إصلاح خط بطاقة ريمورو وجعله متناسقاً تماماً */
-        .court-text-block {
-            display: flex; 
-            flex-direction: column; 
-            align-items: flex-start; 
-            gap: 4px;
-            font-family: var(--font-family);
-        }
-
+        /* شارة إثبات خاصة ومؤكدة بكون ريمورو قاضي إيليت الأعلى */
         .court-tag-proof {
-            font-size: 14px;
-            background: #ef4444; 
+            font-size: 13px;
+            background: #ef4444; /* لون أحمر قضائي صارم لبيان سلطة القاضي */
             color: #fff;
-            border: 1px solid var(--primary-color);
-            padding: 6px 20px;
+            border: 1px solid #ffcc00;
+            padding: 5px 16px;
             border-radius: 50px;
             font-weight: 800;
             width: fit-content;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
-            font-family: var(--font-family);
+            gap: 6px;
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
         }
 
-        .court-name { font-size: 28px; font-weight: 900; color: #fff; text-align: right; font-family: var(--font-family); }
-        .court-sub-title { font-size: 15px; color: var(--primary-color); font-weight: 700; text-align: right; font-family: var(--font-family); }
+        .court-name { font-size: 24px; font-weight: 900; color: #fff; text-align: right; }
+        .court-sub-title { font-size: 14px; color: var(--primary-color); font-weight: 700; text-align: right; }
 
-        .central-action-area { text-align: center; padding: 50px 20px 20px 20px; max-width: 1200px; margin: 0 auto; }
+        /* باقي التنسيقات العامة */
+        .central-action-area { text-align: center; padding: 40px 20px 10px 20px; max-width: 1200px; margin: 0 auto; }
         .btn-dukes-mega {
-            display: inline-flex; align-items: center; justify-content: center; gap: 15px; background: var(--bg-card);
-            border: 2px solid var(--primary-color); color: #ffffff; padding: 20px 55px; font-size: 22px; font-weight: 800; border-radius: 50px; text-decoration: none;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 15px rgba(255, 204, 0, 0.1); transition: all 0.4s ease;
+            display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: var(--bg-card);
+            border: 2px solid var(--primary-color); color: #ffffff; padding: 18px 45px; font-size: 20px; font-weight: 800; border-radius: 50px; text-decoration: none;
+            transition: all 0.4s ease;
         }
-        .btn-dukes-mega:hover { transform: translateY(-5px); background: var(--primary-color); color: #000; box-shadow: 0 15px 35px var(--primary-color); }
+        .btn-dukes-mega:hover { transform: translateY(-5px); background: var(--primary-color); color: #000; }
 
-        .section-container { max-width: 1200px; margin: 0 auto; padding: 40px 20px 80px 20px; }
-        .section-title { text-align: center; font-size: 36px; font-weight: 800; margin-bottom: 50px; position: relative; color: var(--primary-color); }
-        .section-title::after { content: ''; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background-color: var(--primary-color); border-radius: 2px; }
+        .section-container { max-width: 1200px; margin: 0 auto; padding: 30px 20px 60px 20px; }
+        .section-title { text-align: center; font-size: 32px; font-weight: 800; margin-bottom: 40px; position: relative; color: var(--primary-color); }
+        .section-title::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background-color: var(--primary-color); }
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background-color: var(--bg-card); border: 1px solid rgba(255, 204, 0, 0.15); border-radius: 16px; padding: 40px 25px; text-align: center; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
-        .card:hover { border-color: var(--primary-color); transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 15px rgba(255, 204, 0, 0.1); }
-        .card i { font-size: 45px; color: var(--primary-color); margin-bottom: 25px; }
+        .card { background-color: var(--bg-card); border: 1px solid rgba(255, 204, 0, 0.15); border-radius: 12px; padding: 30px 20px; text-align: center; transition: all 0.3s ease; }
+        .card:hover { border-color: var(--primary-color); transform: translateY(-5px); }
+        .card i { font-size: 40px; color: var(--primary-color); margin-bottom: 20px; }
 
-        footer { background-color: #030305; padding: 50px 20px; text-align: center; border-top: 2px solid var(--primary-color); margin-top: 60px; }
+        footer { background-color: #030305; padding: 40px 20px; text-align: center; border-top: 2px solid var(--primary-color); margin-top: 40px; }
 
+        /* نظام النوافذ المنبثقة للمعلومات */
         .leader-modal {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(3, 3, 5, 0.95); z-index: 3000; justify-content: center; align-items: center; padding: 20px; backdrop-filter: blur(10px);
+            background-color: rgba(3, 3, 5, 0.93); z-index: 3000; justify-content: center; align-items: center; padding: 20px; backdrop-filter: blur(8px);
         }
         .modal-content {
-            background: var(--bg-card); border: 2px solid var(--primary-color); max-width: 650px; width: 100%; border-radius: 24px; padding: 50px 40px; text-align: center; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+            background: var(--bg-card); border: 2px solid var(--primary-color); max-width: 600px; width: 100%; border-radius: 20px; padding: 40px 30px; text-align: center; position: relative;
         }
-        .close-modal-btn { position: absolute; top: 20px; left: 20px; background: rgba(255, 255, 255, 0.1); border: none; color: #fff; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 16px; transition: all 0.3s ease; }
-        .close-modal-btn:hover { background: #ef4444; color: #fff; }
-        .modal-avatar-wrapper { width: 180px; height: 180px; margin: 0 auto 25px auto; border-radius: 50%; padding: 6px; background: linear-gradient(45deg, var(--primary-color), var(--secondary-glow)); box-shadow: 0 0 25px var(--primary-color); }
-        .modal-avatar-wrapper img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 5px solid #050508; }
-        .modal-title-tag { background: #050508; border: 1px solid var(--primary-color); color: var(--primary-color); display: inline-block; padding: 5px 22px; border-radius: 50px; font-size: 14px; font-weight: 700; margin-bottom: 20px; box-shadow: 0 0 10px rgba(255, 204, 0, 0.2); }
-        .modal-name { font-size: 36px; font-weight: 900; color: #fff; margin-bottom: 20px; }
-        .modal-bio-text { color: #e2e8f0; font-size: 17px; line-height: 1.9; text-align: justify; text-align-last: center; }
+        .close-modal-btn { position: absolute; top: 15px; left: 15px; background: rgba(255, 255, 255, 0.1); border: none; color: #fff; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; }
+        .modal-avatar-wrapper { width: 160px; height: 160px; margin: 0 auto 20px auto; border-radius: 50%; padding: 6px; background: linear-gradient(45deg, var(--primary-color), var(--secondary-glow)); }
+        .modal-avatar-wrapper img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid #050508; }
+        .modal-title-tag { background: #050508; border: 1px solid var(--primary-color); color: var(--primary-color); display: inline-block; padding: 4px 18px; border-radius: 50px; font-size: 13px; font-weight: 700; margin-bottom: 15px; }
+        .modal-name { font-size: 32px; font-weight: 900; color: #fff; margin-bottom: 15px; }
+        .modal-bio-text { color: #e2e8f0; font-size: 16px; line-height: 1.8; text-align: center; }
 
         @media (max-width: 768px) {
             .nav-menu { display: none; }
-            .emperor-section { margin-top: 60px; }
+            .emperor-cover { height: 130px; } 
+            .emperor-profile-container { margin: -75px auto 0 auto; }
+            .wave-glow-avatar { width: 140px; height: 140px; }
+            .deputy-avatar-wave-wrapper { width: 110px; height: 110px; }
+            .single-leader-row { flex-direction: column; text-align: center; gap: 12px; }
+            .deputy-text-block { align-items: center; }
+            .court-leader-card { flex-direction: column; text-align: center; }
+            .court-name, .court-sub-title { text-align: center; }
         }
     </style>
 </head>
-<body class="fade-in-up-effect">
+<body>
 
     <button class="theme-switcher-corner" onclick="toggleCustomTheme()">
         <i class="fa-solid fa-wand-magic-sparkles"></i> <span id="theme-btn-text">المظهر</span>
@@ -411,13 +386,14 @@
         <div class="nav-container">
             <div class="logo">
                 <i class="fa-solid fa-crown"></i>
-                <span>مملكة إيليت</span>
+                <span>ممــلكة إيليــت</span>
             </div>
             <nav class="nav-menu">
                 <a href="#" class="active">الرئيسية</a>
+                <a href="legends.html">ملـــوك مملكة </a>
                 <a href="dukes.html">دوقات المملكة</a>
                 <a href="guilds.html">النقابات والأدميرالات</a>
-                <a href="legends.html">المعتزلين والتكريم</a>
+           
             </nav>
         </div>
     </header>
@@ -431,7 +407,7 @@
             </div>
             
             <span class="text-elite-normal"><i class="fa-solid fa-bolt"></i> النخبة تصنع المجد دائماً <i class="fa-solid fa-bolt"></i></span>
-            <h1 class="emperor-name"><span>⚜️مملكة إيليت</span></h1>
+            <h1 class="emperor-name"><span>مملكة إيليت⚜️</span></h1>
             
             <div class="interactive-btn-group">
                 <button id="btn-royal-scroll" class="btn-interactive" onclick="toggleDisclosure('royal-scroll')">
@@ -446,59 +422,63 @@
             </div>
             
             <div id="box-royal-scroll" class="info-disclosure-box">
-                <h3>📜 السجل الملكي وقدرات التاج</h3>
-                <p><strong>الاسم الحركي:</strong> الإمبراطور العظيم إينوماكي.</p>
+                <h3>📜 السجل المـــلكي  </h3>
+                <p><strong>الاسم الحركي:</strong>  الإمبراطور العظيم إينوماكي.</p>
                 <p><strong>الرؤية والقدرة:</strong> توجيه الكلمات السحرية وقيادة المجالس الإدارية والسيادية العليا لضمان بقاء المملكة في الصدارة المطلقة دائماً.</p>
             </div>
 
             <div id="box-elite-bio" class="info-disclosure-box">
-                <h3>⚜️ عن إمبراطورية إيليت</h3>
-                <p>إمبراطورية النخبة والصفوة، تأسست لتجمع أقوى الأعضاء تحت قيادة منظمة وقوانين صارمة تحافظ على العدالة والتفاعل الدائم وبناء أمجاد لا تنتهي.</p>
+                <h3> عن إمبراطورية إيليـــــت⚜️</h3>
+                <p>إمبراطورية النخبة والصفوة، تأسست لتجمع أقوى الأعضاء تحت قيادة منظمة وحكيمة تحافظ على العدالة والتفاعل الدائم وبناء أمجاد لا تنتهي.</p>
             </div>
 
+            <!-- قائمة قادة إيليت العليا والمحكمة المحدثة -->
             <div id="box-leaders-list" class="leaders-disclosure-container">
                 <div class="deputies-free-flow-stack">
                     
+                    <!-- كرولو (نائب ملكي فقط) -->
                     <div class="single-leader-row" onclick="openLeaderModal('chrollo')">
                         <div class="deputy-avatar-wave-wrapper">
                             <img src="assets/images/chrollo.jpg" alt="النائب الملكي كرولو" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150'">
                         </div>
                         <div class="deputy-text-block">
                             <div>
-                                <div class="deputy-tag-wave-border"><i class="fa-solid fa-crown"></i> النائب الملكي لِلإمبراطور</div>
+                                <div class="deputy-tag-wave-border"><i class="fa-solid fa-crown"></i> النائب  لِلإمبراطور</div>
                             </div>
-                            <div class="deputy-name-plain">كرولو</div>
+                            <div class="deputy-name-plain">『 𝐶𝐻𝑅𝑂𝐿𝐿𝑂 ˹🕷˼ 』كرولو</div>
                         </div>
                     </div>
 
+                    <!-- باين (نائب إمبراطور فقط) -->
                     <div class="single-leader-row" onclick="openLeaderModal('pain')">
                         <div class="deputy-avatar-wave-wrapper">
-                            <img src="assets/images/pain.jpg" alt="النائب باين" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150'">
+                            <img src="assets/images/pain.jpg" alt="النائب بان" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150'">
                         </div>
                         <div class="deputy-text-block">
                             <div>
                                 <div class="deputy-tag-wave-border"><i class="fa-solid fa-star"></i> نائب الإمبراطور</div>
                             </div>
-                            <div class="deputy-name-plain">باين</div>
+                            <div class="deputy-name-plain">بان</div>
                         </div>
                     </div>
 
+                    <!-- ⚖️ واجهة مجلس القضاء الخاصة بالقاضي ريمورو المحاطة بـ موازين العدالة ⚖️ -->
                     <div class="court-disclosure-box">
                         <div class="court-header">
                             <i class="fa-solid fa-scale-balanced scale-icon"></i>
-                            <span>مجلس إيليت الأعلى لمحكمة إيليت</span>
+                            <span>مجلس إيليت الأعلى لمحكمة إيليت⚖️ هاوس اّدلر</span>
                             <i class="fa-solid fa-scale-balanced scale-icon"></i>
                         </div>
                         
                         <div class="court-leader-card">
                             <div class="court-avatar-glow">
-                                <img src="assets/images/rimuru.jpg" alt="المستشار ريمورو" onerror="this.src='https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=150'">
+                                <img src="assets/images/rimuru.jpg" alt="المستشار ريمورو او المدعو رايــــ🎩ــــن" onerror="this.src='https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=150'">
                             </div>
-                            <!-- 🏛️ تم تطبيق الوزن وتوحيد الخطوط لريمورو هنا بنجاح -->
-                            <div class="court-text-block">
+                            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px;">
+                                <!-- شارة إثبات صارمة لسلطته القضائية -->
                                 <div class="court-tag-proof"><i class="fa-solid fa-gavel"></i> رئيس محكمة إيليت العليا</div>
-                                <div class="court-name">المستشار ريمورو</div>
-                                <div class="court-sub-title">المستشار الأعلى لـ إيليت</div>
+                                <div class="court-name">"رايــــ🎩ــــن"المستشار ريمورو</div>
+                                <div class="court-sub-title">المستشار الأعلى لـ إيليت⚖️</div>
                             </div>
                         </div>
                     </div>
@@ -536,6 +516,7 @@
         </div>
     </section>
 
+    <!-- النوافذ المنبثقة المحدثة بعد إزالة صفة القاضي عن النواب -->
     <div id="modal-chrollo" class="leader-modal" onclick="closeLeaderModal('chrollo')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <button class="close-modal-btn" onclick="closeLeaderModal('chrollo')"><i class="fa-solid fa-xmark"></i></button>
@@ -545,7 +526,7 @@
             <span class="modal-title-tag">👑 المخطط الأول للعرش والسيادة</span>
             <h2 class="modal-name">النائب الملكي كرولو</h2>
             <p class="modal-bio-text">
-                هو العقل المدبر واليد اليمنى للإمبراطور في إدارة شؤون مملكة إيليت العليا. يتميز كرولو بذكائه الإستراتيجي الفذ ونظرته الثاقبة في إدارة الأزمات وقيادة المجالس، مكرساً جهوده لضمان بقاء النخبة في قمة هرم التميز والاستقرار الدائم.
+                هو العقل المدبر واليد اليمنى للإمبراطور في إدارة شؤون مملكة إيليت العليا. يتميز كرولو بذكائه الإستراتيجي الفذ ونظرته الثاقبة في إدارة الأزمات وقيادة المجالس،رمز الهيبة في وجوده ترتعش الابدان من الخوف لو صادف ى و التقيت به ابحث لك عن مخباء منه .
             </p>
         </div>
     </div>
@@ -554,12 +535,12 @@
         <div class="modal-content" onclick="event.stopPropagation()">
             <button class="close-modal-btn" onclick="closeLeaderModal('pain')"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-avatar-wrapper">
-                <img src="assets/images/pain.jpg" alt="باين" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=250'">
+                <img src="assets/images/pain.jpg" alt="بان" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=250'">
             </div>
             <span class="modal-title-tag">⭐ درع العرش والقبضة الحازمة</span>
-            <h2 class="modal-name">نائب الإمبراطور باين</h2>
+            <h2 class="modal-name">نائب الإمبراطور بان</h2>
             <p class="modal-bio-text">
-                هو رمز القوة والنظام الصارم في المملكة، والمسؤول المباشر عن متابعة الانضباط والتفاعل داخل إيليت. يمثل السد المنيع والدرع الحامي لقرارات التاج لضمان الحفاظ على هيبة المملكة وسلامتها الداخلية بلا تهاون.
+                هو رمز القوة والنظام لديه حس فكاهي و جميل في المملكة، والمسؤول المباشر عن متابعة الانضباط والتفاعل داخل إيليت. يمثل السد المنيع والدرع الحامي لقرارات التاج لضمان الحفاظ على هيبة المملكة وسلامتها الداخلية بلا تهاون.
             </p>
         </div>
     </div>
@@ -571,25 +552,6 @@
     </footer>
 
     <script>
-        // 🔄 السكريبت التلقائي لفحص حالة المظهر فور فتح الصفحة
-        (function() {
-            const savedTheme = localStorage.getItem('elite-theme');
-            if (savedTheme === 'mythic-purple') {
-                document.body.setAttribute('data-theme', 'mythic-purple');
-            }
-        })();
-
-        function toggleCustomTheme() {
-            const bodyEl = document.body;
-            if (bodyEl.hasAttribute('data-theme')) {
-                bodyEl.removeAttribute('data-theme');
-                localStorage.setItem('elite-theme', 'default'); // حفظ خيار الافتراضي
-            } else {
-                bodyEl.setAttribute('data-theme', 'mythic-purple');
-                localStorage.setItem('elite-theme', 'mythic-purple'); // حفظ خيار الأرجواني
-            }
-        }
-
         function toggleDisclosure(targetId) {
             document.getElementById('box-leaders-list').style.display = 'none';
             document.getElementById('btn-leaders-list').classList.remove('active-box');
@@ -625,6 +587,15 @@
                 leadersBox.style.display = 'block';
                 leadersBtn.classList.add('active-box');
                 leadersBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        function toggleCustomTheme() {
+            const bodyEl = document.body;
+            if (bodyEl.hasAttribute('data-theme')) {
+                bodyEl.removeAttribute('data-theme');
+            } else {
+                bodyEl.setAttribute('data-theme', 'mythic-purple');
             }
         }
 

@@ -18,7 +18,7 @@
             --bg-gradient: linear-gradient(45deg, #050508, #090414, #040914, #0d0212, #050508);
             --bg-card: rgba(12, 17, 27, 0.75); 
             --text-main: #ffffff;
-            --primary-color: #ffcc00; /* ذهبي ملكي نقية */
+            --primary-color: #ffcc00; /* ذهبي ملكي نقي */
             --secondary-glow: #ff5500; 
             --third-glow: #00ffff; 
             --font-family: 'Cairo', sans-serif;
@@ -56,6 +56,23 @@
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
+        }
+
+        /* 🎬 تأثير حركية الدخول الرايق والصعود التدريجي الفخم */
+        .fade-in-up-effect {
+            animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes mysteriousWave {
@@ -165,7 +182,6 @@
             padding-bottom: 40px;
         }
 
-        /* صورة خلفية إينو (جبل جليدي وضباب رمادي باهت) */
         .emperor-cover {
             height: 200px; 
             background: linear-gradient(rgba(5, 5, 8, 0.1), rgba(5, 5, 8, 0.99)), 
@@ -246,11 +262,10 @@
         .deputy-tag-wave-border i { color: var(--primary-color); }
         .deputy-name-plain { font-size: 26px; font-weight: 900; color: #ffffff; }
 
-        /* ==================== تحديث واجهة القاضي الأعلى ريمورو ومجلس القضاء ==================== */
         .court-disclosure-box {
             width: 100%;
             background: linear-gradient(135deg, rgba(5, 12, 22, 0.95), rgba(3, 5, 10, 0.98));
-            border: 2px solid #ffcc00;
+            border: 2px solid var(--primary-color);
             box-shadow: 0 0 25px rgba(255, 204, 0, 0.25), inset 0 0 20px rgba(0, 0, 0, 0.9);
             border-radius: 16px;
             padding: 30px 20px;
@@ -259,7 +274,6 @@
             position: relative;
         }
 
-        /* علامات الميزان التي تحف جانبي عنوان المحكمة وعنصرها */
         .court-header {
             display: flex;
             align-items: center;
@@ -306,12 +320,11 @@
         }
         .court-avatar-glow img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 2px solid #050508; }
 
-        /* شارة إثبات خاصة ومؤكدة بكون ريمورو قاضي إيليت الأعلى */
         .court-tag-proof {
             font-size: 13px;
-            background: #ef4444; /* لون أحمر قضائي صارم لبيان سلطة القاضي */
+            background: #ef4444; 
             color: #fff;
-            border: 1px solid #ffcc00;
+            border: 1px solid var(--primary-color);
             padding: 5px 16px;
             border-radius: 50px;
             font-weight: 800;
@@ -326,7 +339,6 @@
         .court-name { font-size: 24px; font-weight: 900; color: #fff; text-align: right; }
         .court-sub-title { font-size: 14px; color: var(--primary-color); font-weight: 700; text-align: right; }
 
-        /* باقي التنسيقات العامة */
         .central-action-area { text-align: center; padding: 40px 20px 10px 20px; max-width: 1200px; margin: 0 auto; }
         .btn-dukes-mega {
             display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: var(--bg-card);
@@ -338,15 +350,14 @@
         .section-container { max-width: 1200px; margin: 0 auto; padding: 30px 20px 60px 20px; }
         .section-title { text-align: center; font-size: 32px; font-weight: 800; margin-bottom: 40px; position: relative; color: var(--primary-color); }
         .section-title::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background-color: var(--primary-color); }
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .card { background-color: var(--bg-card); border: 1px solid rgba(255, 204, 0, 0.15); border-radius: 12px; padding: 30px 20px; text-align: center; transition: all 0.3s ease; }
         .card:hover { border-color: var(--primary-color); transform: translateY(-5px); }
         .card i { font-size: 40px; color: var(--primary-color); margin-bottom: 20px; }
 
         footer { background-color: #030305; padding: 40px 20px; text-align: center; border-top: 2px solid var(--primary-color); margin-top: 40px; }
 
-        /* نظام النوافذ المنبثقة للمعلومات */
         .leader-modal {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-color: rgba(3, 3, 5, 0.93); z-index: 3000; justify-content: center; align-items: center; padding: 20px; backdrop-filter: blur(8px);
@@ -361,20 +372,75 @@
         .modal-name { font-size: 32px; font-weight: 900; color: #fff; margin-bottom: 15px; }
         .modal-bio-text { color: #e2e8f0; font-size: 16px; line-height: 1.8; text-align: center; }
 
+        /* ==========================================================================
+           📱 التنسيقات الصارمة والوزن الدقيق للهواتف الذكية (Mobile First Adjustments)
+           ========================================================================== */
         @media (max-width: 768px) {
-            .nav-menu { display: none; }
-            .emperor-cover { height: 130px; } 
-            .emperor-profile-container { margin: -75px auto 0 auto; }
-            .wave-glow-avatar { width: 140px; height: 140px; }
-            .deputy-avatar-wave-wrapper { width: 110px; height: 110px; }
-            .single-leader-row { flex-direction: column; text-align: center; gap: 12px; }
+            /* تنزيل شريط التنقل العلوي وتوسيط الروابط لتناسب الشاشات الصغيرة */
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+                padding: 10px;
+            }
+            .nav-menu {
+                display: flex; /* تفعيل العرض لتظهر الأزرار بشكل متناسق في الجوال */
+                gap: 12px;
+                justify-content: center;
+                flex-wrap: wrap;
+                width: 100%;
+            }
+            .nav-menu a {
+                font-size: 13px;
+                padding: 4px 6px;
+            }
+            
+            /* إعادة موازنة أبعاد الهيدر وقسم الإمبراطور */
+            .emperor-section { margin-top: 105px; padding-bottom: 25px; }
+            .emperor-cover { height: 120px; } 
+            .emperor-profile-container { margin: -65px auto 0 auto; padding: 0 15px; }
+            
+            /* وزن أحجام الخطوط والعناوين للجوال منعاً لتشوه الكلمات */
+            .emperor-name { font-size: 26px; margin-bottom: 15px; }
+            .section-title { font-size: 24px; margin-bottom: 30px; }
+            
+            /* أزرار تفاعلية مريحة للضغط واللمس بالهاتف */
+            .interactive-btn-group { gap: 10px; width: 100%; padding: 0 5px; }
+            .btn-interactive { width: 100%; justify-content: center; font-size: 14px; padding: 12px; }
+            
+            /* وزن حجم الأفاتار والصور الدائرية */
+            .wave-glow-avatar { width: 130px; height: 130px; }
+            .deputy-avatar-wave-wrapper { width: 105px; height: 105px; }
+            
+            /* قلب الصفوف الأفقية للقادة إلى صفوف عمودية متناسقة ومريحة للمستخدم */
+            .single-leader-row { 
+                flex-direction: column !important; 
+                text-align: center !important; 
+                gap: 15px; 
+                padding: 20px 15px;
+            }
             .deputy-text-block { align-items: center; }
-            .court-leader-card { flex-direction: column; text-align: center; }
-            .court-name, .court-sub-title { text-align: center; }
+            .deputy-name-plain { font-size: 22px; }
+            
+            /* وزن محكمة ريمورو لتنقلب الأبعاد في الجوال بمرونة تامة */
+            .court-leader-card { 
+                flex-direction: column !important; 
+                text-align: center !important; 
+                padding: 20px 15px;
+                gap: 15px;
+            }
+            .court-leader-card > div[style*="display: flex"] {
+                align-items: center !important;
+            }
+            .court-name, .court-sub-title { text-align: center !important; }
+            .court-header { font-size: 16px; gap: 8px; }
+            .court-header .scale-icon { font-size: 20px; }
+
+            /* زر مجلس الدوقات الضخم */
+            .btn-dukes-mega { width: 90%; font-size: 16px; padding: 15px 20px; }
         }
     </style>
 </head>
-<body>
+<body class="fade-in-up-effect"> <!-- 🎬 تطبيق تأثير الدخول الرايق عند فتح الموقع -->
 
     <button class="theme-switcher-corner" onclick="toggleCustomTheme()">
         <i class="fa-solid fa-wand-magic-sparkles"></i> <span id="theme-btn-text">المظهر</span>
@@ -431,11 +497,9 @@
                 <p>إمبراطورية النخبة والصفوة، تأسست لتجمع أقوى الأعضاء تحت قيادة منظمة وقوانين صارمة تحافظ على العدالة والتفاعل الدائم وبناء أمجاد لا تنتهي.</p>
             </div>
 
-            <!-- قائمة قادة إيليت العليا والمحكمة المحدثة -->
             <div id="box-leaders-list" class="leaders-disclosure-container">
                 <div class="deputies-free-flow-stack">
                     
-                    <!-- كرولو (نائب ملكي فقط) -->
                     <div class="single-leader-row" onclick="openLeaderModal('chrollo')">
                         <div class="deputy-avatar-wave-wrapper">
                             <img src="assets/images/chrollo.jpg" alt="النائب الملكي كرولو" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150'">
@@ -448,7 +512,6 @@
                         </div>
                     </div>
 
-                    <!-- باين (نائب إمبراطور فقط) -->
                     <div class="single-leader-row" onclick="openLeaderModal('pain')">
                         <div class="deputy-avatar-wave-wrapper">
                             <img src="assets/images/pain.jpg" alt="النائب باين" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150'">
@@ -461,7 +524,6 @@
                         </div>
                     </div>
 
-                    <!-- ⚖️ واجهة مجلس القضاء الخاصة بالقاضي ريمورو المحاطة بـ موازين العدالة ⚖️ -->
                     <div class="court-disclosure-box">
                         <div class="court-header">
                             <i class="fa-solid fa-scale-balanced scale-icon"></i>
@@ -474,7 +536,6 @@
                                 <img src="assets/images/rimuru.jpg" alt="المستشار ريمورو" onerror="this.src='https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=150'">
                             </div>
                             <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px;">
-                                <!-- شارة إثبات صارمة لسلطته القضائية -->
                                 <div class="court-tag-proof"><i class="fa-solid fa-gavel"></i> رئيس محكمة إيليت العليا</div>
                                 <div class="court-name">المستشار ريمورو</div>
                                 <div class="court-sub-title">المستشار الأعلى لـ إيليت</div>
@@ -515,7 +576,6 @@
         </div>
     </section>
 
-    <!-- النوافذ المنبثقة المحدثة بعد إزالة صفة القاضي عن النواب -->
     <div id="modal-chrollo" class="leader-modal" onclick="closeLeaderModal('chrollo')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <button class="close-modal-btn" onclick="closeLeaderModal('chrollo')"><i class="fa-solid fa-xmark"></i></button>
@@ -551,6 +611,25 @@
     </footer>
 
     <script>
+        // 🔄 سكريبت ذكي للتحقق من المظهر المحفوظ مسبقاً عند فتح الصفحة فوراً
+        (function() {
+            const savedTheme = localStorage.getItem('elite-theme');
+            if (savedTheme === 'mythic-purple') {
+                document.body.setAttribute('data-theme', 'mythic-purple');
+            }
+        })();
+
+        function toggleCustomTheme() {
+            const bodyEl = document.body;
+            if (bodyEl.hasAttribute('data-theme')) {
+                bodyEl.removeAttribute('data-theme');
+                localStorage.setItem('elite-theme', 'default'); // حفظ الوضع الافتراضي
+            } else {
+                bodyEl.setAttribute('data-theme', 'mythic-purple');
+                localStorage.setItem('elite-theme', 'mythic-purple'); // حفظ الوضع الأرجواني
+            }
+        }
+
         function toggleDisclosure(targetId) {
             document.getElementById('box-leaders-list').style.display = 'none';
             document.getElementById('btn-leaders-list').classList.remove('active-box');
@@ -586,15 +665,6 @@
                 leadersBox.style.display = 'block';
                 leadersBtn.classList.add('active-box');
                 leadersBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }
-        }
-
-        function toggleCustomTheme() {
-            const bodyEl = document.body;
-            if (bodyEl.hasAttribute('data-theme')) {
-                bodyEl.removeAttribute('data-theme');
-            } else {
-                bodyEl.setAttribute('data-theme', 'mythic-purple');
             }
         }
 

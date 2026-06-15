@@ -3,28 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مملكة إيليت⚜️| الواجهة السينمائية الحديثة</title>
-    <!-- استدعاء خط Cairo الفخم من جوجل -->
+    <title>مملكة إيليت⚜️</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <!-- استدعاء مكتبة الأيقونات FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* المتغيرات العامة للألوان والتصميم */
         :root {
             --bg-dark: #050508;
             --bg-gradient: linear-gradient(45deg, #050508, #090414, #040914, #0d0212, #050508);
             --bg-card: rgba(12, 17, 27, 0.75); 
             --text-main: #ffffff;
-            --primary-color: #ffcc00; /* ذهبي ملكي نقي */
+            --primary-color: #ffcc00; 
             --secondary-glow: #ff5500; 
             --third-glow: #00ffff; 
             --font-family: 'Cairo', sans-serif;
             --particle-color: rgba(255, 204, 0, 0.5);
             --btn-bg: rgba(15, 22, 36, 0.7);
-            --court-color: #00e5ff; /* توهج سماوي خاص بالمحكمة والمستشارين */
+            --court-color: #00e5ff; 
             --court-gold: #ffaa00;
         }
 
@@ -58,7 +55,7 @@
             position: relative;
         }
 
-        /* 🎬 تأثير حركية الدخول الرايق والصعود التدريجي الفخم */
+        /* 🎬 تأثير حركة الدخول الصاعدة والفخمة للموقع بالكامل */
         .fade-in-up-effect {
             animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
             opacity: 0;
@@ -183,93 +180,96 @@
         }
 
         .emperor-cover {
-            height: 200px; 
+            height: 280px; 
             background: linear-gradient(rgba(5, 5, 8, 0.1), rgba(5, 5, 8, 0.99)), 
                         url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200') no-repeat center center/cover;
             filter: grayscale(75%) contrast(115%) brightness(40%);
             box-shadow: inset 0 -30px 40px rgba(5, 5, 8, 1);
         }
 
-        .emperor-profile-container { max-width: 900px; margin: -100px auto 0 auto; padding: 0 20px; position: relative; z-index: 5; }
+        .emperor-profile-container { max-width: 900px; margin: -140px auto 0 auto; padding: 0 20px; position: relative; z-index: 5; }
 
         .wave-glow-avatar {
-            width: 190px; height: 190px; margin: 0 auto 20px auto; border-radius: 50%; padding: 5px; 
+            width: 220px; height: 220px; margin: 0 auto 25px auto; border-radius: 50%; padding: 6px; 
             background: linear-gradient(45deg, var(--primary-color), var(--secondary-glow), var(--third-glow), var(--primary-color));
             background-size: 200% 200%;
             animation: lightPulseGlow 3s ease-in-out infinite alternate;
         }
 
         @keyframes lightPulseGlow {
-            0% { box-shadow: 0 0 15px var(--primary-color); background-position: 0% 50%; }
-            100% { box-shadow: 0 0 30px var(--primary-color); background-position: 100% 50%; }
+            0% { box-shadow: 0 0 20px var(--primary-color); background-position: 0% 50%; }
+            100% { box-shadow: 0 0 40px var(--primary-color); background-position: 100% 50%; }
         }
 
         .wave-glow-avatar img, .deputy-avatar-wave-wrapper img {
-            width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid #050508;
+            width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 5px solid #050508;
         }
 
         .text-elite-normal {
-            color: #ffffff; font-size: 15px; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 12px;
-            display: inline-block; background: rgba(0, 0, 0, 0.5); padding: 4px 16px; border-radius: 20px;
+            color: #ffffff; font-size: 16px; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 15px;
+            display: inline-block; background: rgba(0, 0, 0, 0.5); padding: 5px 20px; border-radius: 50px;
         }
-        .text-elite-normal i { color: var(--primary-color); margin: 0 6px; }
-        .emperor-name { font-size: 36px; font-weight: 900; color: #fff; margin-bottom: 20px; }
-        .emperor-name span { color: var(--primary-color); text-shadow: 0 0 25px var(--primary-color); }
+        .text-elite-normal i { color: var(--primary-color); margin: 0 8px; }
+        .emperor-name { font-size: 42px; font-weight: 900; color: #fff; margin-bottom: 25px; }
+        .emperor-name span { color: var(--primary-color); text-shadow: 0 0 30px var(--primary-color); }
 
-        .interactive-btn-group { display: flex; justify-content: center; gap: 15px; margin: 20px auto; flex-wrap: wrap; }
+        .interactive-btn-group { display: flex; justify-content: center; gap: 20px; margin: 25px auto; }
 
         .btn-interactive {
             background: var(--btn-bg); border: 2px solid var(--primary-color); color: var(--text-main);
-            padding: 12px 26px; border-radius: 8px; cursor: pointer; font-family: var(--font-family);
-            font-weight: 700; font-size: 15px; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 32px; border-radius: 10px; cursor: pointer; font-family: var(--font-family);
+            font-weight: 700; font-size: 16px; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
 
-        .btn-interactive:hover, .btn-interactive.active-box { background: var(--primary-color); color: #000; box-shadow: 0 0 20px var(--primary-color); }
+        .btn-interactive:hover, .btn-interactive.active-box { background: var(--primary-color); color: #000; box-shadow: 0 0 25px var(--primary-color); transform: translateY(-2px); }
 
         .info-disclosure-box {
-            display: none; margin: 15px auto; background: var(--bg-card); border: 1px solid var(--primary-color);
-            padding: 25px; border-radius: 12px; text-align: right; box-shadow: 0 12px 35px rgba(0,0,0,0.7);
-            animation: slideDownFade 0.3s ease forwards; max-width: 650px;
+            display: none; margin: 20px auto; background: var(--bg-card); border: 1px solid var(--primary-color);
+            padding: 30px; border-radius: 16px; text-align: right; box-shadow: 0 15px 45px rgba(0,0,0,0.8);
+            animation: slideDownFade 0.3s ease forwards; max-width: 700px;
         }
 
-        @keyframes slideDownFade { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideDownFade { from { opacity: 0; transform: translateY(-15px); } to { opacity: 1; transform: translateY(0); } }
 
-        .info-disclosure-box h3 { color: var(--primary-color); border-bottom: 1px solid rgba(255, 204, 0, 0.2); padding-bottom: 8px; margin-bottom: 12px; font-size: 20px; }
+        .info-disclosure-box h3 { color: var(--primary-color); border-bottom: 1px solid rgba(255, 204, 0, 0.2); padding-bottom: 10px; margin-bottom: 15px; font-size: 22px; }
 
-        .leaders-disclosure-container { display: none; margin-top: 30px; animation: slideDownFade 0.4s ease forwards; width: 100%; }
+        .leaders-disclosure-container { display: none; margin-top: 40px; animation: slideDownFade 0.4s ease forwards; width: 100%; }
 
-        .deputies-free-flow-stack { display: flex; flex-direction: column; align-items: center; gap: 25px; margin: 20px auto 0 auto; max-width: 650px; width: 100%; }
+        .deputies-free-flow-stack { display: flex; flex-direction: column; align-items: center; gap: 35px; margin: 30px auto 0 auto; max-width: 750px; width: 100%; }
 
         .single-leader-row {
-            display: flex; align-items: center; gap: 30px; width: 100%; text-align: right; padding: 15px;
-            background: rgba(10, 15, 26, 0.4); border-radius: 14px; border: 1px solid rgba(255, 204, 0, 0.05);
+            display: flex; align-items: center; gap: 40px; width: 100%; text-align: right; padding: 20px 25px;
+            background: rgba(10, 15, 26, 0.4); border-radius: 18px; border: 1px solid rgba(255, 204, 0, 0.05);
             cursor: pointer; transition: all 0.3s ease;
         }
         
-        .single-leader-row:hover { transform: scale(1.02); border-color: var(--primary-color); background: var(--bg-card); }
+        .single-leader-row:hover { transform: scale(1.03) translateY(-3px); border-color: var(--primary-color); background: var(--bg-card); box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
 
         .deputy-avatar-wave-wrapper {
-            width: 140px; height: 140px; border-radius: 50%; padding: 5px; flex-shrink: 0;
+            width: 150px; height: 150px; border-radius: 50%; padding: 5px; flex-shrink: 0;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-glow), var(--primary-color));
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
 
-        .deputy-text-block { display: flex; flex-direction: column; gap: 6px; }
+        .deputy-text-block { display: flex; flex-direction: column; gap: 8px; font-family: var(--font-family); }
 
         .deputy-tag-wave-border {
-            font-size: 12px; color: #ffffff; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;
-            padding: 4px 14px; border-radius: 50px; width: fit-content; background: #050508; border: 2px solid var(--primary-color);
+            font-size: 13px; color: #ffffff; font-weight: 700; display: inline-flex; align-items: center; gap: 8px;
+            padding: 5px 16px; border-radius: 50px; width: fit-content; background: #050508; border: 2px solid var(--primary-color);
+            font-family: var(--font-family);
         }
         .deputy-tag-wave-border i { color: var(--primary-color); }
-        .deputy-name-plain { font-size: 26px; font-weight: 900; color: #ffffff; }
+        .deputy-name-plain { font-size: 30px; font-weight: 900; color: #ffffff; letter-spacing: 0.5px; font-family: var(--font-family); }
 
         .court-disclosure-box {
             width: 100%;
             background: linear-gradient(135deg, rgba(5, 12, 22, 0.95), rgba(3, 5, 10, 0.98));
             border: 2px solid var(--primary-color);
-            box-shadow: 0 0 25px rgba(255, 204, 0, 0.25), inset 0 0 20px rgba(0, 0, 0, 0.9);
-            border-radius: 16px;
-            padding: 30px 20px;
-            margin-top: 25px;
+            box-shadow: 0 0 35px rgba(255, 204, 0, 0.3), inset 0 0 30px rgba(0, 0, 0, 0.9);
+            border-radius: 24px;
+            padding: 40px 30px;
+            margin-top: 35px;
             text-align: center;
             position: relative;
         }
@@ -278,169 +278,128 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 25px;
+            gap: 20px;
+            margin-bottom: 35px;
             color: #fff;
-            font-size: 22px;
+            font-size: 26px;
             font-weight: 900;
-            text-shadow: 0 0 10px var(--primary-color);
+            text-shadow: 0 0 15px var(--primary-color);
+            border-bottom: 1px dashed rgba(255, 204, 0, 0.2);
+            padding-bottom: 15px;
+            font-family: var(--font-family);
         }
         
         .court-header .scale-icon {
             color: var(--primary-color);
-            font-size: 26px;
+            font-size: 32px;
             animation: balanceSway 3s ease-in-out infinite alternate;
         }
 
         @keyframes balanceSway {
-            0% { transform: rotate(-5deg); }
-            100% { transform: rotate(5deg); }
+            0% { transform: rotate(-8deg); }
+            100% { transform: rotate(8deg); }
         }
 
         .court-leader-card {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 25px;
+            justify-content: flex-start;
+            gap: 35px;
             background: rgba(5, 5, 8, 0.8);
-            padding: 20px 30px;
-            border-radius: 12px;
-            max-width: 520px;
+            padding: 25px 35px;
+            border-radius: 20px;
+            max-width: 580px;
             margin: 0 auto;
             border: 2px solid var(--primary-color);
-            box-shadow: 0 0 15px rgba(255, 204, 0, 0.1);
+            box-shadow: 0 0 25px rgba(255, 204, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .court-leader-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 35px rgba(255, 204, 0, 0.3);
         }
 
         .court-avatar-glow {
-            width: 105px; height: 105px;
+            width: 120px; height: 120px;
             border-radius: 50%;
-            padding: 4px;
+            padding: 5px;
             background: linear-gradient(45deg, var(--primary-color), var(--secondary-glow));
-            box-shadow: 0 0 15px var(--primary-color);
+            box-shadow: 0 0 20px var(--primary-color);
+            flex-shrink: 0;
         }
-        .court-avatar-glow img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 2px solid #050508; }
+        .court-avatar-glow img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid #050508; }
+
+        /* ✨ إصلاح خط بطاقة ريمورو وجعله متناسقاً تماماً */
+        .court-text-block {
+            display: flex; 
+            flex-direction: column; 
+            align-items: flex-start; 
+            gap: 4px;
+            font-family: var(--font-family);
+        }
 
         .court-tag-proof {
-            font-size: 13px;
+            font-size: 14px;
             background: #ef4444; 
             color: #fff;
             border: 1px solid var(--primary-color);
-            padding: 5px 16px;
+            padding: 6px 20px;
             border-radius: 50px;
             font-weight: 800;
             width: fit-content;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+            gap: 8px;
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+            font-family: var(--font-family);
         }
 
-        .court-name { font-size: 24px; font-weight: 900; color: #fff; text-align: right; }
-        .court-sub-title { font-size: 14px; color: var(--primary-color); font-weight: 700; text-align: right; }
+        .court-name { font-size: 28px; font-weight: 900; color: #fff; text-align: right; font-family: var(--font-family); }
+        .court-sub-title { font-size: 15px; color: var(--primary-color); font-weight: 700; text-align: right; font-family: var(--font-family); }
 
-        .central-action-area { text-align: center; padding: 40px 20px 10px 20px; max-width: 1200px; margin: 0 auto; }
+        .central-action-area { text-align: center; padding: 50px 20px 20px 20px; max-width: 1200px; margin: 0 auto; }
         .btn-dukes-mega {
-            display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: var(--bg-card);
-            border: 2px solid var(--primary-color); color: #ffffff; padding: 18px 45px; font-size: 20px; font-weight: 800; border-radius: 50px; text-decoration: none;
-            transition: all 0.4s ease;
+            display: inline-flex; align-items: center; justify-content: center; gap: 15px; background: var(--bg-card);
+            border: 2px solid var(--primary-color); color: #ffffff; padding: 20px 55px; font-size: 22px; font-weight: 800; border-radius: 50px; text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 15px rgba(255, 204, 0, 0.1); transition: all 0.4s ease;
         }
-        .btn-dukes-mega:hover { transform: translateY(-5px); background: var(--primary-color); color: #000; }
+        .btn-dukes-mega:hover { transform: translateY(-5px); background: var(--primary-color); color: #000; box-shadow: 0 15px 35px var(--primary-color); }
 
-        .section-container { max-width: 1200px; margin: 0 auto; padding: 30px 20px 60px 20px; }
-        .section-title { text-align: center; font-size: 32px; font-weight: 800; margin-bottom: 40px; position: relative; color: var(--primary-color); }
-        .section-title::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background-color: var(--primary-color); }
+        .section-container { max-width: 1200px; margin: 0 auto; padding: 40px 20px 80px 20px; }
+        .section-title { text-align: center; font-size: 36px; font-weight: 800; margin-bottom: 50px; position: relative; color: var(--primary-color); }
+        .section-title::after { content: ''; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background-color: var(--primary-color); border-radius: 2px; }
         
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card { background-color: var(--bg-card); border: 1px solid rgba(255, 204, 0, 0.15); border-radius: 12px; padding: 30px 20px; text-align: center; transition: all 0.3s ease; }
-        .card:hover { border-color: var(--primary-color); transform: translateY(-5px); }
-        .card i { font-size: 40px; color: var(--primary-color); margin-bottom: 20px; }
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background-color: var(--bg-card); border: 1px solid rgba(255, 204, 0, 0.15); border-radius: 16px; padding: 40px 25px; text-align: center; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+        .card:hover { border-color: var(--primary-color); transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 15px rgba(255, 204, 0, 0.1); }
+        .card i { font-size: 45px; color: var(--primary-color); margin-bottom: 25px; }
 
-        footer { background-color: #030305; padding: 40px 20px; text-align: center; border-top: 2px solid var(--primary-color); margin-top: 40px; }
+        footer { background-color: #030305; padding: 50px 20px; text-align: center; border-top: 2px solid var(--primary-color); margin-top: 60px; }
 
         .leader-modal {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(3, 3, 5, 0.93); z-index: 3000; justify-content: center; align-items: center; padding: 20px; backdrop-filter: blur(8px);
+            background-color: rgba(3, 3, 5, 0.95); z-index: 3000; justify-content: center; align-items: center; padding: 20px; backdrop-filter: blur(10px);
         }
         .modal-content {
-            background: var(--bg-card); border: 2px solid var(--primary-color); max-width: 600px; width: 100%; border-radius: 20px; padding: 40px 30px; text-align: center; position: relative;
+            background: var(--bg-card); border: 2px solid var(--primary-color); max-width: 650px; width: 100%; border-radius: 24px; padding: 50px 40px; text-align: center; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.8);
         }
-        .close-modal-btn { position: absolute; top: 15px; left: 15px; background: rgba(255, 255, 255, 0.1); border: none; color: #fff; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; }
-        .modal-avatar-wrapper { width: 160px; height: 160px; margin: 0 auto 20px auto; border-radius: 50%; padding: 6px; background: linear-gradient(45deg, var(--primary-color), var(--secondary-glow)); }
-        .modal-avatar-wrapper img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid #050508; }
-        .modal-title-tag { background: #050508; border: 1px solid var(--primary-color); color: var(--primary-color); display: inline-block; padding: 4px 18px; border-radius: 50px; font-size: 13px; font-weight: 700; margin-bottom: 15px; }
-        .modal-name { font-size: 32px; font-weight: 900; color: #fff; margin-bottom: 15px; }
-        .modal-bio-text { color: #e2e8f0; font-size: 16px; line-height: 1.8; text-align: center; }
+        .close-modal-btn { position: absolute; top: 20px; left: 20px; background: rgba(255, 255, 255, 0.1); border: none; color: #fff; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 16px; transition: all 0.3s ease; }
+        .close-modal-btn:hover { background: #ef4444; color: #fff; }
+        .modal-avatar-wrapper { width: 180px; height: 180px; margin: 0 auto 25px auto; border-radius: 50%; padding: 6px; background: linear-gradient(45deg, var(--primary-color), var(--secondary-glow)); box-shadow: 0 0 25px var(--primary-color); }
+        .modal-avatar-wrapper img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 5px solid #050508; }
+        .modal-title-tag { background: #050508; border: 1px solid var(--primary-color); color: var(--primary-color); display: inline-block; padding: 5px 22px; border-radius: 50px; font-size: 14px; font-weight: 700; margin-bottom: 20px; box-shadow: 0 0 10px rgba(255, 204, 0, 0.2); }
+        .modal-name { font-size: 36px; font-weight: 900; color: #fff; margin-bottom: 20px; }
+        .modal-bio-text { color: #e2e8f0; font-size: 17px; line-height: 1.9; text-align: justify; text-align-last: center; }
 
-        /* ==========================================================================
-           📱 التنسيقات الصارمة والوزن الدقيق للهواتف الذكية (Mobile First Adjustments)
-           ========================================================================== */
         @media (max-width: 768px) {
-            /* تنزيل شريط التنقل العلوي وتوسيط الروابط لتناسب الشاشات الصغيرة */
-            .nav-container {
-                flex-direction: column;
-                gap: 12px;
-                padding: 10px;
-            }
-            .nav-menu {
-                display: flex; /* تفعيل العرض لتظهر الأزرار بشكل متناسق في الجوال */
-                gap: 12px;
-                justify-content: center;
-                flex-wrap: wrap;
-                width: 100%;
-            }
-            .nav-menu a {
-                font-size: 13px;
-                padding: 4px 6px;
-            }
-            
-            /* إعادة موازنة أبعاد الهيدر وقسم الإمبراطور */
-            .emperor-section { margin-top: 105px; padding-bottom: 25px; }
-            .emperor-cover { height: 120px; } 
-            .emperor-profile-container { margin: -65px auto 0 auto; padding: 0 15px; }
-            
-            /* وزن أحجام الخطوط والعناوين للجوال منعاً لتشوه الكلمات */
-            .emperor-name { font-size: 26px; margin-bottom: 15px; }
-            .section-title { font-size: 24px; margin-bottom: 30px; }
-            
-            /* أزرار تفاعلية مريحة للضغط واللمس بالهاتف */
-            .interactive-btn-group { gap: 10px; width: 100%; padding: 0 5px; }
-            .btn-interactive { width: 100%; justify-content: center; font-size: 14px; padding: 12px; }
-            
-            /* وزن حجم الأفاتار والصور الدائرية */
-            .wave-glow-avatar { width: 130px; height: 130px; }
-            .deputy-avatar-wave-wrapper { width: 105px; height: 105px; }
-            
-            /* قلب الصفوف الأفقية للقادة إلى صفوف عمودية متناسقة ومريحة للمستخدم */
-            .single-leader-row { 
-                flex-direction: column !important; 
-                text-align: center !important; 
-                gap: 15px; 
-                padding: 20px 15px;
-            }
-            .deputy-text-block { align-items: center; }
-            .deputy-name-plain { font-size: 22px; }
-            
-            /* وزن محكمة ريمورو لتنقلب الأبعاد في الجوال بمرونة تامة */
-            .court-leader-card { 
-                flex-direction: column !important; 
-                text-align: center !important; 
-                padding: 20px 15px;
-                gap: 15px;
-            }
-            .court-leader-card > div[style*="display: flex"] {
-                align-items: center !important;
-            }
-            .court-name, .court-sub-title { text-align: center !important; }
-            .court-header { font-size: 16px; gap: 8px; }
-            .court-header .scale-icon { font-size: 20px; }
-
-            /* زر مجلس الدوقات الضخم */
-            .btn-dukes-mega { width: 90%; font-size: 16px; padding: 15px 20px; }
+            .nav-menu { display: none; }
+            .emperor-section { margin-top: 60px; }
         }
     </style>
 </head>
-<body class="fade-in-up-effect"> <!-- 🎬 تطبيق تأثير الدخول الرايق عند فتح الموقع -->
+<body class="fade-in-up-effect">
 
     <button class="theme-switcher-corner" onclick="toggleCustomTheme()">
         <i class="fa-solid fa-wand-magic-sparkles"></i> <span id="theme-btn-text">المظهر</span>
@@ -535,7 +494,8 @@
                             <div class="court-avatar-glow">
                                 <img src="assets/images/rimuru.jpg" alt="المستشار ريمورو" onerror="this.src='https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=150'">
                             </div>
-                            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px;">
+                            <!-- 🏛️ تم تطبيق الوزن وتوحيد الخطوط لريمورو هنا بنجاح -->
+                            <div class="court-text-block">
                                 <div class="court-tag-proof"><i class="fa-solid fa-gavel"></i> رئيس محكمة إيليت العليا</div>
                                 <div class="court-name">المستشار ريمورو</div>
                                 <div class="court-sub-title">المستشار الأعلى لـ إيليت</div>
@@ -611,7 +571,7 @@
     </footer>
 
     <script>
-        // 🔄 سكريبت ذكي للتحقق من المظهر المحفوظ مسبقاً عند فتح الصفحة فوراً
+        // 🔄 السكريبت التلقائي لفحص حالة المظهر فور فتح الصفحة
         (function() {
             const savedTheme = localStorage.getItem('elite-theme');
             if (savedTheme === 'mythic-purple') {
@@ -623,10 +583,10 @@
             const bodyEl = document.body;
             if (bodyEl.hasAttribute('data-theme')) {
                 bodyEl.removeAttribute('data-theme');
-                localStorage.setItem('elite-theme', 'default'); // حفظ الوضع الافتراضي
+                localStorage.setItem('elite-theme', 'default'); // حفظ خيار الافتراضي
             } else {
                 bodyEl.setAttribute('data-theme', 'mythic-purple');
-                localStorage.setItem('elite-theme', 'mythic-purple'); // حفظ الوضع الأرجواني
+                localStorage.setItem('elite-theme', 'mythic-purple'); // حفظ خيار الأرجواني
             }
         }
 

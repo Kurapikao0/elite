@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#06070d">
+    <title>أدميرالات ونقابات إيليـــــت ⚜️</title>
+
+    <!-- استدعاء خط Cairo الفخم من جوجل -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- استدعاء مكتبة الأيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ملفات التنسيق الخاصة بالموقع -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+
+    <!-- تنسيقات إضافية خاصة بصفحة الأدميرالات لترتيب العرض -->
+    <style>
+        .admirals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .admiral-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            backdrop-filter: blur(6px);
+            position: relative;
+            overflow: hidden;
+        }
+        .admiral-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px var(--primary-soft);
+        }
+        .admiral-avatar {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px auto;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-glow));
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+        .admiral-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--bg-card-solid);
+        }
+        .guild-badge {
+            font-size: 11px;
+            background: var(--primary-soft);
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 3px 12px;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .admiral-name {
+            font-size: 20px;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        .guild-name {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        .capital-section {
+            background: rgba(241, 197, 69, 0.05);
+            border: 2px dashed var(--primary-color);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="snow-container"></div>
+
+    <!-- الهيدر وقائمة التنقل -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-crown"></i>
+                <span>ممــلكة إيليــت</span>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="index.html"><i class="fa-solid fa-house"></i> الرئيسية</a>
+                <a href="legends.html"><i class="fa-solid fa-medal"></i> ملـــوك مملكة</a>
+                <a href="dukes.html"><i class="fa-solid fa-chess-knight"></i> دوقات المملكة</a>
+                <a href="admirals.html" class="active"><i class="fa-solid fa-shield-halved"></i> النقابات والأدميرالات</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-switcher-corner" onclick="toggleCustomTheme()" aria-label="تبديل المظهر">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> <span class="theme-text">المظهر</span>
+                </button>
+                <button class="menu-toggle" id="menu-toggle-btn" onclick="toggleMobileNav()" aria-label="فتح القائمة" aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- القائمة المنسدلة للهواتف -->
+        <nav class="mobile-nav-panel" id="mobile-nav-panel">
+            <a href="index.html"><i class="fa-solid fa-house"></i> الرئيسية</a>
+            <a href="legends.html"><i class="fa-solid fa-medal"></i> ملـــوك مملكة</a>
+            <a href="dukes.html"><i class="fa-solid fa-chess-knight"></i> دوقات المملكة</a>
+            <a href="admirals.html" class="active"><i class="fa-solid fa-shield-halved"></i> النقابات والأدميرالات</a>
+        </nav>
+    </header>
+
+    <!-- محتوى الصفحة الرئيسي -->
+    <main class="section-container" style="margin-top: 100px;">
+        
+        <h2 class="section-title">مجلس الأدميرالات وقادة النقابات العسكرية</h2>
+        <p class="section-subtitle">القوة الضاربة والقبضة الحديدية لحماية أراضي التاج الإمبراطوري</p>
+
+        <!-- قسم عاصمة المملكة (حسب الصورة المرفقة) -->
+        <div class="capital-section">
+            <h3 style="color: var(--primary-color); font-weight: 900; margin-bottom: 10px;">
+                <i class="fa-solid fa-city"></i> عاصمة المملكة 🏛️
+            </h3>
+            <p style="font-size: 18px; font-weight: 700;">الكتيبة الحاكمة: <span style="color: var(--secondary-glow);">『 ستورم 』 🌪️</span></p>
+        </div>
+
+        <!-- شبكة عرض الأدميرالات -->
+        <div class="admirals-grid">
+
+            <!-- 1. الأدميرال ساي (القائد العسكري الأول للـ ستورم) -->
+            <div class="admiral-card" onclick="openAdmiralModal('sai')">
+                <div class="admiral-avatar">
+                    <img src="assets/images/sai.jpg" alt="الأدميرال ساي" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=150'">
+                </div>
+                <span class="guild-badge"><i class="fa-solid fa-bolt"></i> أدميرال ستورم</span>
+                <div class="admiral-name">【 ساي 卍 】</div>
+                <div class="guild-name">نقابة ⚔️ 『 ستورم 』</div>
+            </div>
+
+            <!-- 2. الأدميرال ايتاشي -->
+            <div class="admiral-card" onclick="openAdmiralModal('itachi')">
+                <div class="admiral-avatar">
+                    <img src="assets/images/itachi.jpg" alt="الأدميرال ايتاشي" onerror="this.src='https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=150'">
+                </div>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرال مويرا</span>
+                <div class="admiral-name">【 ايتاشي 🍂 】</div>
+                <div class="guild-name">نقابة 🎲 『 مويرا 』</div>
+            </div>
+
+            <!-- 3. الأدميرال كيوس -->
+            <div class="admiral-card" onclick="openAdmiralModal('chaos')">
+                <div class="admiral-avatar">
+                    <img src="assets/images/chaos.jpg" alt="الأدميرال كيوس" onerror="this.src='https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=150'">
+                </div>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرال ناروتو</span>
+                <div class="admiral-name">【 ناروتو ⚡ 】</div>
+                <div class="guild-name">نقابة ☠️ 『 كيوس 』</div>
+            </div>
+
+            <!-- 4. الأدميرال فورين -->
+            <div class="admiral-card" onclick="openAdmiralModal('foren')">
+                <div class="admiral-avatar">
+                    <img src="assets/images/foren.jpg" alt="الأدميرال فورين" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150'">
+                </div>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرال نوفليت</span>
+                <div class="admiral-name">【 نوفليت 🌊 】</div>
+                <div class="guild-name">نقابة 🔰 『 فورين 』</div>
+            </div>
+
+            <!-- 5. الأدميرال ايسكرا -->
+            <div class="admiral-card" onclick="openAdmiralModal('iskra')">
+                <div class="admiral-avatar">
+                    <img src="assets/images/iskra.jpg" alt="الأدميرال ايسكرا" onerror="this.src='https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=150'">
+                </div>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرال نيزوكو</span>
+                <div class="admiral-name">【 نيزوكو 🎀 】</div>
+                <div class="guild-name">نقابة 💥 『 ايسكرا 』</div>
+            </div>
+
+            <!-- يمكن إضافة باقي الأدميرالات المستخرجين من الصورة هنا بنفس الترتيب وببساطة تامة -->
+
+        </div>
+    </main>
+
+    <!-- ==================== النوافذ المنبثقة للأدميرالات (Modals) ==================== -->
+    
+    <!-- نافذة الأدميرال ساي -->
+    <div id="modal-sai" class="leader-modal" onclick="closeAdmiralModal('sai')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeAdmiralModal('sai')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/sai.jpg" alt="الأدميرال ساي" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">🌪️ أدميرال العاصمة وقائد كتيبة الأعاصير</span>
+            <h2 class="modal-name">【 ساي 卍 】</h2>
+            <p class="modal-bio-text">
+                القائد الأعلى لنقابة 『 ستورم 』 والحامي المطلق لعاصمة مملكة إيليت. يتميز بالسرعة الخاطفة والقدرات التكتيكية الاستثنائية التي تجعله أحد ركائز القوة العسكرية الأساسية في الإمبراطورية.
+            </p>
+        </div>
+    </div>
+
+    <!-- نافذة الأدميرال ايتاشي -->
+    <div id="modal-itachi" class="leader-modal" onclick="closeAdmiralModal('itachi')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeAdmiralModal('itachi')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/itachi.jpg" alt="الأدميرال ايتاشي" onerror="this.src='https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">🎲 لورد الظلال والاستراتيجيات المعقدة</span>
+            <h2 class="modal-name">【 ايتاشي 🍂 】</h2>
+            <p class="modal-bio-text">
+                أدميرال نقابة 『 مويرا 』 الفخمة. يمتلك الحكمة والهدوء اللذين يمكنانه من قلب موازين أي معركة حربية لصالح التاج، ويشرف على الفصائل القتالية الخاصة بنخبة المقاتلين.
+            </p>
+        </div>
+    </div>
+
+    <!-- نافذة الأدميرال كيوس -->
+    <div id="modal-chaos" class="leader-modal" onclick="closeAdmiralModal('chaos')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeAdmiralModal('chaos')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/chaos.jpg" alt="الأدميرال كيوس" onerror="this.src='https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">☠️ قائد الفوضى المنظمة والبرق الخاطف</span>
+            <h2 class="modal-name">【 ناروتو ⚡ 】</h2>
+            <p class="modal-bio-text">
+                أدميرال نقابة 『 كيوس 』 الشرسة. يمثل القوة الهجومية التي لا تعرف التراجع، مكلف بفتح الجبهات وتأمين الحدود الخارجية للمملكة ضد أي تهديد.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="copyright">
+            &copy; 2026 مملكة إيليت. جميع الحقوق محفوظة | صُنع بامتياز بواسطة قادة النخبة.
+        </div>
+    </footer>
+
+    <!-- السكربتات -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        function openAdmiralModal(admiralId) {
+            document.getElementById('modal-' + admiralId).style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeAdmiralModal(admiralId) {
+            document.getElementById('modal-' + admiralId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,591 @@
+/* ============================================================
+   تنسيقات خاصة بالصفحة الرئيسية — قسم الإمبراطور وقادة إيليت
+   ============================================================ */
+
+.emperor-section {
+    position: relative;
+    margin-top: var(--header-height);
+    text-align: center;
+    background-color: rgba(15, 18, 26, 0.2);
+    border-bottom: 1px solid var(--primary-soft);
+    padding-bottom: 40px;
+}
+
+.emperor-cover {
+    height: 200px;
+    background:
+        linear-gradient(rgba(95, 95, 110, 0.1), rgba(20, 18, 30, 0.99)),
+        url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200') no-repeat center center/cover;
+    filter: grayscale(75%) contrast(115%) brightness(40%);
+    box-shadow: inset 0 -30px 40px var(--bg-dark);
+}
+
+.emperor-profile-container {
+    max-width: 900px;
+    margin: -100px auto 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 5;
+}
+
+/* ✨ إطار إينوماكي المتدرج بالألوان والإشعاع الأسطوري */
+.wave-glow-avatar {
+    width: 200px; height: 200px;
+    margin: 0 auto 8px auto;
+    border-radius: 50%;
+    padding: 5px;
+    background: conic-gradient(
+        from 0deg,
+        #f1c545, #ff6a3d, #ff1e8e, #c98bff, #29e0ff, #00ff88, #f1c545
+    );
+    background-size: 200% 200%;
+    animation: rainbowRotate 4s linear infinite, emperorPulse 3s ease-in-out infinite alternate;
+    box-shadow:
+        0 0 0 3px rgba(0,0,0,0.5),
+        0 0 30px #f1c545,
+        0 0 60px rgba(201, 139, 255, 0.5),
+        0 0 100px rgba(41, 224, 255, 0.3);
+    position: relative;
+}
+
+@keyframes rainbowRotate {
+    0%   { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes emperorPulse {
+    0%   { box-shadow: 0 0 0 3px rgba(0,0,0,0.5), 0 0 30px #f1c545, 0 0 60px rgba(201,139,255,0.5), 0 0 100px rgba(41,224,255,0.3); }
+    100% { box-shadow: 0 0 0 3px rgba(0,0,0,0.5), 0 0 50px #ffdf70, 0 0 90px rgba(255,30,142,0.6), 0 0 140px rgba(41,224,255,0.5); }
+}
+
+/* اسم إينوماكي تحت الصورة */
+.emperor-founder-label {
+    font-size: clamp(13px, 3.5vw, 16px);
+    font-weight: 800;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    text-shadow: 0 0 10px var(--primary-color);
+    display: block;
+}
+
+.wave-glow-avatar img, .deputy-avatar-wave-wrapper img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--bg-dark);
+}
+
+.text-elite-normal {
+    color: #ffffff;
+    font-size: clamp(12px, 3vw, 15px);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 14px;
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 16px;
+    border-radius: 20px;
+}
+
+.text-elite-normal i { color: var(--primary-color); margin: 0 6px; }
+
+.emperor-name {
+    font-size: clamp(26px, 8vw, 36px);
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.emperor-name span {
+    color: var(--primary-color);
+    text-shadow: 0 0 25px var(--primary-soft);
+}
+
+/* ====================== أزرار التفاعل المُحسَّنة ====================== */
+.interactive-btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 22px auto;
+    flex-wrap: wrap;
+    max-width: 720px;
+}
+
+/* زر السجل الإمبراطوري */
+.btn-royal {
+    background: linear-gradient(135deg, rgba(241,197,69,0.15), rgba(241,197,69,0.05));
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+.btn-royal:hover, .btn-royal.active-box {
+    background: var(--primary-color);
+    color: #06070d;
+    box-shadow: 0 0 25px rgba(241,197,69,0.6);
+}
+
+/* زر نبذة عن إيليت */
+.btn-shield {
+    background: linear-gradient(135deg, rgba(41,224,255,0.12), rgba(41,224,255,0.03));
+    border: 2px solid var(--third-glow);
+    color: var(--third-glow);
+}
+.btn-shield:hover, .btn-shield.active-box {
+    background: var(--third-glow);
+    color: #06070d;
+    box-shadow: 0 0 25px rgba(41,224,255,0.6);
+}
+
+/* زر قادة إيليت */
+.btn-leaders {
+    background: linear-gradient(135deg, rgba(255,106,61,0.12), rgba(255,106,61,0.03));
+    border: 2px solid var(--secondary-glow);
+    color: var(--secondary-glow);
+}
+.btn-leaders:hover, .btn-leaders.active-box {
+    background: var(--secondary-glow);
+    color: #fff;
+    box-shadow: 0 0 25px rgba(255,106,61,0.6);
+}
+
+/* زر ملوك إيليت */
+.btn-kings {
+    background: linear-gradient(135deg, rgba(201,139,255,0.15), rgba(201,139,255,0.04));
+    border: 2px solid #c98bff;
+    color: #c98bff;
+}
+.btn-kings:hover, .btn-kings.active-box {
+    background: linear-gradient(135deg, #c98bff, #ff4fa3);
+    color: #fff;
+    box-shadow: 0 0 30px rgba(201,139,255,0.7);
+}
+
+/* ====================== قائمة قادة إيليت العليا ====================== */
+.leaders-disclosure-container {
+    display: none;
+    margin-top: 30px;
+    animation: slideDownFade 0.4s ease forwards;
+    width: 100%;
+}
+
+.deputies-free-flow-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    margin: 20px auto 0 auto;
+    max-width: 650px;
+    width: 100%;
+}
+
+/* ✨ بطاقة كرولو وبان — أكبر وأكثر إشعاعاً وأسطورية */
+.single-leader-row {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    width: 100%;
+    text-align: right;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(10,15,26,0.7), rgba(4,5,10,0.9));
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.single-leader-row::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--primary-soft), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.single-leader-row:hover::before { opacity: 1; }
+
+.single-leader-row:hover {
+    transform: scale(1.03);
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, rgba(16,20,32,0.95), rgba(8,10,18,0.99));
+    box-shadow: 0 8px 40px rgba(0,0,0,0.6), 0 0 20px var(--primary-soft);
+}
+
+.single-leader-row:active { transform: scale(0.99); }
+
+/* ✨ صورة كرولو وبان أكبر مع إشعاعات أسطورية */
+.deputy-avatar-wave-wrapper {
+    width: 130px; height: 130px;
+    border-radius: 50%;
+    padding: 5px;
+    flex-shrink: 0;
+    position: relative;
+    animation: legendaryGlowPulse 3s ease-in-out infinite alternate;
+}
+
+/* كرولو — إطار ذهبي بنفسجي */
+.deputy-avatar-wave-wrapper.chrollo-frame {
+    background: conic-gradient(from 0deg, #f1c545, #c98bff, #ff4fa3, #f1c545);
+    box-shadow:
+        0 0 0 3px rgba(0,0,0,0.5),
+        0 0 20px #f1c545,
+        0 0 45px rgba(201,139,255,0.7),
+        0 0 70px rgba(255,79,163,0.4);
+    animation: chrolloSpin 5s linear infinite, legendaryGlowPulse 3s ease-in-out infinite alternate;
+}
+
+/* بان — إطار ناري أحمر برتقالي */
+.deputy-avatar-wave-wrapper.ban-frame {
+    background: conic-gradient(from 0deg, #ff6a3d, #ff1e1e, #ffdf00, #ff6a3d);
+    box-shadow:
+        0 0 0 3px rgba(0,0,0,0.5),
+        0 0 20px #ff6a3d,
+        0 0 45px rgba(255,30,30,0.7),
+        0 0 70px rgba(255,223,0,0.4);
+    animation: banFire 4s linear infinite, banGlowPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes chrolloSpin {
+    0%   { filter: hue-rotate(0deg) brightness(1); }
+    100% { filter: hue-rotate(360deg) brightness(1.2); }
+}
+
+@keyframes banFire {
+    0%   { filter: hue-rotate(0deg); }
+    50%  { filter: hue-rotate(20deg) brightness(1.3); }
+    100% { filter: hue-rotate(0deg); }
+}
+
+@keyframes legendaryGlowPulse {
+    0%   { transform: scale(1); }
+    100% { transform: scale(1.04); }
+}
+
+@keyframes banGlowPulse {
+    0%   { box-shadow: 0 0 0 3px rgba(0,0,0,0.5), 0 0 20px #ff6a3d, 0 0 45px rgba(255,30,30,0.7), 0 0 70px rgba(255,223,0,0.4); }
+    100% { box-shadow: 0 0 0 3px rgba(0,0,0,0.5), 0 0 35px #ff8a5d, 0 0 65px rgba(255,50,50,0.9), 0 0 100px rgba(255,223,0,0.6); }
+}
+
+.deputy-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.deputy-tag-wave-border {
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 14px;
+    border-radius: 50px;
+    width: fit-content;
+    background: var(--bg-dark);
+    border: 2px solid var(--primary-color);
+}
+
+.deputy-tag-wave-border i { color: var(--primary-color); }
+
+.deputy-name-plain {
+    font-size: clamp(20px, 5vw, 28px);
+    font-weight: 900;
+    color: #ffffff;
+    overflow-wrap: break-word;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+/* ====================== مجلس القضاء — ريمورو ====================== */
+.court-disclosure-box {
+    width: 100%;
+    background: linear-gradient(135deg, rgba(8, 14, 24, 0.95), rgba(4, 5, 10, 0.98));
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 25px var(--primary-soft), inset 0 0 20px rgba(0, 0, 0, 0.9);
+    border-radius: var(--radius-lg);
+    padding: 28px 20px;
+    margin-top: 24px;
+    text-align: center;
+    position: relative;
+}
+
+.court-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    color: #fff;
+    font-size: clamp(15px, 4vw, 22px);
+    font-weight: 900;
+    text-shadow: 0 0 10px var(--primary-soft);
+    flex-wrap: wrap;
+    line-height: 1.6;
+}
+
+.court-header .scale-icon {
+    color: var(--primary-color);
+    font-size: clamp(18px, 4.5vw, 26px);
+    animation: balanceSway 3s ease-in-out infinite alternate;
+}
+
+@keyframes balanceSway {
+    0%   { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
+}
+
+.court-leader-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    background: rgba(4, 5, 10, 0.8);
+    padding: 20px 26px;
+    border-radius: var(--radius-md);
+    max-width: 520px;
+    margin: 0 auto 20px auto;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-soft);
+}
+
+.court-avatar-glow {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    padding: 4px;
+    flex-shrink: 0;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-glow));
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+.court-avatar-glow img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--bg-dark);
+}
+
+.court-tag-proof {
+    font-size: 12px;
+    background: var(--court-red);
+    color: #fff;
+    border: 1px solid var(--primary-color);
+    padding: 5px 16px;
+    border-radius: 50px;
+    font-weight: 800;
+    width: fit-content;
+    margin-bottom: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+}
+
+.court-name {
+    font-size: clamp(17px, 4.5vw, 24px);
+    font-weight: 900;
+    color: #fff;
+    text-align: right;
+    overflow-wrap: break-word;
+}
+
+.court-sub-title {
+    font-size: clamp(12px, 3.5vw, 14px);
+    color: var(--primary-color);
+    font-weight: 700;
+    text-align: right;
+}
+
+/* ====================== لورد آرثر ====================== */
+.lord-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    background: linear-gradient(135deg, rgba(10,5,25,0.9), rgba(20,5,40,0.95));
+    padding: 20px 26px;
+    border-radius: var(--radius-md);
+    max-width: 520px;
+    margin: 0 auto 20px auto;
+    border: 2px solid #c98bff;
+    box-shadow: 0 0 20px rgba(201,139,255,0.35), 0 0 50px rgba(201,139,255,0.1);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.lord-card:hover {
+    box-shadow: 0 0 35px rgba(201,139,255,0.6), 0 0 70px rgba(201,139,255,0.2);
+    transform: translateY(-3px);
+}
+
+.lord-avatar-glow {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    padding: 4px;
+    flex-shrink: 0;
+    background: conic-gradient(from 0deg, #c98bff, #ff4fa3, #29e0ff, #c98bff);
+    box-shadow: 0 0 20px rgba(201,139,255,0.8), 0 0 40px rgba(255,79,163,0.4);
+    animation: arthurAura 4s linear infinite;
+}
+
+@keyframes arthurAura {
+    0%   { filter: hue-rotate(0deg); box-shadow: 0 0 20px rgba(201,139,255,0.8), 0 0 40px rgba(255,79,163,0.4); }
+    50%  { filter: hue-rotate(30deg); box-shadow: 0 0 30px rgba(255,79,163,0.9), 0 0 60px rgba(201,139,255,0.5); }
+    100% { filter: hue-rotate(0deg); box-shadow: 0 0 20px rgba(201,139,255,0.8), 0 0 40px rgba(255,79,163,0.4); }
+}
+
+.lord-avatar-glow img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--bg-dark);
+}
+
+.lord-tag {
+    font-size: 12px;
+    background: linear-gradient(135deg, #3d0066, #1a0033);
+    color: #c98bff;
+    border: 1px solid #c98bff;
+    padding: 5px 16px;
+    border-radius: 50px;
+    font-weight: 800;
+    width: fit-content;
+    margin-bottom: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 0 10px rgba(201,139,255,0.4);
+}
+
+.lord-name {
+    font-size: clamp(17px, 4.5vw, 24px);
+    font-weight: 900;
+    color: #e2c7ff;
+    text-align: right;
+    overflow-wrap: break-word;
+    text-shadow: 0 0 8px rgba(201,139,255,0.6);
+}
+
+.lord-sub-title {
+    font-size: clamp(12px, 3.5vw, 14px);
+    color: #c98bff;
+    font-weight: 700;
+    text-align: right;
+}
+
+/* ====================== الماركيز شادو ====================== */
+.marquis-banner {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto 10px auto;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 2px solid #29e0ff;
+    box-shadow: 0 0 20px rgba(41,224,255,0.3), 0 0 50px rgba(41,224,255,0.1);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    background: linear-gradient(135deg, rgba(0,20,40,0.95), rgba(0,5,20,0.99));
+    display: flex;
+    align-items: center;
+    gap: 0;
+    position: relative;
+}
+
+.marquis-banner:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 35px rgba(41,224,255,0.6), 0 0 70px rgba(41,224,255,0.2);
+}
+
+.marquis-shadow-stripe {
+    width: 6px;
+    height: 100%;
+    min-height: 130px;
+    background: linear-gradient(180deg, #29e0ff, #0066cc, #29e0ff);
+    flex-shrink: 0;
+    animation: shadowPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes shadowPulse {
+    0%   { opacity: 0.7; }
+    100% { opacity: 1; filter: brightness(1.4); }
+}
+
+.marquis-avatar-wrapper {
+    width: 90px; height: 90px;
+    border-radius: 50%;
+    padding: 4px;
+    margin: 20px 18px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #29e0ff, #0066cc);
+    box-shadow: 0 0 15px rgba(41,224,255,0.7);
+}
+
+.marquis-avatar-wrapper img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgba(0,0,0,0.5);
+}
+
+.marquis-info {
+    flex: 1;
+    padding: 20px 20px 20px 0;
+    text-align: right;
+}
+
+.marquis-rank-badge {
+    font-size: 11px;
+    background: linear-gradient(135deg, rgba(41,224,255,0.2), rgba(41,224,255,0.05));
+    color: #29e0ff;
+    border: 1px solid #29e0ff;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 8px;
+}
+
+.marquis-name {
+    font-size: clamp(16px, 4.5vw, 22px);
+    font-weight: 900;
+    color: #e0f7ff;
+    text-shadow: 0 0 8px rgba(41,224,255,0.5);
+    margin-bottom: 6px;
+}
+
+.marquis-desc {
+    font-size: clamp(11px, 3vw, 13px);
+    color: rgba(180,220,255,0.8);
+    line-height: 1.6;
+}
+
+/* ============================== التجاوب ============================== */
+@media (max-width: 768px) {
+    .emperor-cover { height: 130px; }
+    .emperor-profile-container { margin: -75px auto 0 auto; }
+    .wave-glow-avatar { width: 140px; height: 140px; }
+
+    .deputy-avatar-wave-wrapper { width: 100px; height: 100px; }
+    .single-leader-row { flex-direction: column; text-align: center; gap: 12px; padding: 18px 14px; }
+    .deputy-text-block { align-items: center; }
+
+    .court-disclosure-box { padding: 22px 14px; }
+    .court-leader-card { flex-direction: column; text-align: center; padding: 20px 16px; gap: 14px; }
+    .court-name, .court-sub-title { text-align: center; }
+    .lord-card { flex-direction: column; text-align: center; padding: 20px 16px; gap: 14px; }
+    .lord-name, .lord-sub-title { text-align: center; }
+    .marquis-banner { flex-direction: column; }
+    .marquis-shadow-stripe { width: 100%; height: 5px; min-height: unset; }
+    .marquis-info { text-align: center; padding: 0 16px 20px 16px; }
+    .marquis-rank-badge { margin: 0 auto 8px auto; }
+}
+
+@media (max-width: 380px) {
+    .wave-glow-avatar { width: 115px; height: 115px; }
+    .deputy-avatar-wave-wrapper { width: 85px; height: 85px; }
+}

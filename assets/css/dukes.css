@@ -1,0 +1,127 @@
+/* ============================================================
+   تنسيقات خاصة بصفحة دوقات المملكة — شبكة بطاقات متجاوبة
+   ============================================================ */
+
+.dukes-section {
+    margin-top: calc(var(--header-height) + 40px);
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+.dukes-section .section-title {
+    font-size: clamp(22px, 6vw, 36px);
+    margin-bottom: 8px;
+    padding: 0 16px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
+    overflow-wrap: break-word;
+}
+
+.dukes-section .section-title::after { content: none; }
+
+.dukes-section .section-title span {
+    color: var(--primary-color);
+    text-shadow: 0 0 20px var(--primary-soft);
+}
+
+/* ====================== شبكة بطاقات الدوقات ====================== */
+.dukes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 26px;
+    max-width: var(--container-max);
+    margin: 50px auto 0 auto;
+    padding: 0 20px;
+}
+
+.duke-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+    padding: 30px 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+    backdrop-filter: blur(4px);
+}
+
+.duke-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 22px var(--primary-soft);
+}
+
+/* إطار الصورة المتموج */
+.duke-avatar-wave-wrapper {
+    width: 116px;
+    height: 116px;
+    border-radius: 50%;
+    padding: 5px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-glow), var(--third-glow), var(--primary-color));
+    background-size: 300% 300%;
+    animation: extremeWaveGlow 6s linear infinite;
+    box-shadow: 0 0 18px var(--primary-soft);
+}
+
+@keyframes extremeWaveGlow {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.duke-avatar-wave-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--bg-dark);
+}
+
+.duke-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.duke-tag-wave-border {
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 14px;
+    border-radius: 50px;
+    width: fit-content;
+    background: var(--bg-dark);
+    border: 2px solid var(--primary-color);
+}
+
+.duke-tag-wave-border i { color: var(--primary-color); }
+
+.duke-name-plain {
+    font-size: clamp(18px, 4.5vw, 23px);
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================== التجاوب ============================== */
+@media (max-width: 768px) {
+    .dukes-section { margin-top: calc(var(--header-height) + 24px); }
+    .dukes-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 16px;
+        margin-top: 34px;
+    }
+    .duke-card { padding: 22px 12px; gap: 10px; }
+    .duke-avatar-wave-wrapper { width: 92px; height: 92px; }
+}
+
+@media (max-width: 380px) {
+    .dukes-grid { grid-template-columns: repeat(2, 1fr); }
+}

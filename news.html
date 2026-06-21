@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#06070d">
+    <title>أخبار التاج الإمبراطوري - مملكة إيليـــــت ⚜️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+
+    <style>
+        /* أنماط صفحة الأخبار المبسطة */
+        .news-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .news-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-lg);
+            padding: 25px;
+            backdrop-filter: blur(6px);
+            transition: all var(--transition-base);
+        }
+        .news-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 25px var(--primary-soft);
+        }
+        .news-date {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .news-title {
+            font-size: 22px;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        .news-content p {
+            font-size: 15px;
+            color: #e0e0e0;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .guild-list {
+            background: rgba(255, 255, 255, 0.02);
+            border-right: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        }
+        .guild-item {
+            font-size: 15px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        .guild-item:last-child { margin-bottom: 0; }
+        .guild-tag { font-weight: 700; color: var(--secondary-glow); }
+
+        /* 📊 حاوية الإحصائيات الإجمالية مع حواف ملونة متوهجة 📊 */
+        .stats-box {
+            margin-top: 40px;
+            background: linear-gradient(180deg, rgba(11, 14, 26, 0.85) 0%, rgba(6, 7, 13, 0.98) 100%);
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 0 20px rgba(241, 197, 69, 0.15);
+            border-radius: var(--radius-lg);
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .stats-grid-2x2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .stat-card-mini {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .stat-card-mini:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-glow);
+            background: rgba(241, 197, 69, 0.02);
+            box-shadow: 0 5px 15px rgba(241, 197, 69, 0.1);
+        }
+        .stat-icon-mini {
+            font-size: 26px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .stat-num-mini {
+            font-size: 28px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        .stat-lbl-mini {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        /* 📨 قسم الشريط المطور والزر المشع 📨 */
+        .telegram-join-box {
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px dashed var(--border-soft);
+            border-radius: var(--radius-md);
+            padding: 25px 20px;
+            text-align: center;
+        }
+        
+        .btn-return-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--secondary-glow) 0%, var(--primary-color) 50%, var(--secondary-glow) 100%);
+            background-size: 200% auto;
+            color: #000;
+            font-weight: 900;
+            padding: 14px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0 15px rgba(241, 197, 69, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+            transition: all 0.4s ease;
+            animation: pulse-glow 2s infinite ease-in-out;
+        }
+        
+        .btn-return-home:hover {
+            transform: scale(1.05) translateY(-2px);
+            background-position: right center;
+            color: #000;
+            box-shadow: 0 0 25px rgba(241, 197, 69, 0.8), 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 15px rgba(241, 197, 69, 0.4); }
+            50% { box-shadow: 0 0 25px rgba(241, 197, 69, 0.7); }
+            100% { box-shadow: 0 0 15px rgba(241, 197, 69, 0.4); }
+        }
+
+        @media (max-width: 480px) {
+            .stat-num-mini { font-size: 24px; }
+            .stat-lbl-mini { font-size: 11px; }
+            .stat-icon-mini { font-size: 22px; }
+            .btn-return-home { width: 100%; justify-content: center; padding: 14px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="snow-container"></div>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-crown"></i>
+                <span>ممــلكة إيليــت</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html"><i class="fa-solid fa-house"></i> الرئيسية</a>
+                <a href="legends.html"><i class="fa-solid fa-medal"></i> ملـــوك مملكة</a>
+                <a href="dukes.html"><i class="fa-solid fa-chess-knight"></i> دوقات المملكة</a>
+                <a href="admirals.html"><i class="fa-solid fa-shield-halved"></i> النقابات والأدميرالات</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="theme-switcher-corner" onclick="toggleCustomTheme()">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> <span class="theme-text">المظهر</span>
+                </button>
+                <button class="menu-toggle" id="menu-toggle-btn" onclick="toggleMobileNav()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <nav class="mobile-nav-panel" id="mobile-nav-panel">
+            <a href="index.html">الرئيسية</a>
+            <a href="legends.html">ملـــوك مملكة</a>
+            <a href="dukes.html">دوقات المملكة</a>
+            <a href="admirals.html">النقابات والأدميرالات</a>
+        </nav>
+    </header>
+
+    <main class="section-container" style="margin-top: 100px;">
+        
+        <h2 class="section-title">أخبار التاج الإمبراطوري 📜</h2>
+        <p class="section-subtitle">آخر مستجدات وأحداث إمبراطورية إيليت</p>
+
+        <div class="news-container">
+            <div class="news-card">
+                <div class="news-date"><i class="fa-regular fa-calendar"></i> يونيو 2026</div>
+                <h3 class="news-title">رسمياً: اعتماد أول ثلاث نقابات عسكرية كبرى في الساحة!</h3>
+                
+                <div class="news-content">
+                    <p>أعلن مجلس النخبة عن انطلاق الفصائل الثلاثة الأولى لإشعال المواجهات وتثبيت القوة في المملكة:</p>
+                    
+                    <div class="guild-list">
+                        <div class="guild-item"><span class="guild-tag">💥 نقابة ايسكرا:</span> تابعة لـ <strong>دوقية تومان</strong> بقيادة الأدميرالة <span style="color: var(--primary-color);">نيزوكو</span>.</div>
+                        <div class="guild-item"><span class="guild-tag">⛈️ نقابة فلوكس:</span> تابعة لـ <strong>قطاع ألفا</strong> بقيادة الأدميرال <span style="color: var(--primary-color);">إيتشيغو</span>.</div>
+                        <div class="guild-item"><span class="guild-tag">🌪️ نقابة ستورم:</span> تابعة لـ <strong>دوقية تومان</strong> بقيادة الأدميرال <span style="color: var(--primary-color);">ساي</span>.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 📊 حاوية الإحصائيات مع الحواف الملونة والمتوهجة 📊 -->
+        <div class="stats-box">
+            <h3 style="color: var(--primary-color); font-weight: 900; font-size: 22px; margin-bottom: 5px;">
+                <i class="fa-solid fa-chart-pie"></i> الخلاصة الإمبراطورية 🏛️
+            </h3>
+            <p style="color: var(--text-muted); font-size: 13px;">التعداد الرسمي المعتمد داخل الإمبراطورية</p>
+            
+            <div class="stats-grid-2x2">
+                <div class="stat-card-mini">
+                    <div class="stat-icon-mini"><i class="fa-solid fa-user-shield"></i></div>
+                    <div class="stat-num-mini">245</div>
+                    <div class="stat-lbl-mini">المشرفين</div>
+                </div>
+
+                <div class="stat-card-mini">
+                    <div class="stat-icon-mini"><i class="fa-solid fa-chess-king"></i></div>
+                    <div class="stat-num-mini">12</div>
+                    <div class="stat-lbl-mini">الدوقات</div>
+                </div>
+
+                <div class="stat-card-mini">
+                    <div class="stat-icon-mini"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="stat-num-mini">24</div>
+                    <div class="stat-lbl-mini">النقابات</div>
+                </div>
+
+                <div class="stat-card-mini">
+                    <div class="stat-icon-mini"><i class="fa-solid fa-id-card-clip"></i></div>
+                    <div class="stat-num-mini">20</div>
+                    <div class="stat-lbl-mini">الأدميرالات</div>
+                </div>
+            </div>
+
+            <!-- 📨 قسم الشريط المطور والزر المشع 📨 -->
+            <div class="telegram-join-box">
+                <a href="index.html" class="btn-return-home">
+                    <i class="fa-solid fa-house"></i> العودة إلى الصفحة الرئيسية
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="copyright">
+            &copy; 2026 مملكة إيليت. جميع الحقوق محفوظة.
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        function toggleMobileNav() {
+            const panel = document.getElementById('mobile-nav-panel');
+            panel.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

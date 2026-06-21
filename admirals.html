@@ -6,19 +6,15 @@
     <meta name="theme-color" content="#06070d">
     <title>أدميرالات ونقابات إيليـــــت ⚜️</title>
 
-    <!-- استدعاء خط Cairo الفخم من جوجل -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
-    <!-- استدعاء مكتبة الأيقونات FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- ملفات التنسيق الخاصة بالموقع -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/home.css">
 
-    <!-- تنسيقات إضافية خاصة بصفحة الأدميرالات لترتيب العرض -->
     <style>
         .admirals-grid {
             display: grid;
@@ -95,7 +91,6 @@
 
     <div id="snow-container"></div>
 
-    <!-- الهيدر وقائمة التنقل -->
     <header>
         <div class="nav-container">
             <div class="logo">
@@ -121,7 +116,6 @@
             </div>
         </div>
 
-        <!-- القائمة المنسدلة للهواتف -->
         <nav class="mobile-nav-panel" id="mobile-nav-panel">
             <a href="index.html"><i class="fa-solid fa-house"></i> الرئيسية</a>
             <a href="legends.html"><i class="fa-solid fa-medal"></i> ملـــوك مملكة</a>
@@ -130,13 +124,11 @@
         </nav>
     </header>
 
-    <!-- محتوى الصفحة الرئيسي -->
     <main class="section-container" style="margin-top: 100px;">
         
         <h2 class="section-title">مجلس الأدميرالات وقادة النقابات العسكرية</h2>
         <p class="section-subtitle">القوة الضاربة والقبضة الحديدية لحماية أراضي التاج الإمبراطوري</p>
 
-        <!-- قسم عاصمة المملكة (حسب الصورة المرفقة) -->
         <div class="capital-section">
             <h3 style="color: var(--primary-color); font-weight: 900; margin-bottom: 10px;">
                 <i class="fa-solid fa-city"></i> عاصمة المملكة 🏛️
@@ -144,20 +136,17 @@
             <p style="font-size: 18px; font-weight: 700;">الكتيبة الحاكمة: <span style="color: var(--secondary-glow);">『 ستورم 』 🌪️</span></p>
         </div>
 
-        <!-- شبكة عرض الأدميرالات -->
         <div class="admirals-grid">
 
-            <!-- 1. الأدميرال ساي (القائد العسكري الأول للـ ستورم) -->
             <div class="admiral-card" onclick="openAdmiralModal('sai')">
                 <div class="admiral-avatar">
                     <img src="assets/images/sai.jpg" alt="الأدميرال ساي" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=150'">
                 </div>
                 <span class="guild-badge"><i class="fa-solid fa-bolt"></i> أدميرال ستورم</span>
                 <div class="admiral-name">【 ساي 卍 】</div>
-                <div class="guild-name">نقابة ⚔️ 『 ستورم 』</div>
+                <div class="guild-name">نقابة 🌪️ 『 ستورم 』</div>
             </div>
 
-            <!-- 2. الأدميرال ايتاشي -->
             <div class="admiral-card" onclick="openAdmiralModal('itachi')">
                 <div class="admiral-avatar">
                     <img src="assets/images/itachi.jpg" alt="الأدميرال ايتاشي" onerror="this.src='https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=150'">
@@ -167,44 +156,164 @@
                 <div class="guild-name">نقابة 🎲 『 مويرا 』</div>
             </div>
 
-            <!-- 3. الأدميرال كيوس -->
-            <div class="admiral-card" onclick="openAdmiralModal('chaos')">
+            <div class="admiral-card" onclick="openAdmiralModal('naruto')">
                 <div class="admiral-avatar">
-                    <img src="assets/images/chaos.jpg" alt="الأدميرال كيوس" onerror="this.src='https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=150'">
+                    <img src="assets/images/naruto.jpg" alt="الأدميرال ناروتو" onerror="this.src='https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=150'">
                 </div>
-                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرال ناروتو</span>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرال كيوس</span>
                 <div class="admiral-name">【 ناروتو ⚡ 】</div>
                 <div class="guild-name">نقابة ☠️ 『 كيوس 』</div>
             </div>
 
-            <!-- 4. الأدميرال فورين -->
-            <div class="admiral-card" onclick="openAdmiralModal('foren')">
+            <div class="admiral-card" onclick="openAdmiralModal('nofleet')">
                 <div class="admiral-avatar">
-                    <img src="assets/images/foren.jpg" alt="الأدميرال فورين" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150'">
+                    <img src="assets/images/nofleet.jpg" alt="الأدميرال نوفليت" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150'">
                 </div>
-                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرال نوفليت</span>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرال فورين</span>
                 <div class="admiral-name">【 نوفليت 🌊 】</div>
-                <div class="guild-name">نقابة 🔰 『 فورين 』</div>
+                <div class="guild-name">نقابة 📖 『 فورين 』</div>
             </div>
 
-            <!-- 5. الأدميرال ايسكرا -->
-            <div class="admiral-card" onclick="openAdmiralModal('iskra')">
+            <div class="admiral-card" onclick="openAdmiralModal('nezuko')">
                 <div class="admiral-avatar">
-                    <img src="assets/images/iskra.jpg" alt="الأدميرال ايسكرا" onerror="this.src='https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=150'">
+                    <img src="assets/images/nezuko.jpg" alt="الأدميرال نيزوُكو" onerror="this.src='https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=150'">
                 </div>
-                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرال نيزوكو</span>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرالة ايسكرا</span>
                 <div class="admiral-name">【 نيزوكو 🎀 】</div>
                 <div class="guild-name">نقابة 💥 『 ايسكرا 』</div>
             </div>
 
-            <!-- يمكن إضافة باقي الأدميرالات المستخرجين من الصورة هنا بنفس الترتيب وببساطة تامة -->
+            <div class="admiral-card" onclick="openAdmiralModal('goku')">
+                <div class="admiral-avatar">
+                    <img src="assets/images/goku.jpg" alt="الأدميرال غوكو" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150'">
+                </div>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرال بولسار</span>
+                <div class="admiral-name">【 غوكو 🏮 】</div>
+                <div class="guild-name">نقابة 🌌 『 بولسار 』</div>
+            </div>
+
+            <div class="admiral-card" onclick="openAdmiralModal('alucard')">
+                <div class="admiral-avatar">
+                    <img src="assets/images/alucard.jpg" alt="الأدميرال الوكارد" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150'">
+                </div>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرال شيرو</span>
+                <div class="admiral-name">【 الوكارد 🍁 】</div>
+                <div class="guild-name">نقابة ⚪ 『 شيرو 』</div>
+            </div>
+
+            <div class="admiral-card" onclick="openAdmiralModal('sukuna')">
+                <div class="admiral-avatar">
+                    <img src="assets/images/sukuna.jpg" alt="الأدميرال سوكونا" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150'">
+                </div>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرال ستيلا</span>
+                <div class="admiral-name">【 سوكونا 🕸️ 】</div>
+                <div class="guild-name">نقابة 💫 『 ستيلا 』</div>
+            </div>
+
+            <div class="admiral-card" onclick="openAdmiralModal('hanji')">
+                <div class="admiral-avatar">
+                    <img src="assets/images/hanji.jpg" alt="الأدميرال هانجي" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150'">
+                </div>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرالة نايت</span>
+                <div class="admiral-name">【 هانجي 🌺 】</div>
+                <div class="guild-name">نقابة 🌙 『 نايت 』</div>
+            </div>
+
+            <div class="admiral-card" onclick="openAdmiralModal('eren')">
+                <div class="admiral-avatar">
+                    <img src="assets/images/eren.jpg" alt="الأدميرال ايرين" onerror="this.src='https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=150'">
+                </div>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرال سكواد</span>
+                <div class="admiral-name">【 ايرين 🕷️ 】</div>
+                <div class="guild-name">نقابة 🔲 『 سكواد 』</div>
+            </div>
+
+            <div class="admiral-card" onclick="openAdmiralModal('maki')">
+                <div class="admiral-avatar">
+                    <img src="assets/images/maki.jpg" alt="الأدميرال ماكي" onerror="this.src='https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150'">
+                </div>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرالة دريفت</span>
+                <div class="admiral-name">【 ماكي 💥 】</div>
+                <div class="guild-name">نقابة ☁️ 『 دريفت 』</div>
+            </div>
+
+            <div class="admiral-card" onclick="openAdmiralModal('daniel')">
+                <div class="admiral-avatar">
+                    <img src="assets/images/daniel.jpg" alt="الأدميرال دانيال" onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150'">
+                </div>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرال داون</span>
+                <div class="admiral-name">【 دانيال 🎻 】</div>
+                <div class="guild-name">نقابة 🌕 『 داون 』</div>
+            </div>
+
+            <div class="admiral-card" onclick="openAdmiralModal('megumi')">
+                <div class="admiral-avatar">
+                    <img src="assets/images/megumi.jpg" alt="الأدميرال ميغومي" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=150'">
+                </div>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرال اونيكس</span>
+                <div class="admiral-name">【 ميغومي 🪶 】</div>
+                <div class="guild-name">نقابة 🌗 『 اونيكس 』</div>
+            </div>
+
+            <div class="admiral-card" onclick="openAdmiralModal('shager1')">
+                <div class="admiral-avatar">
+                    <img src="assets/images/shager1.jpg" alt="" onerror="this.src='https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=150'">
+                </div>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرال اوليرا</span>
+                <div class="admiral-name">【 شاغر 💤 】</div>
+                <div class="guild-name">نقابة 🏹 『 اوليرا 』</div>
+            </div>
+
+            <div class="admiral-card" onclick="openAdmiralModal('yuki')">
+                <div class="admiral-avatar">
+                    <img src="assets/images/yuki.jpg" alt="الأدميرال يوكي" onerror="this.src='https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=150'">
+                </div>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرالة لينوكس</span>
+                <div class="admiral-name">【 يوكي 🥢 】</div>
+                <div class="guild-name">نقابة 🔱 『 لينوكس 』</div>
+            </div>
+
+            <div class="admiral-card" onclick="openAdmiralModal('ichigo')">
+                <div class="admiral-avatar">
+                    <img src="assets/images/ichigo.jpg" alt="الأدميرال ايتشيغو" onerror="this.src='https://images.unsplash.com/photo-1628157582853-a796fa650a6a?q=80&w=150'">
+                </div>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرال فلوكس</span>
+                <div class="admiral-name">【 ايتشيغو 🍷 】</div>
+                <div class="guild-name">نقابة ⛈️ 『 فلوكس 』</div>
+            </div>
+
+            <div class="admiral-card" onclick="openAdmiralModal('sai_raiko')">
+                <div class="admiral-avatar">
+                    <img src="assets/images/sai2.jpg" alt="الأدميرال ساي" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=150'">
+                </div>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرال رايكو</span>
+                <div class="admiral-name">【 ساي 🌧️ 】</div>
+                <div class="guild-name">نقابة 🌨️ 『 رايكو 』</div>
+            </div>
+
+            <div class="admiral-card" onclick="openAdmiralModal('ukyo')">
+                <div class="admiral-avatar">
+                    <img src="assets/images/ukyo.jpg" alt="الأدميرال اوكيو" onerror="this.src='https://images.unsplash.com/photo-1489980508314-941910ded1f4?q=80&w=150'">
+                </div>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرال كورال</span>
+                <div class="admiral-name">【 اوكيو ❄️ 】</div>
+                <div class="guild-name">نقابة 🪸 『 كورال 』</div>
+            </div>
+
+            <div class="admiral-card" onclick="openAdmiralModal('shager2')">
+                <div class="admiral-avatar">
+                    <img src="assets/images/shager2.jpg" alt="الأدميرال شاغر" onerror="this.src='https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?q=80&w=150'">
+                </div>
+                <span class="guild-badge"><i class="fa-solid fa-shield"></i> أدميرال سلاي</span>
+                <div class="admiral-name">【 شاغر 💤 】</div>
+                <div class="guild-name">نقابة 🗡️ 『 سلاي 』</div>
+            </div>
 
         </div>
     </main>
 
-    <!-- ==================== النوافذ المنبثقة للأدميرالات (Modals) ==================== -->
-    
-    <!-- نافذة الأدميرال ساي -->
+    <!-- Modals -->
+
     <div id="modal-sai" class="leader-modal" onclick="closeAdmiralModal('sai')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <button class="close-modal-btn" onclick="closeAdmiralModal('sai')"><i class="fa-solid fa-xmark"></i></button>
@@ -213,13 +322,10 @@
             </div>
             <span class="modal-title-tag">🌪️ أدميرال العاصمة وقائد كتيبة الأعاصير</span>
             <h2 class="modal-name">【 ساي 卍 】</h2>
-            <p class="modal-bio-text">
-                القائد الأعلى لنقابة 『 ستورم 』 والحامي المطلق لعاصمة مملكة إيليت. يتميز بالسرعة الخاطفة والقدرات التكتيكية الاستثنائية التي تجعله أحد ركائز القوة العسكرية الأساسية في الإمبراطورية.
-            </p>
+            <p class="modal-bio-text"> ادميرال نقابة  『 ستورم 』 </p>
         </div>
     </div>
 
-    <!-- نافذة الأدميرال ايتاشي -->
     <div id="modal-itachi" class="leader-modal" onclick="closeAdmiralModal('itachi')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <button class="close-modal-btn" onclick="closeAdmiralModal('itachi')"><i class="fa-solid fa-xmark"></i></button>
@@ -228,24 +334,213 @@
             </div>
             <span class="modal-title-tag">🎲 لورد الظلال والاستراتيجيات المعقدة</span>
             <h2 class="modal-name">【 ايتاشي 🍂 】</h2>
-            <p class="modal-bio-text">
-                أدميرال نقابة 『 مويرا 』 الفخمة. يمتلك الحكمة والهدوء اللذين يمكنانه من قلب موازين أي معركة حربية لصالح التاج، ويشرف على الفصائل القتالية الخاصة بنخبة المقاتلين.
-            </p>
+            <p class="modal-bio-text">أدميرال نقابة 『 مويرا 』</p>  
         </div>
     </div>
 
-    <!-- نافذة الأدميرال كيوس -->
-    <div id="modal-chaos" class="leader-modal" onclick="closeAdmiralModal('chaos')">
+    <div id="modal-naruto" class="leader-modal" onclick="closeAdmiralModal('naruto')">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <button class="close-modal-btn" onclick="closeAdmiralModal('chaos')"><i class="fa-solid fa-xmark"></i></button>
+            <button class="close-modal-btn" onclick="closeAdmiralModal('naruto')"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-avatar-wrapper">
-                <img src="assets/images/chaos.jpg" alt="الأدميرال كيوس" onerror="this.src='https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=250'">
+                <img src="assets/images/naruto.jpg" alt="الأدميرال ناروتو" onerror="this.src='https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=250'">
             </div>
             <span class="modal-title-tag">☠️ قائد الفوضى المنظمة والبرق الخاطف</span>
             <h2 class="modal-name">【 ناروتو ⚡ 】</h2>
-            <p class="modal-bio-text">
-                أدميرال نقابة 『 كيوس 』 الشرسة. يمثل القوة الهجومية التي لا تعرف التراجع، مكلف بفتح الجبهات وتأمين الحدود الخارجية للمملكة ضد أي تهديد.
-            </p>
+            <p class="modal-bio-text">أدميرال نقابة 『 كيوس 』    </p>
+        </div>
+    </div>
+
+    <div id="modal-nofleet" class="leader-modal" onclick="closeAdmiralModal('nofleet')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeAdmiralModal('nofleet')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/nofleet.jpg" alt="الأدميرال نوفليت" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">📖 حارس المعرفة والبحار الهائجة</span>
+            <h2 class="modal-name">【 نوفليت 🌊 】</h2>
+            <p class="modal-bio-text">أدميرال نقابة 『 فورين 』              </p>
+        </div>
+    </div>
+
+    <div id="modal-nezuko" class="leader-modal" onclick="closeAdmiralModal('nezuko')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeAdmiralModal('nezuko')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/nezuko.jpg" alt="الأدميرال نيزوكو" onerror="this.src='https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">💥 صاعقة اللهب القرمزية الفتاكة شوكولاتة </span>
+            <h2 class="modal-name">【 نيزوكو 🎀 】</h2>
+            <p class="modal-bio-text">أدميرالة نقابة 『 ايسكرا 』   </p>
+        </div>
+    </div>
+
+    <div id="modal-goku" class="leader-modal" onclick="closeAdmiralModal('goku')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeAdmiralModal('goku')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/goku.jpg" alt="الأدميرال غوكو" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">🌌 قوة النجم النابض والمدمر الإمبراطوري</span>
+            <h2 class="modal-name">【 غوكو 🏮 】</h2>
+            <p class="modal-bio-text">أدميرال نقابة 『 بولسار 』 </p>
+        </div>
+    </div>
+
+    <div id="modal-alucard" class="leader-modal" onclick="closeAdmiralModal('alucard')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeAdmiralModal('alucard')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/alucard.jpg" alt="الأدميرال الوكارد" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">⚪ سيف النقاء القاطع وقائد النخبة البيضاء</span>
+            <h2 class="modal-name">【 الوكارد 🍁 】</h2>
+            <p class="modal-bio-text">أدميرال نقابة 『 شيرو 』 </p>
+        </div>
+    </div>
+
+    <div id="modal-sukuna" class="leader-modal" onclick="closeAdmiralModal('sukuna')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeAdmiralModal('sukuna')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/sukuna.jpg" alt="الأدميرال سوكونا" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">💫 مرعب الساحات وسيد القيود المحكمة</span>
+            <h2 class="modal-name">【 سوكونا 🕸️ 】</h2>
+            <p class="modal-bio-text">أدميرال نقابة 『 ستيلا 』 </p>
+        </div>
+    </div>
+
+    <div id="modal-hanji" class="leader-modal" onclick="closeAdmiralModal('hanji')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeAdmiralModal('hanji')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/hanji.jpg" alt="الأدميرالة هانجي" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">🌙 قائدة كتائب الليل والاستكشاف السري</span>
+            <h2 class="modal-name">【 هانجي 🌺 】</h2>
+            <p class="modal-bio-text">أدميرالة نقابة 『 نايت 』</p>   
+        </div>
+    </div>
+
+    <div id="modal-eren" class="leader-modal" onclick="closeAdmiralModal('eren')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeAdmiralModal('eren')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/eren.jpg" alt="الأدميرال ايرين" onerror="this.src='https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">🔲 قائد الفيلق الحديدي والمقاومة المطلقة</span>
+            <h2 class="modal-name">【 ايرين 🕷️ 】</h2>
+            <p class="modal-bio-text">أدميرال نقابة 『 سكواد 』 </p>
+        </div>
+    </div>
+
+    <div id="modal-maki" class="leader-modal" onclick="closeAdmiralModal('maki')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeAdmiralModal('maki')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/maki.jpg" alt="الأدميرالة ماكي" onerror="this.src='https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">☁️ قبضة الرياح العاتية والمناورات السريعة</span>
+            <h2 class="modal-name">【 ماكي 💥 】</h2>
+            <p class="modal-bio-text">أدميرالة نقابة 『 دريفت 』 </p>
+        </div>
+    </div>
+
+    <div id="modal-daniel" class="leader-modal" onclick="closeAdmiralModal('daniel')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeAdmiralModal('daniel')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/daniel.jpg" alt="الأدميرال دانيال" onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">🌕 لورد الفجر والترتيل الحربي</span>
+            <h2 class="modal-name">【 دانيال 🎻 】</h2>
+            <p class="modal-bio-text">أدميرال نقابة 『 داون 』  </p>
+        </div>
+    </div>
+
+    <div id="modal-megumi" class="leader-modal" onclick="closeAdmiralModal('megumi')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeAdmiralModal('megumi')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/megumi.jpg" alt="الأدميرال ميغومي" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">🌗 مستدعي الظلال وحامي الفصائل الغامضة</span>
+            <h2 class="modal-name">【 ميغومي 🪶 】</h2>
+            <p class="modal-bio-text">أدميرال نقابة 『 اونيكس 』   </p>
+        </div>
+    </div>
+
+    <!-- تم إصلاح شباك منصب شاغر 1 بالكامل هنا -->
+    <div id="modal-shager1" class="leader-modal" onclick="closeAdmiralModal('shager1')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeAdmiralModal('shager1')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/shager1.jpg" alt="منصب شاغر" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">🏹 منصب قيادي ينتظر بطلاً جديداً</span>
+            <h2 class="modal-name">【 منصب شاغر 💤 】</h2>
+            <p class="modal-bio-text">المقعد القيادي لنقابة 『 اوليرا 』 متاح حالياً لنخبة الفرسان المستعدين لإثبات جدارتهم وقيادة الكتيبة نحو المجد.</p>
+        </div>
+    </div>
+
+    <div id="modal-yuki" class="leader-modal" onclick="closeAdmiralModal('yuki')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeAdmiralModal('yuki')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/yuki.jpg" alt="الأدميرال يوكي" onerror="this.src='https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">🔱 تحافظ دائما على امن نقابتها ، وسيدة التوازن</span>
+            <h2 class="modal-name">【 يوكي 🥢 】</h2>
+            <p class="modal-bio-text">أدميرالة نقابة 『 لينوكس 』 </p>
+        </div>
+    </div>
+
+    <div id="modal-ichigo" class="leader-modal" onclick="closeAdmiralModal('ichigo')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeAdmiralModal('ichigo')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/ichigo.jpg" alt="الأدميرال ايتشيغو" onerror="this.src='https://images.unsplash.com/photo-1628157582853-a796fa650a6a?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">⛈️ قاطع الأرواح ومستدعي العواصف المدمرة</span>
+            <h2 class="modal-name">【 ايتشيغو 🍷 】</h2>
+            <p class="modal-bio-text">أدميرال نقابة 『 فلوكس 』</p>
+        </div>
+    </div>
+
+    <div id="modal-sai_raiko" class="leader-modal" onclick="closeAdmiralModal('sai_raiko')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeAdmiralModal('sai_raiko')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/sai2.jpg" alt="الأدميرال ساي" onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">🌨️ قائد صقيع الشمال والقبضة المتجمدة</span>
+            <h2 class="modal-name">【 ساي 🌧️ 】</h2>
+            <p class="modal-bio-text">أدميرال نقابة 『 رايكو 』</p>
+        </div>
+    </div>
+
+    <div id="modal-ukyo" class="leader-modal" onclick="closeAdmiralModal('ukyo')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeAdmiralModal('ukyo')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/ukyo.jpg" alt="الأدميرال اوكيو" onerror="this.src='https://images.unsplash.com/photo-1489980508314-941910ded1f4?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">🪸 سيف الصقيع الفضي والهدوء القاتل</span>
+            <h2 class="modal-name">【 اوكيو ❄️ 】</h2>
+            <p class="modal-bio-text">أدميرال نقابة 『 كورال 』   .</p>
+        </div>
+    </div>
+
+    <!-- تم إصلاح شباك منصب شاغر 2 بالكامل هنا (الدالة والصورة الاحتياطية) -->
+    <div id="modal-shager2" class="leader-modal" onclick="closeAdmiralModal('shager2')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeAdmiralModal('shager2')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/shager2.jpg" alt="منصب شاغر" onerror="this.src='https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">🗡️ مقعد السيف الحاد بانتظار الفارس المستحق</span>
+            <h2 class="modal-name">【 منصب شاغر 💤 】</h2>
+            <p class="modal-bio-text">المقعد القيادي لنقابة 『 سلاي 』 متاح حالياً لنخبة مقاتلي السيف في إيليت لإثبات قوتهم المطلقة ومؤهلاتهم القيادية.</p>
         </div>
     </div>
 
@@ -255,7 +550,6 @@
         </div>
     </footer>
 
-    <!-- السكربتات -->
     <script src="assets/js/main.js"></script>
     <script>
         function openAdmiralModal(admiralId) {
@@ -269,4 +563,4 @@
         }
     </script>
 </body>
-</html>
+                                                                                 </html>

@@ -106,13 +106,93 @@
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
         }
+
+        /* ✨ إعادة هيكلة وتصميم الأزرار الثلاثة لتصبح فخمة ومشعّة دون كرينج ✨ */
+        .custom-addons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+            width: 100%;
+            max-width: 320px;
+            margin: 25px auto 0 auto;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .addon-glow-btn {
+            width: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 13px 20px;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 12px;
+            text-decoration: none;
+            box-sizing: border-box;
+            text-align: center;
+            letter-spacing: 0.3px;
+            backdrop-filter: blur(5px);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* 🔮 زر أخبار المملكة - بنفسجي داكن غامض مع نيون مشع */
+        .btn-addon-news {
+            background: rgba(138, 43, 226, 0.06);
+            border: 1px solid rgba(138, 43, 226, 0.4);
+            color: #e2d5ff;
+            box-shadow: 0 4px 12px rgba(138, 43, 226, 0.1);
+        }
+        .btn-addon-news:hover {
+            transform: translateY(-3px);
+            background: rgba(138, 43, 226, 0.15);
+            border-color: #8a2be2;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.5), inset 0 0 8px rgba(138, 43, 226, 0.2);
+        }
+
+        /* 👑 زر الفعاليات والهوية - أسود ملكي ممتزج مع توهج ذهبي فخم نابض */
+        .btn-addon-fun {
+            background: rgba(255, 215, 0, 0.05);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            color: #fff1b3;
+            animation: elegantGlow 3s infinite ease-in-out;
+        }
+        .btn-addon-fun:hover {
+            transform: translateY(-3px) scale(1.02);
+            background: rgba(255, 215, 0, 0.12);
+            border-color: #ffd700;
+            color: #fff;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.6), inset 0 0 10px rgba(255, 215, 0, 0.2);
+        }
+
+        /* 🟢 زر التواصل مع المطور - نيون زمردي هادئ */
+        .btn-addon-dev {
+            background: rgba(37, 211, 102, 0.04);
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            color: #d1ffd9;
+        }
+        .btn-addon-dev:hover {
+            transform: translateY(-3px);
+            background: rgba(37, 211, 102, 0.1);
+            border-color: #25d366;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4), inset 0 0 8px rgba(37, 211, 102, 0.1);
+        }
+
+        @keyframes elegantGlow {
+            0% { box-shadow: 0 0 12px rgba(255, 215, 0, 0.1); border-color: rgba(255, 215, 0, 0.3); }
+            50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); border-color: rgba(255, 215, 0, 0.5); }
+            100% { box-shadow: 0 0 12px rgba(255, 215, 0, 0.1); border-color: rgba(255, 215, 0, 0.3); }
+        }
     </style>
 </head>
 <body>
 
     <div id="snow-container"></div>
 
-    <!-- الهيدر وقائمة التنقل -->
     <header>
         <div class="nav-container">
             <div class="logo">
@@ -150,7 +230,6 @@
         </nav>
     </header>
 
-    <!-- قسم الإمبراطور -->
     <section class="emperor-section">
         <div class="emperor-cover"></div>
 
@@ -163,7 +242,6 @@
             <span class="text-elite-normal"><i class="fa-solid fa-bolt"></i> النخبة تصنع المجد دائماً <i class="fa-solid fa-bolt"></i></span>
             <h1 class="emperor-name"><span>مملكة إيليت⚜️</span></h1>
 
-            <!-- أزرار تفاعلية بحجمها الموحد الجديد والمرتبة عمودياً -->
             <div class="interactive-btn-group">
                 <button id="btn-royal-scroll" class="btn-interactive btn-royal" onclick="toggleDisclosure('royal-scroll')"
                     title="اضغط لعرض السجل الإمبراطوري">
@@ -186,7 +264,7 @@
             <div id="box-royal-scroll" class="info-disclosure-box">
                 <h3>📜 السجل المـــلكي</h3>
                 <p><strong>الاسم الحركي:</strong> الإمبراطور العظيم إينوماكي.</p>
-                <p><strong>الرؤية والقدرة:</strong> توجيه الكلمات السحرية وقيادة المجالس الإدارية والسيادية العليا لضمان بقاء المملكة في الصدارة المطلقة دائماً.</p>
+                <p><strong>الرؤية والقدرة:</strong> توجيه الكلمات السحرية وقيادة المجالس الإدارية والسياسية العليا لضمان بقاء المملكة في الصدارة المطلقة دائماً.</p>
             </div>
 
             <div id="box-elite-bio" class="info-disclosure-box">
@@ -194,11 +272,9 @@
                 <p>إمبراطورية النخبة والصفوة، تأسست لتجمع أقوى الأعضاء تحت قيادة منظمة وحكيمة تحافظ على العدالة والتفاعل الدائم وبناء أمجاد لا تنتهي.</p>
             </div>
 
-            <!-- قائمة قادة إيليت العليا والمحكمة -->
             <div id="box-leaders-list" class="leaders-disclosure-container">
                 <div class="deputies-free-flow-stack">
 
-                    <!-- كرولو -->
                     <div class="single-leader-row" onclick="openLeaderModal('chrollo')">
                         <div class="deputy-avatar-wave-wrapper chrollo-frame">
                             <img src="assets/images/chrollo.jpg" alt="النائب الملكي كرولو"
@@ -210,7 +286,6 @@
                         </div>
                     </div>
 
-                    <!-- بان -->
                     <div class="single-leader-row" onclick="openLeaderModal('pain')">
                         <div class="deputy-avatar-wave-wrapper ban-frame">
                             <img src="assets/images/pain.jpg" alt="النائب بان"
@@ -229,7 +304,6 @@
                             <i class="fa-solid fa-scale-balanced scale-icon"></i>
                         </div>
 
-                        <!-- آرثر — لورد المملكة -->
                         <div class="lord-card" onclick="openLeaderModal('arthur')">
                             <div class="lord-avatar-glow">
                                 <img src="assets/images/arather.jpg" alt="اللورد آرثر" onerror="this.src='assets/images/arather.jpg'">
@@ -242,7 +316,6 @@
                         </div>
                     </div>
 
-                    <!-- مجلس القضاء — ريمورو -->
                     <div class="court-disclosure-box">
                         <div class="court-header">
                             <i class="fa-solid fa-scale-balanced scale-icon"></i>
@@ -250,7 +323,6 @@
                             <i class="fa-solid fa-scale-balanced scale-icon"></i>
                         </div>
 
-                        <!-- ريمورو -->
                         <div class="court-leader-card" onclick="openLeaderModal('rimuru')">
                             <div class="court-avatar-glow">
                                 <img src="assets/images/rimuru.jpg" alt="المستشار ريمورو"
@@ -270,7 +342,6 @@
                             <span>     الماركيز </span>
                             <i class="fa-solid fa-scale-balanced scale-icon"></i>
                         </div>
-                        <!-- شادو -->
                         <div class="marquis-banner" onclick="openLeaderModal('shadow')">
                             <div class="marquis-shadow-stripe"></div>
                             <div class="marquis-avatar-wrapper">
@@ -291,14 +362,24 @@
         </div>
     </section>
 
-    <!-- زر الانتقال لصفحة الدوقات -->
     <div class="central-action-area">
         <a href="dukes.html" class="btn-dukes-mega">
             <i class="fa-solid fa-chess-knight"></i> مجلس دوقات المملكة الإستراتيجي
         </a>
+
+        <div class="custom-addons-container">
+            <a href="news.html" class="addon-glow-btn btn-addon-news">
+                <i class="fa-solid fa-newspaper"></i> أخبار المملكة الإمبراطورية
+            </a>
+            <a href="fun.html" class="addon-glow-btn btn-addon-fun">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> اكتشف هويتك الحقيقية
+            </a>
+            <a href="https://wa.me/994404455588" target="_blank" class="addon-glow-btn btn-addon-dev">
+                <i class="fa-brands fa-whatsapp"></i> تواصل مع المطور
+            </a>
+        </div>
     </div>
 
-    <!-- إدارات وأقسام النخبة -->
     <section class="section-container">
         <h2 class="section-title">إدارات وأقسام النخبة</h2>
         <div class="grid-layout">
@@ -310,7 +391,7 @@
             <div class="card">
                 <i class="fa-solid fa-shield-halved"></i>
                 <h3>الأدميرالات والنقابات</h3>
-                <p>تصفح الفصائل العسكرية التابعة للتاج وتعرف على شروط وقادة الكتائب القتالية.</p>
+                <p>تصفح الفصائل العسكرية التابعة للتاج وتعرف على شروط وقادة الکتائب القتالية.</p>
             </div>
             <div class="card">
                 <i class="fa-solid fa-medal"></i>
@@ -320,7 +401,6 @@
         </div>
     </section>
 
-    <!-- النوافذ المنبثقة للقادة (Modals) -->
     <div id="modal-chrollo" class="leader-modal" onclick="closeLeaderModal('chrollo')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <button class="close-modal-btn" onclick="closeLeaderModal('chrollo')"><i class="fa-solid fa-xmark"></i></button>
@@ -349,7 +429,6 @@
         </div>
     </div>
 
-    <!-- مودال اللورد آرثر -->
     <div id="modal-arthur" class="leader-modal" onclick="closeLeaderModal('arthur')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <button class="close-modal-btn" onclick="closeLeaderModal('arthur')"><i class="fa-solid fa-xmark"></i></button>
@@ -364,7 +443,6 @@
         </div>
     </div>
 
-    <!-- مودال المستشار ريمورو (مُعدل باللون البرتقالي والأحمر الناري) -->
     <div id="modal-rimuru" class="leader-modal" onclick="closeLeaderModal('rimuru')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <button class="close-modal-btn" onclick="closeLeaderModal('rimuru')"><i class="fa-solid fa-xmark"></i></button>
@@ -379,7 +457,6 @@
         </div>
     </div>
 
-    <!-- مودال الماركيز شادو -->
     <div id="modal-shadow" class="leader-modal" onclick="closeLeaderModal('shadow')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <button class="close-modal-btn" onclick="closeLeaderModal('shadow')"><i class="fa-solid fa-xmark"></i></button>

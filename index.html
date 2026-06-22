@@ -262,7 +262,7 @@
             </div>
 
             <div id="box-royal-scroll" class="info-disclosure-box">
-                <h3> 📜  السجل المـــلكي</h3>
+                <h3>📜 السجل المـــلكي</h3>
                 <p><strong>الاسم الحركي:</strong> الإمبراطور العظيم إينوماكي.</p>
                 <p><strong>الرؤية والقدرة:</strong> توجيه الكلمات السحرية وقيادة المجالس الإدارية والسياسية العليا لضمان بقاء المملكة في الصدارة المطلقة دائماً.</p>
             </div>
@@ -282,7 +282,7 @@
                         </div>
                         <div class="deputy-text-block">
                             <div class="deputy-tag-wave-border"><i class="fa-solid fa-crown"></i> نائب الإمبراطور</div>
-                            <div class="deputy-name-plain">『🕷 𝐶𝐻𝑅𝑂𝐿𝐿𝑂  』</div>
+                            <div class="deputy-name-plain">『🕷 𝐶𝐻𝑅Ｏ𝐿𝐿Ｏ  』</div>
                         </div>
                     </div>
 
@@ -304,6 +304,7 @@
                             <i class="fa-solid fa-scale-balanced scale-icon"></i>
                         </div>
 
+                        <!-- بطاقة اللورد آرثر -->
                         <div class="lord-card" onclick="openLeaderModal('arthur')">
                             <div class="lord-avatar-glow">
                                 <img src="assets/images/arather.jpg" alt="اللورد آرثر" onerror="this.src='assets/images/arather.jpg'">
@@ -312,6 +313,18 @@
                                 <div class="lord-tag"><i class="fa-solid fa-chess-king"></i> لورد المملكة</div>
                                 <div class="lord-name">اللـورد آرثـر 👑</div>
                                 <div class="lord-sub-title">حارس العدل وسيف الملكة</div>
+                            </div>
+                        </div>
+
+                        <!-- بطاقة ماوماو مطابقة تماماً لنفس قالب وإطار وتوهج آرثر الملكي -->
+                        <div class="lord-card" onclick="openLeaderModal('maomao')" style="margin-top: 15px;">
+                            <div class="lord-avatar-glow" style="background:linear-gradient(45deg,#c98bff,#ff4fa3,#29e0ff,#c98bff);box-shadow:0 0 30px rgba(201,139,255,0.7);">
+                                <img src="assets/images/maomao.jpg" alt="ماوماو" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150'">
+                            </div>
+                            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+                                <div class="lord-tag" style="border-color:#c98bff;color:#c98bff;"><i class="fa-solid fa-wand-magic-sparkles"></i>نائبة اللورد</div>
+                                <div class="lord-name" style="color:#e2c7ff;text-shadow:0 0 15px rgba(201,139,255,0.6);">ماومــاو ✨</div>
+                                <div class="lord-sub-title">الذكاء و الرقة والروح الملهمة للمجلس</div>
                             </div>
                         </div>
                     </div>
@@ -418,3 +431,131 @@
     <div id="modal-pain" class="leader-modal" onclick="closeLeaderModal('pain')">
         <div class="modal-content" onclick="event.stopPropagation()">
             <button class="close-modal-btn" onclick="closeLeaderModal('pain')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper">
+                <img src="assets/images/pain.jpg" alt="بان" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag">⭐ درع العرش والقبضة الحازمة</span>
+            <h2 class="modal-name">نائب الإمبراطور بان</h2>
+            <p class="modal-bio-text">
+                هو رمز القوة والنظام ولديه حس فكاهي وجميل في المملكة، والمسؤول المباشر عن متابعة الانضباط والتفاعل داخل إيليت. يمثل السد المنيع والدرع الحامي لقرارات التاج لضمان الحفاظ على هيبة المملكة وسلامتها الداخلية بلا تهاون.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal-arthur" class="leader-modal" onclick="closeLeaderModal('arthur')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeLeaderModal('arthur')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper" style="background:linear-gradient(45deg,#c98bff,#ff4fa3,#29e0ff,#c98bff);box-shadow:0 0 30px rgba(201,139,255,0.7);">
+                <img src="assets/images/arather.jpg" alt="آرثر" onerror="this.src='https://images.unsplash.com/photo-1640960543409-dbe56ccc30e2?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag" style="border-color:#c98bff;color:#c98bff;">👑 لورد مملكة إيليت</span>
+            <h2 class="modal-name" style="color:#e2c7ff;text-shadow:0 0 15px rgba(201,139,255,0.6);">اللورد آرثر</h2>
+            <p class="modal-bio-text">
+              حارس العدل وسيف المملكة في وجه كل من يُفكّر في تهديد أمن إيليت. يجمع آرثر بين الرزانة والقوة الخارقة — سلاحه الكلمة الحكيمة وإن اقتضى الأمر فهو يدٌ من حديد لا ترحم. لورد المملكة المُعيَّن لإدارة شؤون النخبة.  
+            </p>
+        </div>
+    </div>
+
+    <!-- نافذة ماوماو المنبثقة: قالب متناسق مع آرثر + نبذة أنثوية رقيقة مستقلة -->
+    <div id="modal-maomao" class="leader-modal" onclick="closeLeaderModal('maomao')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeLeaderModal('maomao')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper" style="background:linear-gradient(45deg,#c98bff,#ff4fa3,#29e0ff,#c98bff);box-shadow:0 0 30px rgba(201,139,255,0.7);">
+                <img src="assets/images/maomao.jpg" alt="ماوماو" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag" style="border-color:#c98bff;color:#c98bff;"><i class="fa-solid fa-wand-magic-sparkles"></i> زهرة لوردات إيليت العليا</span>
+            <h2 class="modal-name" style="color:#e2c7ff;text-shadow:0 0 15px rgba(201,139,255,0.6);">ماومــاو</h2>
+            <p class="modal-bio-text">
+                كـ نسمة رقيقة داخل أجواء المملكة، تتربع ماوماو برقة آسرة وذكاء حاد لا يُشقّ له غبار في مجالس النخبة. صاحبة بصمة فريدة تجمع بين اللين والدقة الفائقة في كشف غوامض الأمور، لتضفي سحراً وسلاماً خاصاً على أركان التاج الملكي.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal-rimuru" class="leader-modal" onclick="closeLeaderModal('rimuru')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeLeaderModal('rimuru')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper" style="background:linear-gradient(45deg,#ff4500,#ff8c00,#ff0000);box-shadow:0 0 30px rgba(255,69,0,0.7);">
+                <img src="assets/images/rimuru.jpg" alt="ريمورو" onerror="this.src='https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag" style="border-color:#ff4500;color:#ff8c00;"><i class="fa-solid fa-gavel"></i> رئيس محكمة إيليت العليا</span>
+            <h2 class="modal-name" style="color:#ffe5db;text-shadow:0 0 15px rgba(255,69,0,0.6);">"المستشار رايـ🎩ـن" ريمورو</h2>
+            <p class="modal-bio-text">
+                المستشار الأعلى للمملكة ورأس السلطة القضائية في هاوس آدلر. يمتلك الحكمة المطلقة والقدرة على موازنة الأمور وإحقاق الحق بين الجميع. بفضل رؤيته السديدة وتوجيهاته الدبلوماسية, تُحل النزاعات وتُرسى قواعد العدل والمساواة في أركان إيليت كافة.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal-shadow" class="leader-modal" onclick="closeLeaderModal('shadow')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closeLeaderModal('shadow')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-avatar-wrapper" style="background:linear-gradient(45deg,#29e0ff,#004488,#00ccff);box-shadow:0 0 30px rgba(41,224,255,0.6);">
+                <img src="assets/images/shado.jpg" alt="شادو" onerror="this.src='https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=250'">
+            </div>
+            <span class="modal-title-tag" style="border-color:#29e0ff;color:#29e0ff;"><i class="fa-solid fa-mask"></i> ماركيز الظل</span>
+            <h2 class="modal-name" style="color:#e0f7ff;text-shadow:0 0 15px rgba(41,224,255,0.6);">الماركيز شادو 🌑</h2>
+            <p class="modal-bio-text">
+                يسكن الظلام ويتحرك في صمت مطبق — لا أحد يراه حتى يشاء هو ذلك. ذراع إيليت الخفية وحارسها الأبدي من الظل. حين يصمت الجميع ويعجزون فشادو يظهر من العتمة ويُحسم الأمر بلا كلام.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="copyright">
+            &copy; 2026 مملكة إيليت. جميع الحقوق محفوظة | صُنع بامتياز بواسطة قادة النخبة.
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        function toggleDisclosure(targetId) {
+            document.getElementById('box-leaders-list').style.display = 'none';
+            document.getElementById('btn-leaders-list').classList.remove('active-box');
+
+            const currentBox = document.getElementById('box-' + targetId);
+            const currentBtn = document.getElementById('btn-' + targetId);
+            const allBoxes = document.querySelectorAll('.info-disclosure-box');
+            const allBtns = document.querySelectorAll('.btn-interactive');
+            const isOpen = currentBox.style.display === 'block';
+
+            allBoxes.forEach(box => box.style.display = 'none');
+            allBtns.forEach(btn => btn.classList.remove('active-box'));
+
+            if (!isOpen) {
+                currentBox.style.display = 'block';
+                currentBtn.classList.add('active-box');
+                currentBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        function toggleLeadersDisclosure() {
+            const allBoxes = document.querySelectorAll('.info-disclosure-box');
+            const allBtns = document.querySelectorAll('.btn-interactive');
+            allBoxes.forEach(box => box.style.display = 'none');
+            allBtns.forEach(btn => btn.classList.remove('active-box'));
+
+            const leadersBox = document.getElementById('box-leaders-list');
+            const leadersBtn = document.getElementById('btn-leaders-list');
+
+            if (leadersBox.style.display === 'block') {
+                leadersBox.style.display = 'none';
+                leadersBtn.classList.remove('active-box');
+            } else {
+                leadersBox.style.display = 'block';
+                leadersBtn.classList.add('active-box');
+                leadersBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        function openLeaderModal(leaderId) {
+            document.getElementById('modal-' + leaderId).style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLeaderModal(leaderId) {
+            document.getElementById('modal-' + leaderId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>

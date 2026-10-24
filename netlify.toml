@@ -1,0 +1,37 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+[dev]
+  command = "npm run dev:vite"
+  targetPort = 5173
+  port = 8888
+
+[[redirects]]
+  from = "/api/cards"
+  to = "/.netlify/functions/cards"
+  status = 200
+
+[[redirects]]
+  from = "/api/content.php"
+  to = "/.netlify/functions/content"
+  status = 200
+
+[[redirects]]
+  from = "/api/auth.php"
+  to = "/.netlify/functions/auth"
+  status = 200
+
+[[redirects]]
+  from = "/api/upload.php"
+  to = "/.netlify/functions/upload"
+  status = 200
+
+[[redirects]]
+  from = "/api/image/*"
+  to = "/.netlify/functions/image/:splat"
+  status = 200

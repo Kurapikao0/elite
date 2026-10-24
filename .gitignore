@@ -1,0 +1,13 @@
+node_modules/
+dist/
+tsconfig.tsbuildinfo
+storage/content.json
+storage/*.lock
+uploads/*
+!uploads/.htaccess
+.env
+.env.*
+!.env.example
+
+# Local Netlify folder
+.netlify

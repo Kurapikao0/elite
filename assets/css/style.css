@@ -5,26 +5,26 @@
 
 :root {
     /* لوحة الألوان الإمبراطورية الأساسية */
-    --bg-dark: #06070d;
-    --bg-gradient: linear-gradient(135deg, #06070d, #0c0a1c, #110618, #06070d);
-    --bg-card: rgba(16, 20, 32, 0.72);
-    --bg-card-solid: #10131f;
+    --bg-dark: #06151b;
+    --bg-gradient: linear-gradient(135deg, #06151b, #08252e, #0b3440, #06151b);
+    --bg-card: rgba(9, 37, 46, 0.82);
+    --bg-card-solid: #0b2730;
     --border-soft: rgba(255, 255, 255, 0.08);
 
-    --text-main: #f6f2e9;
-    --text-muted: #aab0c4;
+    --text-main: #f0fcff;
+    --text-muted: #a7cbd3;
 
-    --primary-color: #f1c545;      /* ذهبي إمبراطوري فاخر */
-    --primary-soft: rgba(241, 197, 69, 0.16);
-    --secondary-glow: #ff6a3d;      /* توهج ناري */
-    --third-glow: #29e0ff;          /* توهج كريستالي */
+    --primary-color: #35d5e8;
+    --primary-soft: rgba(53, 213, 232, 0.18);
+    --secondary-glow: #a8f4fb;
+    --third-glow: #79eafa;
 
     --court-color: #29e0ff;
     --court-red: #ef4444;
 
     --font-family: 'Cairo', sans-serif;
-    --particle-color: rgba(241, 197, 69, 0.55);
-    --btn-bg: rgba(16, 20, 32, 0.65);
+    --particle-color: rgba(95, 226, 241, 0.55);
+    --btn-bg: rgba(9, 37, 46, 0.8);
 
     --header-height: 68px;
     --container-max: 1200px;
@@ -38,17 +38,17 @@
 
 /* الوضع البنفسجي الأسطوري */
 [data-theme="mythic-purple"] {
-    --bg-dark: #050108;
-    --bg-gradient: linear-gradient(135deg, #050108, #160226, #0d0118, #050108);
-    --bg-card: rgba(28, 12, 45, 0.72);
-    --bg-card-solid: #160c22;
-    --primary-color: #c98bff;
-    --primary-soft: rgba(201, 139, 255, 0.16);
-    --secondary-glow: #ff4fa3;
-    --third-glow: #38f6ff;
-    --court-color: #ff4fa3;
-    --particle-color: rgba(201, 139, 255, 0.55);
-    --btn-bg: rgba(28, 12, 45, 0.65);
+    --bg-dark: #06151b;
+    --bg-gradient: linear-gradient(135deg, #06151b, #08252e, #0b3440, #06151b);
+    --bg-card: rgba(9, 37, 46, 0.82);
+    --bg-card-solid: #0b2730;
+    --primary-color: #35d5e8;
+    --primary-soft: rgba(53, 213, 232, 0.18);
+    --secondary-glow: #a8f4fb;
+    --third-glow: #79eafa;
+    --court-color: #35d5e8;
+    --particle-color: rgba(95, 226, 241, 0.55);
+    --btn-bg: rgba(9, 37, 46, 0.8);
 }
 
 /* ============================== Reset ============================== */

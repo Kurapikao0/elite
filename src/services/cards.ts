@@ -1,4 +1,5 @@
 import starterCards from '../data/cards.json';
+import { uploadMedia } from './content';
 
 export type CardItem = {
   id: string;
@@ -24,19 +25,9 @@ export async function saveCards(cards: CardItem[], csrfToken: string): Promise<v
     headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': csrfToken },
     body: JSON.stringify(cards),
   });
-  if (!response.ok) throw new Error((await response.json().catch(() => null))?.error ?? 'تعذر حفظ البطاقات على GitHub.');
+  if (!response.ok) throw new Error((await response.json().catch(() => null))?.error ?? 'تعذر حفظ البطاقات في التخزين الدائم.');
 }
 
 export async function uploadCardImage(file: File, csrfToken: string): Promise<string> {
-  const form = new FormData();
-  form.append('image', file);
-  const response = await fetch(API, {
-    method: 'POST',
-    credentials: 'same-origin',
-    headers: { 'X-CSRF-Token': csrfToken },
-    body: form,
-  });
-  const result = await response.json();
-  if (!response.ok) throw new Error(result.error ?? 'تعذر رفع الصورة إلى GitHub.');
-  return result.url as string;
+  return uploadMedia(file, csrfToken);
 }

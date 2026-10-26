@@ -10,7 +10,7 @@ export type EditableItem = {
 };
 
 export type SiteContent = {
-  home: { founderName: string; founderImage: string; coverImage: string; slogan: string; title: string; royalTitle: string; royalDescription: string; aboutTitle: string; aboutDescription: string };
+  home: { founderName: string; founderImage: string; coverImage: string; coverVideo?: string; slogan: string; title: string; royalTitle: string; royalDescription: string; aboutTitle: string; aboutDescription: string };
   departments: { title: string; description: string; icon: string }[];
   kings: EditableItem[];
   dukes: EditableItem[];
@@ -24,7 +24,7 @@ const item = (id: string, name: string, title: string, subtitle: string, descrip
 
 export const defaultContent: SiteContent = {
   home: {
-    founderName: 'إينوماكي — مؤسس إيليت', founderImage: 'assets/images/1a408bf70e41420bb28d704018b7349f (1).jpg', coverImage: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200', slogan: 'النخبة تصنع المجد دائماً', title: 'مملكة إيليت⚜️',
+    founderName: 'إينوماكي — مؤسس إيليت', founderImage: 'assets/images/1a408bf70e41420bb28d704018b7349f (1).jpg', coverImage: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200', coverVideo: '/videos/hero.mp4', slogan: 'النخبة تصنع المجد دائماً', title: 'مملكة إيليت⚜️',
     royalTitle: 'السجل المـــلكي', royalDescription: 'الاسم الحركي: الإمبراطور العظيم إينوماكي. الرؤية والقدرة: توجيه الكلمات السحرية وقيادة المجالس الإدارية والسياسية العليا لضمان بقاء المملكة في الصدارة المطلقة دائماً.',
     aboutTitle: 'عن إمبراطورية إيليـــــت⚜️', aboutDescription: 'إمبراطورية النخبة والصفوة، تأسست لتجمع أقوى الأعضاء تحت قيادة منظمة وحكيمة تحافظ على العدالة والتفاعل الدائم وبناء أمجاد لا تنتهي.',
   },

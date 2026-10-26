@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { EditableItem, SiteContent } from '../data/defaultContent';
 import { CardModal, Link, SiteShell } from '../components/SiteShell';
 import type { CardItem } from '../services/cards';
 
+const HERO_VIDEO_URL = '/videos/hero.mp4';
 type CollectionKind = 'kings' | 'dukes' | 'admirals';
 
 function Collection({ page, title, subtitle, items, kind }: { page: string; title: string; subtitle: string; items: EditableItem[]; kind: CollectionKind }) {
@@ -35,24 +36,96 @@ function Collection({ page, title, subtitle, items, kind }: { page: string; titl
 export function HomePage({ data, cards }: { data: SiteContent; cards: CardItem[] }) {
   const [disclosure, setDisclosure] = useState('');
   const [selected, setSelected] = useState<EditableItem | null>(null);
+  const [modal, setModal] = useState<{ title: string; description: string } | null>(null);
+  const [videoFailed, setVideoFailed] = useState(false);
+  const [audioEnabled, setAudioEnabled] = useState(true);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const heroVideoSrc = data.home.coverVideo || HERO_VIDEO_URL;
+  const heroVideoType = heroVideoSrc.toLowerCase().split('?')[0].endsWith('.webm')
+    ? 'video/webm'
+    : heroVideoSrc.toLowerCase().split('?')[0].endsWith('.ogg')
+      ? 'video/ogg'
+      : 'video/mp4';
+  const royalDisclosure = {
+    title: 'السجل الملكي',
+    description: 'يعكس السجل الملكي مسيرة من التميز والإنجازات، ويحفظ المحطات المهمة التي تشكّل هوية Elite وقصتها.',
+  };
+  const aboutDisclosure = {
+    title: 'عن Elite',
+    description: 'Elite مساحة تجمع بين الأناقة والتميز، وتهتم بتقديم تجربة راقية تجمع بين الجودة والتفاصيل المدروسة.',
+  };
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || videoFailed || !heroVideoSrc) return;
+    video.playsInline = true;
+    video.loop = true;
+    video.autoplay = true;
+    video.muted = false;
+    const playPromise = video.play();
+    if (playPromise) {
+      playPromise.catch(() => {
+        video.muted = true;
+        setAudioEnabled(false);
+      });
+    }
+  }, [videoFailed, heroVideoSrc]);
+
+  useEffect(() => {
+    setVideoFailed(false);
+    setAudioEnabled(false);
+  }, [heroVideoSrc]);
+
+  const toggleAudio = async () => {
+    const video = videoRef.current;
+    if (!video) return;
+    const nextAudio = !audioEnabled;
+    video.muted = !nextAudio;
+    setAudioEnabled(nextAudio);
+    if (nextAudio) {
+      try {
+        await video.play();
+      } catch {
+        video.muted = true;
+        setAudioEnabled(false);
+      }
+    }
+  };
+
   return (
     <SiteShell page="/index.html">
       <section className="emperor-section">
-        <div className="emperor-cover" style={{ backgroundImage: `linear-gradient(rgba(8,40,50,.15),rgba(6,21,27,.98)), url("${data.home.coverImage}")` }} />
+        <div className="emperor-cover" style={{ backgroundImage: `linear-gradient(rgba(8,40,50,.15),rgba(6,21,27,.98)), url("${data.home.coverImage}")` }}>
+          {!videoFailed && heroVideoSrc && (
+            <>
+              <video key={heroVideoSrc} ref={videoRef} className="emperor-cover-video" autoPlay loop muted playsInline preload="auto" poster={data.home.coverImage} onError={() => setVideoFailed(true)} aria-label="فيديو مقدمة الصفحة الرئيسية">
+                <source src={heroVideoSrc} type={heroVideoType} />
+              </video>
+              <button type="button" className="hero-video-toggle" onClick={() => void toggleAudio()} aria-label={audioEnabled ? 'كتم الصوت' : 'تشغيل الصوت'}>{audioEnabled ? '🔊 الصوت' : '🔇 تشغيل الصوت'}</button>
+            </>
+          )}
+        </div>
         <div className="emperor-profile-container">
           <div className="wave-glow-avatar"><img src={data.home.founderImage} alt={data.home.founderName} /></div>
           <span className="emperor-founder-label">✦ {data.home.founderName} ✦</span>
           <span className="text-elite-normal">✧ {data.home.slogan} ✧</span>
           <h1 className="emperor-name"><span>{data.home.title}</span></h1>
           <div className="interactive-btn-group">
-            <button className="btn-interactive btn-royal" onClick={() => setDisclosure(disclosure === 'royal' ? '' : 'royal')}>📜 السجل الإمبراطوري</button>
-            <button className="btn-interactive btn-royal" onClick={() => setDisclosure(disclosure === 'about' ? '' : 'about')}>🛡️ عن إيليت</button>
+            <button className="btn-interactive btn-royal" onClick={() => setModal(royalDisclosure)}>📜 السجل الملكي</button>
+            <button className="btn-interactive btn-royal" onClick={() => setModal(aboutDisclosure)}>🛡️ عن Elite</button>
             <button className="btn-interactive btn-royal" onClick={() => setDisclosure(disclosure === 'leaders' ? '' : 'leaders')}>قادة إيليت العليا</button>
             <Link to="/legends.html" className="btn-interactive btn-royal">👑 ملوك إيليت</Link>
           </div>
-          {disclosure === 'royal' && <div className="info-disclosure-box"><h3>{data.home.royalTitle}</h3><p>{data.home.royalDescription}</p></div>}
-          {disclosure === 'about' && <div className="info-disclosure-box"><h3>{data.home.aboutTitle}</h3><p>{data.home.aboutDescription}</p></div>}
           {disclosure === 'leaders' && <div className="leaders-disclosure-container leaders-visible"><div className="deputies-free-flow-stack">{data.leaders.map((person) => <button className="single-leader-row" key={person.id} onClick={() => setSelected(person)}><img className="leader-thumb" src={person.image} alt="" /><span><b>{person.title}</b><br />{person.name}</span></button>)}</div></div>}
+          {modal && (
+            <div className="info-modal-overlay" onClick={() => setModal(null)} role="presentation">
+              <div className="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-modal-title" onClick={(event) => event.stopPropagation()}>
+                <button type="button" className="info-modal-close" aria-label="إغلاق" onClick={() => setModal(null)}>×</button>
+                <h3 id="info-modal-title">{modal.title}</h3>
+                <p>{modal.description}</p>
+              </div>
+            </div>
+          )}
         </div>
       </section>
       <div className="central-action-area">
@@ -60,7 +133,7 @@ export function HomePage({ data, cards }: { data: SiteContent; cards: CardItem[]
         <div className="custom-addons-container"><Link className="addon-glow-btn btn-addon-news" to="/news.html">أخبار المملكة الإمبراطورية</Link><Link className="addon-glow-btn btn-addon-fun" to="/fun.html">اكتشف هويتك الحقيقية</Link><a className="addon-glow-btn btn-addon-dev" href="https://wa.me/966556380237" target="_blank" rel="noreferrer">تواصل مع المطور</a></div>
       </div>
       <section className="section-container"><h2 className="section-title">إدارات وأقسام النخبة</h2><div className="grid-layout">{data.departments.map((department) => <article className="card" key={department.title}><i className={`fa-solid ${department.icon}`} /><h3>{department.title}</h3><p>{department.description}</p></article>)}</div></section>
-      <section className="section-container public-cards"><h2 className="section-title">بطاقات المملكة</h2><div className="cards-public-grid">{cards.map(card => <article className="public-card" key={card.id}><img src={card.imageUrl} alt={card.title} loading="lazy"/><div><h3>{card.title}</h3><p>{card.description}</p></div></article>)}</div></section>
+      <section className="section-container public-cards"><h2 className="section-title">بطاقات المملكة</h2><div className="cards-public-grid">{cards.map(card => <article className="public-card" key={card.id}>{card.imageUrl ? <img src={card.imageUrl} alt={card.title} loading="lazy"/> : <div className="public-card-placeholder">بدون صورة</div>}<div><h3>{card.title || 'بطاقة جديدة'}</h3><p>{card.description}</p></div></article>)}</div></section>
       <CardModal item={selected} onClose={() => setSelected(null)} />
     </SiteShell>
   );

@@ -219,9 +219,9 @@ header {
 
 .theme-switcher-corner .theme-text { display: inline; }
 
-/* تلميح توضيحي لزر المظهر */
+/* تلميح توضيحي لزر الإدارة */
 .theme-switcher-corner::after {
-    content: 'غيّر لون الموقع';
+    content: 'الإدارة';
     position: absolute;
     bottom: -34px;
     right: 0;
